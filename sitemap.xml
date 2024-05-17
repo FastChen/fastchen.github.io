@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://fastchen.com/development/hardware/init-tspi/</loc>
+    <loc>https://fastchen.com/hardware/init-tspi/</loc>
     
     <lastmod>2024-05-17</lastmod>
     
@@ -449,7 +449,7 @@
   </url>
   
   <url>
-    <loc>https://fastchen.com/categories/development/hardware/</loc>
+    <loc>https://fastchen.com/categories/hardware/</loc>
     <lastmod>2024-05-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
