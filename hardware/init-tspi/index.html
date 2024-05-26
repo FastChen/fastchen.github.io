@@ -37,7 +37,7 @@
 <meta property="og:image" content="https://fastchen.com/images/blog/init-tspi/open_root_user.png">
 <meta property="og:image" content="https://fastchen.com/images/blog/init-tspi/tspi_pack.png">
 <meta property="article:published_time" content="2024-05-17T15:49:00.000Z">
-<meta property="article:modified_time" content="2024-05-22T13:56:08.567Z">
+<meta property="article:modified_time" content="2024-05-26T14:09:21.456Z">
 <meta property="article:author" content="FastChen">
 <meta property="article:tag" content="Linux">
 <meta property="article:tag" content="硬件开发">
@@ -126,7 +126,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-text">初始化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#0x01-%E5%87%86%E5%A4%87%E5%B7%A5%E5%85%B7"><span class="nav-text">0x01 准备工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x02-%E5%AE%89%E8%A3%85%E9%A9%B1%E5%8A%A8"><span class="nav-text">0x02 安装驱动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x03-%E7%83%A7%E5%BD%95%E7%B3%BB%E7%BB%9F"><span class="nav-text">0x03 烧录系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%90%E8%A1%8C%E7%83%A7%E5%BD%95%E8%BD%AF%E4%BB%B6"><span class="nav-text">运行烧录软件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%86%E6%B3%B0%E5%B1%B1%E6%B4%BE%E8%BF%9E%E6%8E%A5%E8%87%B3%E7%94%B5%E8%84%91"><span class="nav-text">将泰山派连接至电脑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-Loader-%E5%8D%87%E7%BA%A7%E6%A8%A1%E5%BC%8F%E8%BF%9B%E8%A1%8C%E7%83%A7%E5%BD%95"><span class="nav-text">使用 Loader 升级模式进行烧录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BD%BD%E5%85%A5%E5%9B%BA%E4%BB%B6-%E9%95%9C%E5%83%8F-%E7%83%A7%E5%BD%95"><span class="nav-text">载入固件(镜像)烧录</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE-Debian-%E7%B3%BB%E7%BB%9F"><span class="nav-text">配置 Debian 系统</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9E%E6%8E%A5%E7%BD%91%E7%BB%9C-WIFI"><span class="nav-text">连接网络(WIFI)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E5%90%AF-Root-%E7%94%A8%E6%88%B7"><span class="nav-text">开启 Root 用户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE-SSH"><span class="nav-text">配置 SSH</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E4%B8%BB%E6%9C%BA%E5%90%8D"><span class="nav-text">修改主机名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B4%A6%E6%88%B7%E7%AE%A1%E7%90%86"><span class="nav-text">账户管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E6%8F%92%E6%9B%B2"><span class="nav-text">小插曲</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-text">初始化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#0x01-%E5%87%86%E5%A4%87%E5%B7%A5%E5%85%B7"><span class="nav-text">0x01 准备工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x02-%E5%AE%89%E8%A3%85%E9%A9%B1%E5%8A%A8"><span class="nav-text">0x02 安装驱动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x03-%E7%83%A7%E5%BD%95%E7%B3%BB%E7%BB%9F"><span class="nav-text">0x03 烧录系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%90%E8%A1%8C%E7%83%A7%E5%BD%95%E8%BD%AF%E4%BB%B6"><span class="nav-text">运行烧录软件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%86%E6%B3%B0%E5%B1%B1%E6%B4%BE%E8%BF%9E%E6%8E%A5%E8%87%B3%E7%94%B5%E8%84%91"><span class="nav-text">将泰山派连接至电脑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-Loader-%E5%8D%87%E7%BA%A7%E6%A8%A1%E5%BC%8F%E8%BF%9B%E8%A1%8C%E7%83%A7%E5%BD%95"><span class="nav-text">使用 Loader 升级模式进行烧录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BD%BD%E5%85%A5%E5%9B%BA%E4%BB%B6-%E9%95%9C%E5%83%8F-%E7%83%A7%E5%BD%95"><span class="nav-text">载入固件(镜像)烧录</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE-Debian-%E7%B3%BB%E7%BB%9F"><span class="nav-text">配置 Debian 系统</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9E%E6%8E%A5%E7%BD%91%E7%BB%9C-WIFI"><span class="nav-text">连接网络(WIFI)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E5%90%AF-Root-%E7%94%A8%E6%88%B7"><span class="nav-text">开启 Root 用户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE-SSH"><span class="nav-text">配置 SSH</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E4%B8%BB%E6%9C%BA%E5%90%8D"><span class="nav-text">修改主机名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B4%A6%E6%88%B7%E7%AE%A1%E7%90%86"><span class="nav-text">账户管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E6%96%B0%E8%B4%A6%E6%88%B7"><span class="nav-text">添加新账户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%91%E8%B4%A6%E6%88%B7%E6%B7%BB%E5%8A%A0%E6%9D%83%E9%99%90"><span class="nav-text">向账户添加权限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E8%B4%A6%E6%88%B7"><span class="nav-text">删除账户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A1%8C%E9%9D%A2%E9%BB%98%E8%AE%A4%E7%99%BB%E5%BD%95%E8%B4%A6%E6%88%B7"><span class="nav-text">桌面默认登录账户</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E6%8F%92%E6%9B%B2"><span class="nav-text">小插曲</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -221,7 +221,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-05-22 21:56:08" itemprop="dateModified" datetime="2024-05-22T21:56:08+08:00">2024-05-22</time>
+      <time title="修改时间：2024-05-26 22:09:21" itemprop="dateModified" datetime="2024-05-26T22:09:21+08:00">2024-05-26</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -319,7 +319,39 @@
 <p>找到 <code>127.0.1.1</code> 开头段</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">127.0.1.1 新主机名</span><br></pre></td></tr></table></figure>
 
-<h2 id="账户管理"><a href="#账户管理" class="headerlink" title="账户管理"></a>账户管理</h2><p>以至于后续的创建账户什么的，有需要可以参考此文章：<a target="_blank" rel="noopener" href="https://blog.csdn.net/u013541325/article/details/128521356">Linux Debian11创建新用户和删除用户</a></p>
+<h2 id="账户管理"><a href="#账户管理" class="headerlink" title="账户管理"></a>账户管理</h2><h3 id="添加新账户"><a href="#添加新账户" class="headerlink" title="添加新账户"></a>添加新账户</h3><p>通过命令添加一个新账户</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo adduser 用户名</span><br></pre></td></tr></table></figure>
+
+<p>例如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">$ sudo adduser <span class="built_in">fc</span></span><br><span class="line">正在添加用户<span class="string">&quot;fc&quot;</span>...</span><br><span class="line">正在添加新组<span class="string">&quot;fc&quot;</span> (1001)...</span><br><span class="line">正在添加新用户<span class="string">&quot;fc&quot;</span> (1001) 到组<span class="string">&quot;fc&quot;</span>...</span><br><span class="line">创建主目录<span class="string">&quot;/home/fc&quot;</span>...</span><br><span class="line">正在从<span class="string">&quot;/etc/skel&quot;</span>复制文件...</span><br><span class="line">新的 密码：</span><br><span class="line">重新输入新的 密码：</span><br><span class="line">passwd：已成功更新密码</span><br><span class="line">正在改变 <span class="built_in">fc</span> 的用户信息</span><br><span class="line">请输入新值，或直接敲回车键以使用默认值</span><br><span class="line">        全名 []: FastChen</span><br><span class="line">        房间号码 []: </span><br><span class="line">        工作电话 []: </span><br><span class="line">        家庭电话 []: </span><br><span class="line">        其它 []: </span><br><span class="line">这些信息是否正确？ [Y/n] y</span><br></pre></td></tr></table></figure>
+
+<h3 id="向账户添加权限"><a href="#向账户添加权限" class="headerlink" title="向账户添加权限"></a>向账户添加权限</h3><p>给新账户添加 <code>sudo</code> 权限</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo usermod -aG sudo 用户名</span><br></pre></td></tr></table></figure>
+
+<p>添加完成后验证一下是否成功添加 <code>sudo</code> 权限</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo -l -U 用户名</span><br></pre></td></tr></table></figure>
+
+<p>例如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ sudo -l -U <span class="built_in">fc</span></span><br><span class="line">匹配 %2<span class="variable">$s</span> 上 %1<span class="variable">$s</span> 的默认条目：</span><br><span class="line">    env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin</span><br><span class="line"></span><br><span class="line">用户 <span class="built_in">fc</span> 可以在 tspi 上运行以下命令：</span><br><span class="line">    (ALL) NOPASSWD: ALL</span><br></pre></td></tr></table></figure>
+
+<h3 id="删除账户"><a href="#删除账户" class="headerlink" title="删除账户"></a>删除账户</h3><p>官方提供的镜像默认使用的是 <code>linaro</code> 这个名字，不需要的话就可以删掉它，不过删掉后还要修改 <code>xfce</code> 桌面的默认登录账户</p>
+<p>删除账户并删除 <code>home</code> 目录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo deluser --remove-home 用户名</span><br></pre></td></tr></table></figure>
+
+<p>为了成功删除账户，推荐重启系统并登录新创建的账户来删除</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ sudo deluser --remove-home linaro</span><br><span class="line">正在寻找要备份或删除的文件...</span><br><span class="line">正在删除用户 <span class="string">&#x27;linaro&#x27;</span>...</span><br><span class="line">警告：组<span class="string">&quot;linaro&quot;</span>没有其他成员了。</span><br><span class="line">完成。</span><br></pre></td></tr></table></figure>
+
+<p>查看是否成功删除账户和有多少账户存在</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span> /etc/passwd</span><br></pre></td></tr></table></figure>
+
+<h3 id="桌面默认登录账户"><a href="#桌面默认登录账户" class="headerlink" title="桌面默认登录账户"></a>桌面默认登录账户</h3><p>官方提供的镜像里默认使用了 <code>xfce</code> 桌面环境，配置了默认登录 <code>linaro</code> 这个账户，如果删除后则每次启动都需要手动输入账户密码</p>
+<p>修改默认登录账户</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/lightdm/lightdm.conf</span><br></pre></td></tr></table></figure>
+
+<p>找到 <code>[Seat:*]</code> 配置项下方的 <code>autologin-user=linaro</code> 将 <code>linaro</code> 修改成你的用户名</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[Seat:*]</span><br><span class="line">autologin-user=用户名</span><br></pre></td></tr></table></figure>
+
+<p>修改完成后下次登录桌面就自动登录你设置的用户名了</p>
 <h2 id="小插曲"><a href="#小插曲" class="headerlink" title="小插曲"></a>小插曲</h2><p>因为没有仔细看开发板包含的配件，以为只有单个板子，然后就自己买了一个 MircoHDMI 的转接头，回来查看单号的时候发现，开发板是 <strong>8件套</strong> 其中包含一个转接头，然后自己买的转接头也马上到了，就想着留着备用了，反正也不贵(5块钱)，然后开发板到货拆开的时候发现，我去！转 接 头 侠！包装里给了两个转接头。。。</p>
 <p>所以我现在手里有三个转接头了(自购的拍照时还没到)。。。</p>
 <p><img src="/images/blog/init-tspi/tspi_pack.png" alt="泰山派"></p>
