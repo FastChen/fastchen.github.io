@@ -1556,6 +1556,10 @@ pre code {
 .rtl.post-title {
   font-family: UKIJ Ekran;
 }
+ol,
+ul {
+  padding-inline-start: 20px;
+}
 .post-button {
   margin-top: 40px;
   text-align: left;
@@ -2510,7 +2514,7 @@ header.header {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #afe058;
+  background: #fb1d50;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
