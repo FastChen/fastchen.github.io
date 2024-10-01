@@ -1558,7 +1558,7 @@ pre code {
 }
 ol,
 ul {
-  padding-inline-start: 20px;
+  padding-inline-start: 24px;
 }
 .post-button {
   margin-top: 40px;
@@ -2514,7 +2514,7 @@ header.header {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #fb1d50;
+  background: #ffacf4;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
