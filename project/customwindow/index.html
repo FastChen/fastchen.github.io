@@ -22,31 +22,31 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"fastchen.com","root":"/","images":"/images","scheme":"Mist","darkmode":true,"version":"8.21.1","exturl":false,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"hide","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":"default"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="前言 之前的老工作站坏了，换了台新电脑，在游玩 GTA5 的时候发现每当帧数超过 180 后就会发生帧数骤降，出现卡顿 0.5-1 秒左右的现象，由于卡顿结束后帧数还会再次上到 180 导致出现连续卡顿效果。">
+    <meta name="description" content="前言 这个程序本来是为了方便测试一个游戏(Mindustry)而做的，有一天群友希望我能根据这款游戏开发一个服务器管理工具，但是我再游玩了解游戏和测试的时候对这个游戏的窗口管理很烦，它不会记录窗口的类型，如全屏、无边框、窗口化等，也不会记录窗口的位置和尺寸，所以我就写了一个前置脚本来控制它，后来有人希望能制作成一个工具来管理更多的窗口。 故此此工具面世发布，并且为了能帮助更多人的同时开放源代码至">
 <meta property="og:type" content="article">
-<meta property="og:title" content="解决 GTA5 超过 180FPS 后突然卡顿掉帧问题">
-<meta property="og:url" content="https://fastchen.com/write/fix-gta5-180fps-lag/index.html">
+<meta property="og:title" content="自定义窗口(Window)状态">
+<meta property="og:url" content="https://fastchen.com/project/customwindow/index.html">
 <meta property="og:site_name" content="FASTCHEN">
-<meta property="og:description" content="前言 之前的老工作站坏了，换了台新电脑，在游玩 GTA5 的时候发现每当帧数超过 180 后就会发生帧数骤降，出现卡顿 0.5-1 秒左右的现象，由于卡顿结束后帧数还会再次上到 180 导致出现连续卡顿效果。">
+<meta property="og:description" content="前言 这个程序本来是为了方便测试一个游戏(Mindustry)而做的，有一天群友希望我能根据这款游戏开发一个服务器管理工具，但是我再游玩了解游戏和测试的时候对这个游戏的窗口管理很烦，它不会记录窗口的类型，如全屏、无边框、窗口化等，也不会记录窗口的位置和尺寸，所以我就写了一个前置脚本来控制它，后来有人希望能制作成一个工具来管理更多的窗口。 故此此工具面世发布，并且为了能帮助更多人的同时开放源代码至">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://fastchen.com/images/blog/fix-gta5-180fps-lag/gamesetting_1.png">
-<meta property="article:published_time" content="2023-07-07T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-07-07T15:58:38.368Z">
+<meta property="og:image" content="https://fastchen.com/images/software/customwindow.png">
+<meta property="article:published_time" content="2024-12-15T08:45:00.000Z">
+<meta property="article:modified_time" content="2025-02-22T08:54:26.137Z">
 <meta property="article:author" content="FastChen">
-<meta property="article:tag" content="游戏">
-<meta property="article:tag" content="卡顿">
-<meta property="article:tag" content="掉帧">
+<meta property="article:tag" content="工具">
+<meta property="article:tag" content="软件开发">
+<meta property="article:tag" content="Windows">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://fastchen.com/images/blog/fix-gta5-180fps-lag/gamesetting_1.png">
+<meta name="twitter:image" content="https://fastchen.com/images/software/customwindow.png">
 
 
-<link rel="canonical" href="https://fastchen.com/write/fix-gta5-180fps-lag/">
+<link rel="canonical" href="https://fastchen.com/project/customwindow/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://fastchen.com/write/fix-gta5-180fps-lag/","path":"write/fix-gta5-180fps-lag/","title":"解决 GTA5 超过 180FPS 后突然卡顿掉帧问题"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://fastchen.com/project/customwindow/","path":"project/customwindow/","title":"自定义窗口(Window)状态"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>解决 GTA5 超过 180FPS 后突然卡顿掉帧问题 | FASTCHEN</title>
+<title>自定义窗口(Window)状态 | FASTCHEN</title>
   
 
 
@@ -119,7 +119,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%88%E8%AF%B4%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="nav-text">先说解决方案</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E6%80%9D%E8%B7%AF"><span class="nav-text">解决思路</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%BD%8D%E9%97%AE%E9%A2%98%E6%A0%B9%E6%BA%90"><span class="nav-text">定位问题根源</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E4%B8%8D%E8%B6%B3%E5%AF%BC%E8%87%B4"><span class="nav-text">配置不足导致?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B8%B8%E6%88%8F%E5%BA%95%E5%B1%82%E4%BB%A3%E7%A0%81%E9%97%AE%E9%A2%98"><span class="nav-text">游戏底层代码问题?</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E5%BC%95%E7%94%A8%E5%9C%B0%E5%9D%80"><span class="nav-text">相关问题与解决方案引用地址</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%83%E8%83%BD%E5%B9%B2%E4%BB%80%E4%B9%88"><span class="nav-text">它能干什么?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F"><span class="nav-text">实现方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95"><span class="nav-text">使用方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E8%BD%AF%E4%BB%B6"><span class="nav-text">下载软件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E5%9B%BE%E7%89%87"><span class="nav-text">软件图片</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -178,7 +178,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://fastchen.com/write/fix-gta5-180fps-lag/">
+    <link itemprop="mainEntityOfPage" href="https://fastchen.com/project/customwindow/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -191,12 +191,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="解决 GTA5 超过 180FPS 后突然卡顿掉帧问题 | FASTCHEN">
+      <meta itemprop="name" content="自定义窗口(Window)状态 | FASTCHEN">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          解决 GTA5 超过 180FPS 后突然卡顿掉帧问题
+          自定义窗口(Window)状态
         </h1>
 
         <div class="post-meta-container">
@@ -207,14 +207,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2023-07-08 00:00:00" itemprop="dateCreated datePublished" datetime="2023-07-08T00:00:00+08:00">2023-07-08</time>
+      <time title="创建时间：2024-12-15 16:45:00" itemprop="dateCreated datePublished" datetime="2024-12-15T16:45:00+08:00">2024-12-15</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-07-07 23:58:38" itemprop="dateModified" datetime="2023-07-07T23:58:38+08:00">2023-07-07</time>
+      <time title="修改时间：2025-02-22 16:54:26" itemprop="dateModified" datetime="2025-02-22T16:54:26+08:00">2025-02-22</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -222,7 +222,11 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/write/" itemprop="url" rel="index"><span itemprop="name">随便写写</span></a>
+          <a href="/categories/development/" itemprop="url" rel="index"><span itemprop="name">开发</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/project/" itemprop="url" rel="index"><span itemprop="name">我的项目</span></a>
         </span>
     </span>
 
@@ -236,41 +240,49 @@
     
     
     <div class="post-body" itemprop="articleBody"><p><strong>前言</strong></p>
-<p>之前的老工作站坏了，换了台新电脑，在游玩 GTA5 的时候发现每当帧数超过 180 后就会发生帧数骤降，出现卡顿 0.5-1 秒左右的现象，由于卡顿结束后帧数还会再次上到 180 导致出现连续卡顿效果。</p>
+<p>这个程序本来是为了方便测试一个游戏(Mindustry)而做的，有一天群友希望我能根据这款游戏开发一个服务器管理工具，但是我再游玩了解游戏和测试的时候对这个游戏的窗口管理很烦，它不会记录窗口的类型，如全屏、无边框、窗口化等，也不会记录窗口的位置和尺寸，所以我就写了一个前置脚本来控制它，后来有人希望能制作成一个工具来管理更多的窗口。</p>
+<p>故此此工具面世发布，并且为了能帮助更多人的同时开放源代码至 <a target="_blank" rel="noopener" href="https://github.com/FastChen/CustomWindow">Github - FastChen&#x2F;CustomWindow</a> 仓库。</p>
 <span id="more"></span>
 
-<h1 id="先说解决方案"><a href="#先说解决方案" class="headerlink" title="先说解决方案"></a>先说解决方案</h1><blockquote>
-<p>这个方法理论上适用于配置足够，且为游戏超过 180FPS 导致掉帧卡顿的朋友。</p>
-</blockquote>
-<p>因为我使用的是 N卡 所以这里以 NVIDIA 控制面板为例：</p>
-<ol>
-<li>打开 <code>NVIDIA 控制面板</code></li>
-<li>左侧列表选择 <code>管理 3D 设置</code></li>
-<li>进入 <code>管理 3D 设置</code> 后选择 <code>程序设置</code> 页面</li>
-<li>在 <code>选择要自定义的程序(S)</code> 中选择 <code>Grand Theft Auto V (gta5.exe)</code> 注意！不要选成 Launcher !</li>
-<li>在 <code>指定该程序的设置值(C)</code> 中 找到 <code>最大帧速率</code></li>
-<li>将 <code>最大帧速率</code> 点开 选择 <code>开</code> 然后将数值改成低于 180 的数值 例如 144、165 等</li>
-<li>改完点击 确定 按钮，然后确认 <code>最大帧速率</code> 显示的为你修改的帧数数值。</li>
-</ol>
-<blockquote>
-<p>我不清楚其它显卡是否存在此问题，如果存在寻找你对应的显卡驱动将游戏的最大帧数限制在低于 180 以下即可。</p>
-</blockquote>
-<h1 id="解决思路"><a href="#解决思路" class="headerlink" title="解决思路"></a>解决思路</h1><h2 id="定位问题根源"><a href="#定位问题根源" class="headerlink" title="定位问题根源"></a>定位问题根源</h2><p>通过搜索引擎搜索 <code>GTA5 间歇性 掉帧 卡顿</code> 等关键词后，获得大致两类结果</p>
-<ol>
-<li>配置不足导致?</li>
-<li>游戏底层代码问题?</li>
-</ol>
-<p>接下来就是尝试解决方案了。</p>
-<h3 id="配置不足导致"><a href="#配置不足导致" class="headerlink" title="配置不足导致?"></a>配置不足导致?</h3><p>通过降低游戏画质等，无果。</p>
-<p>同时搜索到了一个修改游戏配置的解决方法：<br>修改 Post FX 为 正常<br><img src="/images/blog/fix-gta5-180fps-lag/gamesetting_1.png" alt="fix-gta5-180fps-lag/gamesetting_1.png"></p>
-<p>经过测试，<strong>无效。</strong></p>
-<p>但是发现卡顿基本仅在游戏的线下模式出现，从而引出另一个猜想：《下线帧数与线上帧数差距大，线下帧数高从而导致问题所在？》</p>
-<h3 id="游戏底层代码问题"><a href="#游戏底层代码问题" class="headerlink" title="游戏底层代码问题?"></a>游戏底层代码问题?</h3><p>再次深入搜索后，发现了几篇帖子，其中共同点就是游戏帧数超过一定数值(180)后就会发生掉帧卡顿的情况。<br>通过驱动限制游戏最大帧数为 144FPS 后，重启游戏，开车跑图测试，没有卡顿，同时<strong>问题解决</strong>。</p>
-<h2 id="相关问题与解决方案引用地址"><a href="#相关问题与解决方案引用地址" class="headerlink" title="相关问题与解决方案引用地址"></a>相关问题与解决方案引用地址</h2><ul>
-<li>[#5楼] <a target="_blank" rel="noopener" href="https://tieba.baidu.com/p/8472535119">大佬们，我这个配置玩GTAV怎么一卡一卡的 - 百度贴吧</a></li>
-<li>[#15楼] <a target="_blank" rel="noopener" href="https://tieba.baidu.com/p/7164810398">3080玩GTA5很卡 - 百度贴吧</a></li>
-<li>[已解决] <a target="_blank" rel="noopener" href="https://ngabbs.com/read.php?tid=29935737&rand=610">求助，gta5掉帧严重，3080ti - NGA</a></li>
+<h2 id="它能干什么"><a href="#它能干什么" class="headerlink" title="它能干什么?"></a>它能干什么?</h2><ul>
+<li><input checked="" disabled="" type="checkbox"> 根据文件或进程名定位</li>
+<li><input checked="" disabled="" type="checkbox"> 自定义修改窗口尺寸</li>
+<li><input checked="" disabled="" type="checkbox"> 自定义修改窗口位置</li>
+<li><input checked="" disabled="" type="checkbox"> 将窗口修改为无边框化</li>
+<li><input checked="" disabled="" type="checkbox"> 将窗口置于顶层</li>
+<li><input checked="" disabled="" type="checkbox"> 多个实现方案</li>
+<li><input checked="" disabled="" type="checkbox"> 启动时自动安装配置修改</li>
+<li><input checked="" disabled="" type="checkbox"> 以上全部行为都可以静默启动修改并自动退出</li>
 </ul>
+<h2 id="实现方式"><a href="#实现方式" class="headerlink" title="实现方式"></a>实现方式</h2><p>通过调用多个 Windows API(Win32API) 互相配合 <code>MoveWindow</code>、<code>SetWindowPos</code> 实现对窗口句柄发送更新窗口位置、尺寸等从而更改窗口的状态。</p>
+<p><strong>了解当前已使用的API:</strong></p>
+<ul>
+<li>全部 <a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/windows/win32/apiindex/windows-api-list">Windows API 索引</a></li>
+<li>了解 <a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/windows/win32/api/winuser/nf-winuser-findwindoww">FindWindow</a> 用于查找窗口</li>
+<li>了解 <a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/windows/win32/api/winuser/nf-winuser-showwindow">ShowWindow</a> 用于控制窗口显示&#x2F;隐藏</li>
+<li>了解 <a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/windows/win32/api/winuser/nf-winuser-getwindowrect">GetWindowRect</a> 用于获取窗口位置、尺寸</li>
+<li>了解 <a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/windows/win32/api/winuser/nf-winuser-getwindowlonga">GetWindowLong</a> 用于管理窗口</li>
+<li>了解 <a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/windows/win32/api/winuser/nf-winuser-setwindowlonga">SetWindowLong</a> 用于管理窗口</li>
+<li>了解 <a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/windows/win32/api/winuser/nf-winuser-movewindow">MoveWindow</a> 用于管理窗口</li>
+<li>了解 <a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/windows/win32/api/winuser/nf-winuser-setwindowpos">SetWindowPos</a> 用于管理窗口</li>
+</ul>
+<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><blockquote>
+<p>[!提示]<br>使用本工具需要先安装 <a target="_blank" rel="noopener" href="https://dotnet.microsoft.com/zh-cn/download/dotnet/8.0">.NET8</a> 桌面运行环境。</p>
+</blockquote>
+<p><strong>视频教学：</strong><br><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1tTqcYmEMp/">点此前往查看视频</a></p>
+<p><strong>文字教学：</strong></p>
+<ol>
+<li>运行工具</li>
+<li>选择程序路径或程序的进程名称</li>
+<li>设置一个尺寸</li>
+<li>点击 修改窗口按钮 测试是否修改成功</li>
+</ol>
+<h2 id="下载软件"><a href="#下载软件" class="headerlink" title="下载软件"></a>下载软件</h2><ol>
+<li>通过 <a target="_blank" rel="noopener" href="https://github.com/FastChen/CustomWindow/releases">Github Release</a> 下载</li>
+<li>通过 <a target="_blank" rel="noopener" href="https://nullcraft.org/d/100">发布页</a> 下载</li>
+<li>通过 <a target="_blank" rel="noopener" href="https://jq.qq.com/?_wv=1027&k=A9YzWvbS">用户群</a> 下载</li>
+</ol>
+<h2 id="软件图片"><a href="#软件图片" class="headerlink" title="软件图片"></a>软件图片</h2><p><img src="/./images/software/customwindow.png" alt="主页面"></p>
 
     </div>
 
@@ -280,23 +292,20 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E6%B8%B8%E6%88%8F/" rel="tag"># 游戏</a>
-              <a href="/tags/%E5%8D%A1%E9%A1%BF/" rel="tag"># 卡顿</a>
-              <a href="/tags/%E6%8E%89%E5%B8%A7/" rel="tag"># 掉帧</a>
+              <a href="/tags/%E5%B7%A5%E5%85%B7/" rel="tag"># 工具</a>
+              <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/" rel="tag"># 软件开发</a>
+              <a href="/tags/Windows/" rel="tag"># Windows</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/csharp/winform/fix-richtextbox-moving-cursor-flashing/" rel="prev" title="解决 RichTextBox 选中文本时移动光标闪烁问题">
-                  <i class="fa fa-angle-left"></i> 解决 RichTextBox 选中文本时移动光标闪烁问题
+                <a href="/linux/linux-swap/" rel="prev" title="在 Linux 下创建、优化、删除 Swap 分区">
+                  <i class="fa fa-angle-left"></i> 在 Linux 下创建、优化、删除 Swap 分区
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/development/dev-a-vscode-extension/" rel="next" title="从零开始开发一款 VSCode 插件">
-                  从零开始开发一款 VSCode 插件 <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>
