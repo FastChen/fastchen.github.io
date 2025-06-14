@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
 <meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/logo_2022_256.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/logo_2022_256.png">
@@ -15,12 +15,12 @@
 
 <link rel="stylesheet" href="/css/main.css">
 
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap&subset=latin,latin-ext">
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"fastchen.com","root":"/","images":"/images","scheme":"Mist","darkmode":true,"version":"8.21.1","exturl":false,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"hide","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":"default"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"fastchen.com","root":"/","images":"/images","scheme":"Mist","darkmode":true,"version":"8.23.1","exturl":false,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"hide","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":"default"},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js" defer></script>
 
     <meta name="description" content="我的新玩具：泰山派 (2G RAM + 16G eMMC) 之前为了玩苹果蓝牙弹窗漏洞买了一块 ESP32-S3 来玩，发现性能和可玩性对我来说较小，这次偶然看到泰山派直接就下单了(还出现一个很有意思的小插曲)，准备当 Linux 与 软硬件结合练手用。 (之前还买了块 树莓派3B 然后它成理财产品就给出了)">
 <meta property="og:type" content="article">
@@ -57,6 +57,23 @@
 
 
 
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  
+
+
+
+
+
+
+  
 
 
 
@@ -293,7 +310,7 @@
 <h2 id="连接网络-WIFI"><a href="#连接网络-WIFI" class="headerlink" title="连接网络(WIFI)"></a>连接网络(WIFI)</h2><p><img src="/images/blog/init-tspi/connect_wifi.png" alt="连接WIFI"></p>
 <p><strong>配置好 WIFI 后可以直接通过远程工具使用官方提供的默认账户密码来连接 SSH (需要重启系统)，当然也可以在机器本身上继续设置</strong></p>
 <h2 id="开启-Root-用户"><a href="#开启-Root-用户" class="headerlink" title="开启 Root 用户"></a>开启 Root 用户</h2><p>通过设置 Root 账户的密码以开启</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo passwd root</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> passwd root</span><br></pre></td></tr></table></figure>
 
 <p><img src="/images/blog/init-tspi/open_root_user.png" alt="开启 Root 用户"></p>
 <h2 id="配置-SSH"><a href="#配置-SSH" class="headerlink" title="配置 SSH"></a>配置 SSH</h2><p>1.切换至 Root 用户</p>
@@ -307,45 +324,45 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PermitRootLogin <span class="built_in">yes</span></span><br></pre></td></tr></table></figure>
 
 <p>4.重启 ssh 服务</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service ssh restart</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> service ssh restart</span><br></pre></td></tr></table></figure>
 
 <h2 id="修改主机名"><a href="#修改主机名" class="headerlink" title="修改主机名"></a>修改主机名</h2><p>先通过命令修改</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo hostnamectl set-hostname 新主机名</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> hostnamectl set-hostname 新主机名</span><br></pre></td></tr></table></figure>
 
 <p>然后编辑 <code>hosts</code> 文件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/hosts</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> vim /etc/hosts</span><br></pre></td></tr></table></figure>
 
 <p>找到 <code>127.0.1.1</code> 开头段</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">127.0.1.1 新主机名</span><br></pre></td></tr></table></figure>
 
 <h2 id="账户管理"><a href="#账户管理" class="headerlink" title="账户管理"></a>账户管理</h2><h3 id="添加新账户"><a href="#添加新账户" class="headerlink" title="添加新账户"></a>添加新账户</h3><p>通过命令添加一个新账户</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo adduser 用户名</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> adduser 用户名</span><br></pre></td></tr></table></figure>
 
 <p>例如：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">$ sudo adduser <span class="built_in">fc</span></span><br><span class="line">正在添加用户<span class="string">&quot;fc&quot;</span>...</span><br><span class="line">正在添加新组<span class="string">&quot;fc&quot;</span> (1001)...</span><br><span class="line">正在添加新用户<span class="string">&quot;fc&quot;</span> (1001) 到组<span class="string">&quot;fc&quot;</span>...</span><br><span class="line">创建主目录<span class="string">&quot;/home/fc&quot;</span>...</span><br><span class="line">正在从<span class="string">&quot;/etc/skel&quot;</span>复制文件...</span><br><span class="line">新的 密码：</span><br><span class="line">重新输入新的 密码：</span><br><span class="line">passwd：已成功更新密码</span><br><span class="line">正在改变 <span class="built_in">fc</span> 的用户信息</span><br><span class="line">请输入新值，或直接敲回车键以使用默认值</span><br><span class="line">        全名 []: FastChen</span><br><span class="line">        房间号码 []: </span><br><span class="line">        工作电话 []: </span><br><span class="line">        家庭电话 []: </span><br><span class="line">        其它 []: </span><br><span class="line">这些信息是否正确？ [Y/n] y</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">sudo</span> adduser <span class="built_in">fc</span></span><br><span class="line">正在添加用户<span class="string">&quot;fc&quot;</span>...</span><br><span class="line">正在添加新组<span class="string">&quot;fc&quot;</span> (1001)...</span><br><span class="line">正在添加新用户<span class="string">&quot;fc&quot;</span> (1001) 到组<span class="string">&quot;fc&quot;</span>...</span><br><span class="line">创建主目录<span class="string">&quot;/home/fc&quot;</span>...</span><br><span class="line">正在从<span class="string">&quot;/etc/skel&quot;</span>复制文件...</span><br><span class="line">新的 密码：</span><br><span class="line">重新输入新的 密码：</span><br><span class="line">passwd：已成功更新密码</span><br><span class="line">正在改变 <span class="built_in">fc</span> 的用户信息</span><br><span class="line">请输入新值，或直接敲回车键以使用默认值</span><br><span class="line">        全名 []: FastChen</span><br><span class="line">        房间号码 []: </span><br><span class="line">        工作电话 []: </span><br><span class="line">        家庭电话 []: </span><br><span class="line">        其它 []: </span><br><span class="line">这些信息是否正确？ [Y/n] y</span><br></pre></td></tr></table></figure>
 
 <h3 id="向账户添加权限"><a href="#向账户添加权限" class="headerlink" title="向账户添加权限"></a>向账户添加权限</h3><p>给新账户添加 <code>sudo</code> 权限</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo usermod -aG sudo 用户名</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> usermod -aG <span class="built_in">sudo</span> 用户名</span><br></pre></td></tr></table></figure>
 
 <p>添加完成后验证一下是否成功添加 <code>sudo</code> 权限</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo -l -U 用户名</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> -l -U 用户名</span><br></pre></td></tr></table></figure>
 
 <p>例如：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ sudo -l -U <span class="built_in">fc</span></span><br><span class="line">匹配 %2<span class="variable">$s</span> 上 %1<span class="variable">$s</span> 的默认条目：</span><br><span class="line">    env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin</span><br><span class="line"></span><br><span class="line">用户 <span class="built_in">fc</span> 可以在 tspi 上运行以下命令：</span><br><span class="line">    (ALL) NOPASSWD: ALL</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">sudo</span> -l -U <span class="built_in">fc</span></span><br><span class="line">匹配 %2<span class="variable">$s</span> 上 %1<span class="variable">$s</span> 的默认条目：</span><br><span class="line">    env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin</span><br><span class="line"></span><br><span class="line">用户 <span class="built_in">fc</span> 可以在 tspi 上运行以下命令：</span><br><span class="line">    (ALL) NOPASSWD: ALL</span><br></pre></td></tr></table></figure>
 
 <h3 id="删除账户"><a href="#删除账户" class="headerlink" title="删除账户"></a>删除账户</h3><p>官方提供的镜像默认使用的是 <code>linaro</code> 这个名字，不需要的话就可以删掉它，不过删掉后还要修改 <code>xfce</code> 桌面的默认登录账户</p>
 <p>删除账户并删除 <code>home</code> 目录</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo deluser --remove-home 用户名</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> deluser --remove-home 用户名</span><br></pre></td></tr></table></figure>
 
 <p>为了成功删除账户，推荐重启系统并登录新创建的账户来删除</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ sudo deluser --remove-home linaro</span><br><span class="line">正在寻找要备份或删除的文件...</span><br><span class="line">正在删除用户 <span class="string">&#x27;linaro&#x27;</span>...</span><br><span class="line">警告：组<span class="string">&quot;linaro&quot;</span>没有其他成员了。</span><br><span class="line">完成。</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">sudo</span> deluser --remove-home linaro</span><br><span class="line">正在寻找要备份或删除的文件...</span><br><span class="line">正在删除用户 <span class="string">&#x27;linaro&#x27;</span>...</span><br><span class="line">警告：组<span class="string">&quot;linaro&quot;</span>没有其他成员了。</span><br><span class="line">完成。</span><br></pre></td></tr></table></figure>
 
 <p>查看是否成功删除账户和有多少账户存在</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span> /etc/passwd</span><br></pre></td></tr></table></figure>
 
 <h3 id="桌面默认登录账户"><a href="#桌面默认登录账户" class="headerlink" title="桌面默认登录账户"></a>桌面默认登录账户</h3><p>官方提供的镜像里默认使用了 <code>xfce</code> 桌面环境，配置了默认登录 <code>linaro</code> 这个账户，如果删除后则每次启动都需要手动输入账户密码</p>
 <p>修改默认登录账户</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/lightdm/lightdm.conf</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> vim /etc/lightdm/lightdm.conf</span><br></pre></td></tr></table></figure>
 
 <p>找到 <code>[Seat:*]</code> 配置项下方的 <code>autologin-user=linaro</code> 将 <code>linaro</code> 修改成你的用户名</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[Seat:*]</span><br><span class="line">autologin-user=用户名</span><br></pre></td></tr></table></figure>
@@ -439,24 +456,6 @@
 <noscript>
   <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
 </noscript>
-
-
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
-<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
-
-  
-
-
-
-
-
-
-  
-
-
-
-
 
 </body>
 </html>
