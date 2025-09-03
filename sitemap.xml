@@ -312,27 +312,6 @@
   </url>
   
   <url>
-    <loc>https://fastchen.com/tags/NET/</loc>
-    <lastmod>2025-09-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://fastchen.com/tags/AOT/</loc>
-    <lastmod>2025-09-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://fastchen.com/tags/DDNS/</loc>
-    <lastmod>2025-09-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://fastchen.com/tags/%E6%B8%B8%E6%88%8F/</loc>
     <lastmod>2025-09-03</lastmod>
     <changefreq>weekly</changefreq>
@@ -383,6 +362,27 @@
   
   <url>
     <loc>https://fastchen.com/tags/%E6%8A%98%E8%85%BE/</loc>
+    <lastmod>2025-09-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://fastchen.com/tags/DDNS/</loc>
+    <lastmod>2025-09-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://fastchen.com/tags/NET/</loc>
+    <lastmod>2025-09-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://fastchen.com/tags/AOT/</loc>
     <lastmod>2025-09-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
