@@ -1,0 +1,298 @@
+<!doctype html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>.NET AOT 试玩、构建、发布 | FASTCHEN</title>
+
+
+
+  
+<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+
+  
+<link rel="stylesheet" href="/bootstrap/css/bootstrap-icons.min.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  <meta name="description" content="一介凡人快辰的个人发牢骚之地。灵工艺的创始人。">
+  <meta name="keywords" content="快辰,FastChen,灵工艺,NullCraft,创始人">
+
+  <!-- Apple设备图标 -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/logo_2022_256.png">
+  <!-- Android设备图标 -->
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/logo_2022_256.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/images/logo_2022_256.png">
+
+  <!-- Open Graph协议(社交媒体分享) -->
+  <meta name="description" content="前言 3月5日，GTA5 更新了增强版，我随之回忆起了 GTA 的回忆，下载并重新游玩起来，可能因为刚发布外挂还没跟进，公开战局回归了本质，但是依旧不适合运货发展，所以我便想使用以前的卡单方式一劳永逸，结果发现防火墙卡单、文件卡单在增强版都被修复了，甚至差传都不能用了。。。我便用起来古法，菜单栏右键冻结卡单！ 1..2..3..15! 居然还能用！但我发现这并不方便，便自己研究写了一个小工具，可以">
+<meta property="og:type" content="article">
+<meta property="og:title" content=".NET AOT 试玩、构建、发布">
+<meta property="og:url" content="https://fastchen.com/linux/dotnet-native-aot/index.html">
+<meta property="og:site_name" content="FASTCHEN">
+<meta property="og:description" content="前言 3月5日，GTA5 更新了增强版，我随之回忆起了 GTA 的回忆，下载并重新游玩起来，可能因为刚发布外挂还没跟进，公开战局回归了本质，但是依旧不适合运货发展，所以我便想使用以前的卡单方式一劳永逸，结果发现防火墙卡单、文件卡单在增强版都被修复了，甚至差传都不能用了。。。我便用起来古法，菜单栏右键冻结卡单！ 1..2..3..15! 居然还能用！但我发现这并不方便，便自己研究写了一个小工具，可以">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://fastchen.com/images/blog/dotnet-aot/vs_install_cpp.png">
+<meta property="og:image" content="https://fastchen.com/images/blog/dotnet-aot/vs_create_aot.png">
+<meta property="og:image" content="https://fastchen.com/images/blog/dotnet-aot/vs_build_aot_need_cpp.png">
+<meta property="og:image" content="https://fastchen.com/images/blog/dotnet-aot/vs_install_cpp.png">
+<meta property="og:image" content="https://fastchen.com/images/blog/dotnet-aot/vs_publish_1.png">
+<meta property="og:image" content="https://fastchen.com/images/blog/dotnet-aot/vs_publish_2.png">
+<meta property="og:image" content="https://fastchen.com/images/blog/dotnet-aot/vs_publish_3.png">
+<meta property="og:image" content="https://fastchen.com/images/blog/dotnet-aot/vs_publish_4.png">
+<meta property="og:image" content="https://fastchen.com/images/blog/dotnet-aot/vs_publish_5.png">
+<meta property="og:image" content="https://fastchen.com/images/blog/dotnet-aot/vs_publish_6.png">
+<meta property="og:image" content="https://fastchen.com/images/blog/dotnet-aot/vs_publish_singlefile_cannot_same_time.png">
+<meta property="og:image" content="https://fastchen.com/images/blog/dotnet-aot/vs_publish_done.png">
+<meta property="og:image" content="https://fastchen.com/images/blog/dotnet-aot/freezev.png">
+<meta property="article:published_time" content="2025-03-05T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-03-06T12:59:59.833Z">
+<meta property="article:author" content="FastChen">
+<meta property="article:tag" content=".NET">
+<meta property="article:tag" content="AOT">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://fastchen.com/images/blog/dotnet-aot/vs_install_cpp.png">
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+<!-- 内联脚本立即设置主题，防止闪烁 -->
+<script>
+  // 立即从localStorage获取主题设置或使用系统偏好
+  const savedTheme = localStorage.getItem('theme') || 'auto';
+  let theme = 'light';
+  
+  if (savedTheme === 'dark') {
+      theme = 'dark';
+  } else if (savedTheme === 'auto') {
+      // 检测系统偏好
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          theme = 'dark';
+      }
+  }
+  
+  // 立即设置主题
+  document.documentElement.setAttribute('data-bs-theme', theme);
+</script>
+
+  <body class="theme-transition bg-body-tertiary">
+    <header class="bg-body p-3 mb-3 border-bottom">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+      <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none">
+        <img class="logo-light" width="32" height="32" src="/images/logo_2022_256.png" />
+        <img class="logo-dark" width="32" height="32" src="/images/logo_white_256.png" />
+      </a>
+      <ul class="nav nav-underline col-12 col-lg-auto me-lg-auto ms-3 mb-2 justify-content-center mb-md-0">
+        
+        <li><a href="/" class="nav-link px-2 link-body-emphasis">主页</a></li>
+        
+        <li><a href="/archives" class="nav-link px-2 link-body-emphasis">归档</a></li>
+        
+        <li><a href="/categories" class="nav-link px-2 link-body-emphasis">分类</a></li>
+        
+        <li><a href="/tags" class="nav-link px-2 link-body-emphasis">标签</a></li>
+        
+        <li><a href="/about" class="nav-link px-2 link-body-emphasis">关于我</a></li>
+        
+      </ul>
+
+      <div class="dropdown">
+    <button class="btn btn-link nav-link dropdown-toggle" type="button" id="themeDropdown" data-bs-toggle="dropdown" aria-expanded="false"></button>
+    <ul class="dropdown-menu p-2 rounded-3 mx-0 border-0 shadow" aria-labelledby="themeDropdown">
+        <li>
+        <a class="dropdown-item rounded-2 theme-option" href="#" data-theme="light"><i class="me-2 opacity-50 bi bi-sun-fill"></i> 浅色</a>
+        </li>
+        <li>
+        <a class="dropdown-item rounded-2 theme-option" href="#" data-theme="dark"><i class="me-2 opacity-50 bi bi-moon-stars-fill"></i> 深色</a>
+        </li>
+        <li><hr class="dropdown-divider"></li>
+        <li>
+        <a class="dropdown-item rounded-2 theme-option active" href="#" data-theme="auto"><i class="me-2 opacity-50 bi bi-circle-half"></i> 系统</a>
+        </li>
+    </ul>
+</div>
+
+
+<script src="/js/utils/theme.js"></script>
+
+
+    </div>
+  </div>
+</header>
+    
+    <div class="container my-5">
+      <div class="post">
+    <h1 class="post-title fw-semibold">
+    
+        <div class="text-center">
+            .NET AOT 试玩、构建、发布
+        </div>
+    
+</h1>
+
+    
+        <div class="text-center">
+            
+<div class="mb-4 text-muted author-info">
+    
+        <span title="2025-03-05T16:00:00.000Z"><i class="bi bi-calendar2 me-2" title="发布于 2025-03-06"></i>发布于 2025-03-06</span>
+    
+    
+        <span class="ms-3" title="2025-03-06T12:59:59.833Z"><i class="bi bi-calendar2-plus me-2" title="更新于 2025-03-06"></i>更新于 2025-03-06</span>
+    
+    
+    
+        
+            <span class="ms-3">
+                <i class="bi bi-folder me-2"></i><a class="category-link" href="/categories/csharp/">C#</a>、<a class="category-link" href="/categories/linux/">Linux</a>
+            </span>
+        
+    
+</div>
+        </div>
+    
+
+    
+        <p><strong>前言</strong></p>
+<p>3月5日，GTA5 更新了增强版，我随之回忆起了 GTA 的回忆，下载并重新游玩起来，可能因为刚发布外挂还没跟进，公开战局回归了本质，但是依旧不适合运货发展，所以我便想使用以前的卡单方式一劳永逸，结果发现防火墙卡单、文件卡单在增强版都被修复了，甚至差传都不能用了。。。<br>我便用起来古法，菜单栏右键冻结卡单！ 1..2..3..15! 居然还能用！但我发现这并不方便，便自己研究写了一个小工具，可以一键卡单，因为是使用 .NET8 控制台应用开发，顺手研究了一下 AOT 构建，并且将踩到的坑记录下来以便帮助他人。</p>
+<span id="more"></span>
+
+<h2 id="开发环境准备"><a href="#开发环境准备" class="headerlink" title="开发环境准备"></a>开发环境准备</h2><p>要使用 .NET AOT 有几个先决条件：</p>
+<ol>
+<li>必须使用 Visual Studio 2022 或更高版本</li>
+<li>安装 <code>.NET8 SDK</code> 或更高版本</li>
+<li>安装 <code>使用 C++ 的桌面开发</code> 在 Visual Studio Installer 里安装。 <strong>(坑1)</strong></li>
+</ol>
+<p><img src="/images/blog/dotnet-aot/vs_install_cpp.png"></p>
+<h2 id="创建-AOT-项目"><a href="#创建-AOT-项目" class="headerlink" title="创建 AOT 项目"></a>创建 AOT 项目</h2><p>目前 .NET8 似乎支持的 AOT 仅在控制台类应用上，还未支持 Form 项目。</p>
+<p>通过 VS 创建一个控制台基于 .NET8 的 AOT 项目。</p>
+<p><img src="/images/blog/dotnet-aot/vs_create_aot.png"></p>
+<p>就和写普通的控制台应用一样。</p>
+<h2 id="构建-AOT-项目"><a href="#构建-AOT-项目" class="headerlink" title="构建 AOT 项目"></a>构建 AOT 项目</h2><p>构建这部分有两个方案早期只能通过 CLI 构建 AOT 项目，现在经过我的测试发现可以使用 VS 内自带的 发布 进行 AOT 构建。</p>
+<p><strong>(坑1)</strong> 想要构建 AOT 项目必须安装 <code>使用 C++ 的桌面开发</code> 这个选项，不然就报错<br>如下图：<br><img src="/images/blog/dotnet-aot/vs_build_aot_need_cpp.png"></p>
+<p>我们只需要前往 Visual Studio Installer 里直接勾选 <code>使用 C++ 的桌面开发</code> 选项安装即可，无需修改增删组件。</p>
+<p><img src="/images/blog/dotnet-aot/vs_install_cpp.png"></p>
+<p>安装完毕后，重新打开 AOT 项目进行如下方式构建：</p>
+<ol>
+<li>使用古法 .NET CLI 构建</li>
+<li>使用 VS 内置发布工具构建</li>
+</ol>
+<h3 id="其一-使用古法-NET-CLI-构建"><a href="#其一-使用古法-NET-CLI-构建" class="headerlink" title="其一 使用古法 .NET CLI 构建"></a>其一 使用古法 .NET CLI 构建</h3><ol>
+<li>使用 <code>cmd</code> cd 进入项目目录</li>
+<li>输入构建命令 <code>dotnet publish</code></li>
+<li>等待构建出现 成功</li>
+</ol>
+<h3 id="其二-使用-VS-内置发布工具构建"><a href="#其二-使用-VS-内置发布工具构建" class="headerlink" title="其二 使用 VS 内置发布工具构建"></a>其二 使用 VS 内置发布工具构建</h3><ol>
+<li>右键解决方案选择发布</li>
+</ol>
+<p><img src="/images/blog/dotnet-aot/vs_publish_1.png"></p>
+<ol start="2">
+<li>发布方式选择文件夹 (即编译到目录内)</li>
+</ol>
+<p><img src="/images/blog/dotnet-aot/vs_publish_2.png"></p>
+<ol start="3">
+<li>继续选择文件夹</li>
+</ol>
+<p><img src="/images/blog/dotnet-aot/vs_publish_3.png"></p>
+<ol start="4">
+<li>文件夹路径可以自己随意改</li>
+</ol>
+<p><img src="/images/blog/dotnet-aot/vs_publish_4.png"></p>
+<ol start="5">
+<li>设置完毕后，点击 显示所有设置 文字</li>
+</ol>
+<p><img src="/images/blog/dotnet-aot/vs_publish_5.png"></p>
+<ol start="6">
+<li>部署模式改为 <code>独立</code>、目标运行时改为 <code>win-x64</code>、文件发布选项点开勾选 <code>启用 ReadyToRun 编译</code></li>
+</ol>
+<p><img src="/images/blog/dotnet-aot/vs_publish_6.png"></p>
+<p><strong>(坑2)</strong> 文件发布选项内有个 生成单个文件 的勾选框，它的功能是为了打包资产到一个 exe(dll) 内，但是似乎和 AOT 有冲突，(目前?)只能二选一。<br>错误内容：<code>PublishAot and PublishSingleFile cannot be specified at the same time.</code><br>如下图：<br><img src="/images/blog/dotnet-aot/vs_publish_singlefile_cannot_same_time.png"></p>
+<ol start="7">
+<li>点击发布按钮，测试是否构建成功，并且日志输出内是否有 <code>Generating native code</code> 即代表 AOT 构建成功。</li>
+</ol>
+<p><img src="/images/blog/dotnet-aot/vs_publish_done.png"></p>
+<h2 id="为了-GTAOL-写的小工具"><a href="#为了-GTAOL-写的小工具" class="headerlink" title="为了 GTAOL 写的小工具"></a>为了 GTAOL 写的小工具</h2><p>我管它叫 FreezeV 即 冻结5 (非常言简意赅不是吗?)</p>
+<p>如果你想要使用这款工具，可以在我的网盘或者用户群内下载。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://jq.qq.com/?_wv=1027&k=A9YzWvbS">灵工艺QQ用户群</a></li>
+<li><a target="_blank" rel="noopener" href="https://drive.fastchen.com/%E4%B8%AA%E4%BA%BA%E5%B0%8F%E5%B7%A5%E5%85%B7">FASTCHEN网盘 - 个人小工具</a></li>
+</ul>
+<p><img src="/images/blog/dotnet-aot/freezev.png"></p>
+<h2 id="参考内容："><a href="#参考内容：" class="headerlink" title="参考内容："></a>参考内容：</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/aspnet/core/fundamentals/aot/native-aot-tutorial?view=aspnetcore-9.0&tabs=net-cli">微软 | 教程：使用本机 AOT 发布 ASP.NET Core 应用</a></li>
+</ul>
+
+      
+    
+    
+
+    
+        
+            <a href="/tags/NET/"><span class="tag-item" data-tag=".NET">#.NET</span></a>
+        
+            <a href="/tags/AOT/"><span class="tag-item" data-tag="AOT">#AOT</span></a>
+        
+    
+
+</div>
+    </div>
+
+    
+<!-- 返回顶部 -->
+<a href="#" id="back-to-top" class="btn btn-secondary back-to-top" title="返回顶部"><i class="bi bi-arrow-up" style="width: auto;"></i></a>
+
+<script src="/js/utils/back-to-top.js"></script>
+
+
+    <footer class="border-top bg-body">
+  <div class="container">
+    
+    <div class="d-flex flex-column flex-sm-row justify-content-between py-3 mt-3">
+      <div>
+        <a href="/" class="link-body-emphasis text-decoration-none">
+          <img class="logo-light" width="32" height="32" src="/images/logo_2022_256.png" />
+          <img class="logo-dark" width="32" height="32" src="/images/logo_white_256.png" />
+        </a>
+        <span class="ms-2">
+          © 2025 <a href="https://fastchen.com">FASTCHEN</a> All Rights Reserved. 由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> &amp; <a href="https://github.com/FastChen/hexo-theme-sujian" rel="noopener" target="_blank">SuJian</a> 强力驱动
+        </span>
+      </div>
+
+      <ul class="list-unstyled d-flex d-grid gap-3">
+          
+            
+            
+            
+            <li>
+                <a class="link-body-emphasis" target="_blank" rel="noopener" href="https://github.com/fastchen">
+                <i class="bi bi-github" style="font-size: 24px;"></i>
+              </a>
+            </li>
+          
+      </ul>
+    </div>
+  </div>
+</footer>
+
+
+
+<script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+
+<script src="/js/utils/tag-color.js"></script>
+
+
+<script>
+// 页面加载后设置标签颜色
+document.addEventListener('DOMContentLoaded', function() {
+    TagColor.applyRandomColorsToAll('.tag-item');
+});
+</script>
+  </body>
+  
+</html>

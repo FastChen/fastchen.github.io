@@ -1,0 +1,303 @@
+<!doctype html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>泰山派：点灯！- 了解与控制Led的使用方法 | FASTCHEN</title>
+
+
+
+  
+<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+
+  
+<link rel="stylesheet" href="/bootstrap/css/bootstrap-icons.min.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  <meta name="description" content="一介凡人快辰的个人发牢骚之地。灵工艺的创始人。">
+  <meta name="keywords" content="快辰,FastChen,灵工艺,NullCraft,创始人">
+
+  <!-- Apple设备图标 -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/logo_2022_256.png">
+  <!-- Android设备图标 -->
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/logo_2022_256.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/images/logo_2022_256.png">
+
+  <!-- Open Graph协议(社交媒体分享) -->
+  <meta name="description" content="起因： 因为最近在开发 NGSP(Github: NullCraftOrg&#x2F;game-server-panel) 这个项目，为了测试跨平台能力，翻箱倒柜找到了这块ARM开发板：泰山派RK3566，刚好Armbian也针对RK35XX出了可以用的系统，还包含了SDK，直接利用起来。 为什么要写这篇文章呢？因为泰山派使用Armbian的系统主板上集成的Led小灯是不会跟随系统启动点亮的，这导">
+<meta property="og:type" content="article">
+<meta property="og:title" content="泰山派：点灯！- 了解与控制Led的使用方法">
+<meta property="og:url" content="https://fastchen.com/hardware/tspi-leds/index.html">
+<meta property="og:site_name" content="FASTCHEN">
+<meta property="og:description" content="起因： 因为最近在开发 NGSP(Github: NullCraftOrg&#x2F;game-server-panel) 这个项目，为了测试跨平台能力，翻箱倒柜找到了这块ARM开发板：泰山派RK3566，刚好Armbian也针对RK35XX出了可以用的系统，还包含了SDK，直接利用起来。 为什么要写这篇文章呢？因为泰山派使用Armbian的系统主板上集成的Led小灯是不会跟随系统启动点亮的，这导">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-04-20T16:30:00.000Z">
+<meta property="article:modified_time" content="2026-04-21T08:09:59.235Z">
+<meta property="article:author" content="FastChen">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="折腾">
+<meta property="article:tag" content="硬件开发">
+<meta name="twitter:card" content="summary">
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+<!-- 内联脚本立即设置主题，防止闪烁 -->
+<script>
+  // 立即从localStorage获取主题设置或使用系统偏好
+  const savedTheme = localStorage.getItem('theme') || 'auto';
+  let theme = 'light';
+  
+  if (savedTheme === 'dark') {
+      theme = 'dark';
+  } else if (savedTheme === 'auto') {
+      // 检测系统偏好
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          theme = 'dark';
+      }
+  }
+  
+  // 立即设置主题
+  document.documentElement.setAttribute('data-bs-theme', theme);
+</script>
+
+  <body class="theme-transition bg-body-tertiary">
+    <header class="bg-body p-3 mb-3 border-bottom">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+      <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none">
+        <img class="logo-light" width="32" height="32" src="/images/logo_2022_256.png" />
+        <img class="logo-dark" width="32" height="32" src="/images/logo_white_256.png" />
+      </a>
+      <ul class="nav nav-underline col-12 col-lg-auto me-lg-auto ms-3 mb-2 justify-content-center mb-md-0">
+        
+        <li><a href="/" class="nav-link px-2 link-body-emphasis">主页</a></li>
+        
+        <li><a href="/archives" class="nav-link px-2 link-body-emphasis">归档</a></li>
+        
+        <li><a href="/categories" class="nav-link px-2 link-body-emphasis">分类</a></li>
+        
+        <li><a href="/tags" class="nav-link px-2 link-body-emphasis">标签</a></li>
+        
+        <li><a href="/about" class="nav-link px-2 link-body-emphasis">关于我</a></li>
+        
+      </ul>
+
+      <div class="dropdown">
+    <button class="btn btn-link nav-link dropdown-toggle" type="button" id="themeDropdown" data-bs-toggle="dropdown" aria-expanded="false"></button>
+    <ul class="dropdown-menu p-2 rounded-3 mx-0 border-0 shadow" aria-labelledby="themeDropdown">
+        <li>
+        <a class="dropdown-item rounded-2 theme-option" href="#" data-theme="light"><i class="me-2 opacity-50 bi bi-sun-fill"></i> 浅色</a>
+        </li>
+        <li>
+        <a class="dropdown-item rounded-2 theme-option" href="#" data-theme="dark"><i class="me-2 opacity-50 bi bi-moon-stars-fill"></i> 深色</a>
+        </li>
+        <li><hr class="dropdown-divider"></li>
+        <li>
+        <a class="dropdown-item rounded-2 theme-option active" href="#" data-theme="auto"><i class="me-2 opacity-50 bi bi-circle-half"></i> 系统</a>
+        </li>
+    </ul>
+</div>
+
+
+<script src="/js/utils/theme.js"></script>
+
+
+    </div>
+  </div>
+</header>
+    
+    <div class="container my-5">
+      <div class="post">
+    <h1 class="post-title fw-semibold">
+    
+        <div class="text-center">
+            泰山派：点灯！- 了解与控制Led的使用方法
+        </div>
+    
+</h1>
+
+    
+        <div class="text-center">
+            
+<div class="mb-4 text-muted author-info">
+    
+        <span title="2026-04-20T16:30:00.000Z"><i class="bi bi-calendar2 me-2" title="发布于 2026-04-21"></i>发布于 2026-04-21</span>
+    
+    
+        <span class="ms-3" title="2026-04-21T08:09:59.235Z"><i class="bi bi-calendar2-plus me-2" title="更新于 2026-04-21"></i>更新于 2026-04-21</span>
+    
+    
+    
+        
+            <span class="ms-3">
+                <i class="bi bi-folder me-2"></i><a class="category-link" href="/categories/development/">开发</a>、<a class="category-link" href="/categories/hardware/">硬件</a>
+            </span>
+        
+    
+</div>
+        </div>
+    
+
+    
+        <p><strong>起因：</strong></p>
+<p>因为最近在开发 <a target="_blank" rel="noopener" href="https://github.com/NullCraftOrg/game-server-panel">NGSP(Github: NullCraftOrg&#x2F;game-server-panel)</a> 这个项目，为了测试跨平台能力，翻箱倒柜找到了这块ARM开发板：泰山派RK3566，刚好Armbian也针对RK35XX出了可以用的系统，还包含了SDK，直接利用起来。</p>
+<p>为什么要写这篇文章呢？因为泰山派使用Armbian的系统主板上集成的Led小灯是不会跟随系统启动点亮的，这导致我无法通过外观判断系统是否启动了，所以翻找了文档，发现Led可以通过触发器来控制点亮，例如我这个小需求只需要通过设置对应颜色Led的触发器(trigger)为<code>default-on</code>即可跟随系统启动点亮了。</p>
+<blockquote>
+<p>所以我顺便简单记录一下控制开发板上的Led灯上的其它功能!</p>
+</blockquote>
+<span id="more"></span>
+
+<p>根据官方开发文档：<a target="_blank" rel="noopener" href="https://wiki.lckfb.com/zh-hans/tspi-rk3566/system-usage/buildroot-system-usage.html#%E7%82%B9%E7%81%AF">点灯</a>部分可查看原始内容，以下为我对Armbian系统上使用的个人整理</p>
+<p><strong>系统环境：</strong></p>
+<p>我使用了 Armbian 基于 Debian13 构建的系统，包含了基本的RK驱动包和SDK，比立创官方提供的系统镜像可折腾空间大一些，缺点是刷入后无法使用 <code>Loader</code> 更新固件，需要短接开启 <code>MASKROM</code> 模式。</p>
+<ul>
+<li>下载系统：<a target="_blank" rel="noopener" href="https://armbian.com/boards/lckfb-taishanpi">LCKFB Taishan Pi | Armbian</a></li>
+</ul>
+<p><strong>了解LED：</strong></p>
+<p>查看 led 存放位置</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root@tspi:~# <span class="built_in">ls</span> /sys/class/leds/</span><br><span class="line">mmc1::  status-blue  status-green  status-red</span><br></pre></td></tr></table></figure>
+<p>分别对应控制目录：RGB：<code>蓝色(status-blue)</code>  <code>绿色(status-green)</code>  <code>红色(status-red)</code></p>
+<p>每个Led目录下都有对应的属性、控制器和触发器</p>
+<p><strong>进入一个灯的文件夹查看：</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root@tspi:~# <span class="built_in">ls</span> /sys/class/leds/status-blue</span><br><span class="line">brightness  device  max_brightness  power  subsystem  trigger  uevent</span><br></pre></td></tr></table></figure>
+<p><strong>led 文件夹内容说明：</strong></p>
+<ul>
+<li>brightness：文件，用于控制 LED 亮度通过写文件控制：<code>1(开启)</code> &#x2F; <code>0(关闭)</code>。</li>
+<li>device：目录，LED 相关的设备路径。</li>
+<li>max_brightness：文件，LED 最大亮度值，值在 0 到 max_brightness 之间。</li>
+<li>power：目录，根据官方说明：这个属性表示 LED 的电源状态。它可以是 “on” 表示开启，或者 “off” 表示关闭。</li>
+<li>subsystem：目录，根据官方说明：这个属性表示该 LED 设备所属的子系统。</li>
+<li>trigger：文件，触发器，用于控制 LED 的行为模式，可通过 <code>cat trigger</code> 查看支持的模式。</li>
+<li>uevent：文件，官方说明：这个属性包含有关 LED 设备的事件信息。</li>
+</ul>
+<p><strong>通过设置brightness控制灯的状态</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 点亮蓝色 LED</span></span><br><span class="line"><span class="built_in">echo</span> 1 &gt; /sys/class/leds/status-blue/brightness</span><br><span class="line"><span class="comment"># 熄灭蓝色 LED</span></span><br><span class="line"><span class="built_in">echo</span> 0 &gt; /sys/class/leds/status-blue/brightness</span><br></pre></td></tr></table></figure>
+
+<p><strong>触发器(trigger)说明</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root@tspi:~# <span class="built_in">cat</span> /sys/class/leds/status-blue/trigger </span><br><span class="line">[none] usb-gadget usb-host kbd-scrolllock kbd-numlock kbd-capslock kbd-kanalock kbd-shiftlock kbd-altgrlock kbd-ctrllock kbd-altlock kbd-shiftllock kbd-shiftrlock kbd-ctrlllock kbd-ctrlrlock disk-activity disk-read disk-write mtd nand-disk heartbeat cpu cpu0 cpu1 cpu2 cpu3 activity default-on panic usbport mmc2 mmc0 mmc1 rfkill-any rfkill-none bluetooth-power rfkill0 hci0-power rfkill1</span><br></pre></td></tr></table></figure>
+
+<p><strong>我根据不同功能的触发器分为以下几种类型(个人见解)：</strong></p>
+<ol>
+<li>基本类型：代表直接控制LED为固定显示状态的(比起叫触发器我更喜欢叫它控制器)。</li>
+<li>事件触发：通过预设好的事件来触发更新LED状态的，例如：</li>
+</ol>
+<p><strong>1. 基本类型触发器</strong></p>
+<ul>
+<li>none：禁用触发器，关闭LED</li>
+<li>default-on：默认开启触发器，在开机时保持常亮</li>
+<li>heartbeat：心跳触发器，LED 循环呼吸灯效果</li>
+</ul>
+<p><strong>2. 事件类型触发器</strong></p>
+<ul>
+<li>panic：内核崩溃触发器：当”内核恐慌”时点亮LED</li>
+<li>activity：活跃触发器：LED闪烁频率根据系统活跃程度变化</li>
+<li>bluetooth-power：蓝牙电源触发器：LED指示蓝牙是否开启</li>
+<li>hci0-power：对应系统中第一个蓝牙电源触发器：LED指示蓝牙是否开启</li>
+<li>mmc0、mmc1、mmc2：MMC设备操作触发器：在对应的 MMC 读写操作时闪烁。</li>
+<li>cpu、cpu0、cpu1、cpu2、cpu3：当特定 CPU 核心处于活动状态时闪烁，用于监控 CPU 负载</li>
+<li>rfkill-any：官方说明：在任何 RFKill 状态变化时触发，例如 Wi-Fi 或蓝牙开关状态改变。</li>
+<li>rfkill-none：官方说明：在 RFKill 禁用状态下触发。</li>
+<li>rfkill0、rfkill1：官方说明：在对应的 RFKill 设备状态变化时触发。</li>
+<li>usb-gadget：未测试</li>
+<li>usb-host：未测试</li>
+<li>mtd：未测试</li>
+<li>nand-disk：未测试</li>
+<li>usbport：未测试</li>
+<li>kbd-scrolllock：键盘事件</li>
+<li>kbd-numlock：键盘事件</li>
+<li>kbd-capslock：键盘事件</li>
+<li>kbd-kanalock：键盘事件</li>
+<li>kbd-shiftlock：键盘事件</li>
+<li>kbd-altgrlock：键盘事件</li>
+<li>kbd-ctrllock：键盘事件</li>
+<li>kbd-altlock：键盘事件</li>
+<li>kbd-shiftllock：键盘事件</li>
+<li>kbd-shiftrlock：键盘事件</li>
+<li>kbd-ctrlllock：键盘事件</li>
+<li>kbd-ctrlrlock：键盘事件</li>
+<li>disk-activity：硬盘活跃</li>
+<li>disk-read：硬盘读取</li>
+<li>disk-write：硬盘写入</li>
+</ul>
+<p><strong>触发器使用示例：</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 开启蓝色LED</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;default-on&quot;</span> &gt; /sys/class/leds/status-blue/trigger</span><br><span class="line"><span class="comment"># 关闭蓝色LED</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;none&quot;</span> &gt; /sys/class/leds/status-blue/trigger</span><br><span class="line"><span class="comment"># 系统活跃状态</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;activity&quot;</span> &gt; /sys/class/leds/status-blue/trigger</span><br><span class="line"><span class="comment"># MMC读写状态</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;mmc1&quot;</span> &gt; /sys/class/leds/status-green/trigger</span><br></pre></td></tr></table></figure>
+
+<p>&#x2F;&#x2F; TODO<br>更多玩法研究中…</p>
+
+      
+    
+    
+
+    
+        
+            <a href="/tags/Linux/"><span class="tag-item" data-tag="Linux">#Linux</span></a>
+        
+            <a href="/tags/%E7%A1%AC%E4%BB%B6%E5%BC%80%E5%8F%91/"><span class="tag-item" data-tag="硬件开发">#硬件开发</span></a>
+        
+            <a href="/tags/%E6%8A%98%E8%85%BE/"><span class="tag-item" data-tag="折腾">#折腾</span></a>
+        
+    
+
+</div>
+    </div>
+
+    
+<!-- 返回顶部 -->
+<a href="#" id="back-to-top" class="btn btn-secondary back-to-top" title="返回顶部"><i class="bi bi-arrow-up" style="width: auto;"></i></a>
+
+<script src="/js/utils/back-to-top.js"></script>
+
+
+    <footer class="border-top bg-body">
+  <div class="container">
+    
+    <div class="d-flex flex-column flex-sm-row justify-content-between py-3 mt-3">
+      <div>
+        <a href="/" class="link-body-emphasis text-decoration-none">
+          <img class="logo-light" width="32" height="32" src="/images/logo_2022_256.png" />
+          <img class="logo-dark" width="32" height="32" src="/images/logo_white_256.png" />
+        </a>
+        <span class="ms-2">
+          © 2025 <a href="https://fastchen.com">FASTCHEN</a> All Rights Reserved. 由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> &amp; <a href="https://github.com/FastChen/hexo-theme-sujian" rel="noopener" target="_blank">SuJian</a> 强力驱动
+        </span>
+      </div>
+
+      <ul class="list-unstyled d-flex d-grid gap-3">
+          
+            
+            
+            
+            <li>
+                <a class="link-body-emphasis" target="_blank" rel="noopener" href="https://github.com/fastchen">
+                <i class="bi bi-github" style="font-size: 24px;"></i>
+              </a>
+            </li>
+          
+      </ul>
+    </div>
+  </div>
+</footer>
+
+
+
+<script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+
+<script src="/js/utils/tag-color.js"></script>
+
+
+<script>
+// 页面加载后设置标签颜色
+document.addEventListener('DOMContentLoaded', function() {
+    TagColor.applyRandomColorsToAll('.tag-item');
+});
+</script>
+  </body>
+  
+</html>

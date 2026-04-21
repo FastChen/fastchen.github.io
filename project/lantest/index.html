@@ -1,0 +1,262 @@
+<!doctype html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>简单写了一个局域网探测工具。 | FASTCHEN</title>
+
+
+
+  
+<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+
+  
+<link rel="stylesheet" href="/bootstrap/css/bootstrap-icons.min.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  <meta name="description" content="一介凡人快辰的个人发牢骚之地。灵工艺的创始人。">
+  <meta name="keywords" content="快辰,FastChen,灵工艺,NullCraft,创始人">
+
+  <!-- Apple设备图标 -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/logo_2022_256.png">
+  <!-- Android设备图标 -->
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/logo_2022_256.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/images/logo_2022_256.png">
+
+  <!-- Open Graph协议(社交媒体分享) -->
+  <meta name="description" content="前言 因为公司设备太多，偶尔遇到 IP 分配冲突问题，所以写了一个可视化的 GUI 小工具来快速排查掉已被占用的 IP 地址以及分析局域网概况，包括局域网主机延迟、在线状态、系统类型、主机名、Mac地址等。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="简单写了一个局域网探测工具。">
+<meta property="og:url" content="https://fastchen.com/project/lantest/index.html">
+<meta property="og:site_name" content="FASTCHEN">
+<meta property="og:description" content="前言 因为公司设备太多，偶尔遇到 IP 分配冲突问题，所以写了一个可视化的 GUI 小工具来快速排查掉已被占用的 IP 地址以及分析局域网概况，包括局域网主机延迟、在线状态、系统类型、主机名、Mac地址等。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://fastchen.com/images/software/lantest/lantest_1.png">
+<meta property="og:image" content="https://fastchen.com/images/software/lantest/lantest_2.png">
+<meta property="og:image" content="https://fastchen.com/images/software/lantest/lantest_3.png">
+<meta property="article:published_time" content="2023-12-13T13:35:00.000Z">
+<meta property="article:modified_time" content="2024-01-11T16:02:14.231Z">
+<meta property="article:author" content="FastChen">
+<meta property="article:tag" content="局域网">
+<meta property="article:tag" content="工具">
+<meta property="article:tag" content="软件开发">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://fastchen.com/images/software/lantest/lantest_1.png">
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+<!-- 内联脚本立即设置主题，防止闪烁 -->
+<script>
+  // 立即从localStorage获取主题设置或使用系统偏好
+  const savedTheme = localStorage.getItem('theme') || 'auto';
+  let theme = 'light';
+  
+  if (savedTheme === 'dark') {
+      theme = 'dark';
+  } else if (savedTheme === 'auto') {
+      // 检测系统偏好
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          theme = 'dark';
+      }
+  }
+  
+  // 立即设置主题
+  document.documentElement.setAttribute('data-bs-theme', theme);
+</script>
+
+  <body class="theme-transition bg-body-tertiary">
+    <header class="bg-body p-3 mb-3 border-bottom">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+      <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none">
+        <img class="logo-light" width="32" height="32" src="/images/logo_2022_256.png" />
+        <img class="logo-dark" width="32" height="32" src="/images/logo_white_256.png" />
+      </a>
+      <ul class="nav nav-underline col-12 col-lg-auto me-lg-auto ms-3 mb-2 justify-content-center mb-md-0">
+        
+        <li><a href="/" class="nav-link px-2 link-body-emphasis">主页</a></li>
+        
+        <li><a href="/archives" class="nav-link px-2 link-body-emphasis">归档</a></li>
+        
+        <li><a href="/categories" class="nav-link px-2 link-body-emphasis">分类</a></li>
+        
+        <li><a href="/tags" class="nav-link px-2 link-body-emphasis">标签</a></li>
+        
+        <li><a href="/about" class="nav-link px-2 link-body-emphasis">关于我</a></li>
+        
+      </ul>
+
+      <div class="dropdown">
+    <button class="btn btn-link nav-link dropdown-toggle" type="button" id="themeDropdown" data-bs-toggle="dropdown" aria-expanded="false"></button>
+    <ul class="dropdown-menu p-2 rounded-3 mx-0 border-0 shadow" aria-labelledby="themeDropdown">
+        <li>
+        <a class="dropdown-item rounded-2 theme-option" href="#" data-theme="light"><i class="me-2 opacity-50 bi bi-sun-fill"></i> 浅色</a>
+        </li>
+        <li>
+        <a class="dropdown-item rounded-2 theme-option" href="#" data-theme="dark"><i class="me-2 opacity-50 bi bi-moon-stars-fill"></i> 深色</a>
+        </li>
+        <li><hr class="dropdown-divider"></li>
+        <li>
+        <a class="dropdown-item rounded-2 theme-option active" href="#" data-theme="auto"><i class="me-2 opacity-50 bi bi-circle-half"></i> 系统</a>
+        </li>
+    </ul>
+</div>
+
+
+<script src="/js/utils/theme.js"></script>
+
+
+    </div>
+  </div>
+</header>
+    
+    <div class="container my-5">
+      <div class="post">
+    <h1 class="post-title fw-semibold">
+    
+        <div class="text-center">
+            简单写了一个局域网探测工具。
+        </div>
+    
+</h1>
+
+    
+        <div class="text-center">
+            
+<div class="mb-4 text-muted author-info">
+    
+        <span title="2023-12-13T13:35:00.000Z"><i class="bi bi-calendar2 me-2" title="发布于 2023-12-13"></i>发布于 2023-12-13</span>
+    
+    
+        <span class="ms-3" title="2024-01-11T16:02:14.231Z"><i class="bi bi-calendar2-plus me-2" title="更新于 2024-01-12"></i>更新于 2024-01-12</span>
+    
+    
+    
+        
+            <span class="ms-3">
+                <i class="bi bi-folder me-2"></i><a class="category-link" href="/categories/development/">开发</a>、<a class="category-link" href="/categories/project/">我的项目</a>
+            </span>
+        
+    
+</div>
+        </div>
+    
+
+    
+        <p><strong>前言</strong></p>
+<p>因为公司设备太多，偶尔遇到 IP 分配冲突问题，所以写了一个可视化的 GUI 小工具来快速排查掉已被占用的 IP 地址以及分析局域网概况，包括局域网主机延迟、在线状态、系统类型、主机名、Mac地址等。</p>
+<span id="more"></span>
+
+<h2 id="成品展示"><a href="#成品展示" class="headerlink" title="成品展示"></a>成品展示</h2><h3 id="下载软件"><a href="#下载软件" class="headerlink" title="下载软件"></a>下载软件</h3><ul>
+<li>下载地址：<a target="_blank" rel="noopener" href="https://nullcraft.org/d/79">[免费] 局域网探测 - LanTest - 灵工艺 向着完美无限接近</a></li>
+<li>使用教学：<a target="_blank" rel="noopener" href="https://docs.nullcraft.org/software/lantest">局域网探测 - 灵工艺 | 帮助文档</a></li>
+</ul>
+<h3 id="文图介绍"><a href="#文图介绍" class="headerlink" title="文图介绍"></a>文图介绍</h3><p>通过设置要扫描的局域网 IP 段和起始结束数值即可开始扫描。</p>
+<p><img src="/images/software/lantest/lantest_1.png" alt="LanTest1"></p>
+<p>扫描后可以查看结果信息。</p>
+<p><img src="/images/software/lantest/lantest_2.png" alt="LanTest2"></p>
+<p>通过详细模式可以查看更多细节，以及分析局域网概况，包括局域网主机延迟、在线状态、系统类型、主机名、Mac地址等。</p>
+<p><img src="/images/software/lantest/lantest_3.png" alt="LanTest3"></p>
+<h2 id="功能设想与实现"><a href="#功能设想与实现" class="headerlink" title="功能设想与实现"></a>功能设想与实现</h2><p><strong>基础检测方案：</strong><br>通过基础 Ping 功能对目标 IP 发出 ICMP 数据，以取得目标 IP 状态(是否在线、延迟)。</p>
+<p><strong>性能优化方案：</strong><br>使用多线程+线程池方式调用检测，减小等待时间，提升运行效率。</p>
+<h2 id="代码逻辑"><a href="#代码逻辑" class="headerlink" title="代码逻辑"></a>代码逻辑</h2><p>通过 C# 自带的 Net 实现基础 Ping 服务</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Ping ping = <span class="keyword">new</span> Ping();</span><br><span class="line">PingReply reply = ping.Send(ipAddress);</span><br></pre></td></tr></table></figure>
+
+<p>Ping 发送后，获取目标的状态信息。</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取状态</span></span><br><span class="line">reply.Status</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取延迟</span></span><br><span class="line">reply.RoundtripTime</span><br></pre></td></tr></table></figure>
+<p>至此一个基础的探测逻辑成功实现。</p>
+<p><strong>代码书写：</strong></p>
+<p>先创建一个实体类，用来存放状态信息。</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">internal</span> <span class="keyword">class</span> <span class="title">StatusEntity</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">string</span> IPAddress &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">bool</span> IsOnline &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">long</span> Ms &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>现在要结合多线程与遍历设置的局域网 IP 范围进行获取遍历后的状态信息结果。</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> startRange = <span class="number">1</span>; <span class="comment">//IPv4 第四段开始地址</span></span><br><span class="line"><span class="built_in">int</span> endRange = <span class="number">255</span>; <span class="comment">//IPv4 第四段结束地址</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="built_in">int</span> i = startRange; i &lt;= endRange; i++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">string</span> ipAddress = baseIpAddress + i.ToString();</span><br><span class="line">    Trace.WriteLine(<span class="string">$&quot;<span class="subst">&#123;ipAddress&#125;</span> | <span class="subst">&#123;baseIpAddress + i.ToString()&#125;</span>&quot;</span>);</span><br><span class="line">    Thread thread = <span class="keyword">new</span> Thread(() =&gt; PingHost(ipAddress));</span><br><span class="line">    thread.Start();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置一个线程池用于等待所有线程退出事件。</span></span><br><span class="line">ThreadPool.QueueUserWorkItem(_ =&gt; WaitPingTestAllThreads());</span><br></pre></td></tr></table></figure>
+
+<p>PingHost() 为自封装方法，通过调用 PingHost(传入 IP 地址)，然后将 Ping 结果存入 List 内。</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> BlockingCollection&lt;StatusEntity&gt; statusEntities = <span class="keyword">new</span> BlockingCollection&lt;StatusEntity&gt;();</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">PingHost</span>(<span class="params"><span class="built_in">string</span> ipAddress</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">try</span></span><br><span class="line">    &#123;</span><br><span class="line">        Ping ping = <span class="keyword">new</span> Ping();</span><br><span class="line">        PingReply reply = ping.Send(ipAddress);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 添加 Ping 结果信息到列表保存。</span></span><br><span class="line">        statusEntities.Add(<span class="keyword">new</span> StatusEntity &#123; IPAddress = ipAddress, IsOnline = reply.Status == IPStatus.Success, Ms = reply.RoundtripTime &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">catch</span> (Exception ex)</span><br><span class="line">    &#123;</span><br><span class="line">        Trace.WriteLine(<span class="string">$&quot;<span class="subst">&#123;ipAddress&#125;</span>: 请求错误，错误信息：<span class="subst">&#123;ex.Message&#125;</span>&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>将结果渲染成 UI 展示给用户。</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 所有线程结束后，渲染 UI。</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">WaitPingTestAllThreads</span>()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">foreach</span> (StatusEntity statusEntity <span class="keyword">in</span> statusEntities)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">this</span>.Invoke(<span class="keyword">new</span> Action(() =&gt;</span><br><span class="line">        &#123;</span><br><span class="line">            Panel panel = <span class="keyword">new</span> Panel();</span><br><span class="line">            panel.Width = <span class="number">48</span>;</span><br><span class="line">            panel.Height = <span class="number">48</span>;</span><br><span class="line"></span><br><span class="line">            <span class="comment">//显示 IP 标签</span></span><br><span class="line">            Label num = <span class="keyword">new</span> Label();</span><br><span class="line">            num.AutoSize = <span class="literal">false</span>;</span><br><span class="line">            num.Margin = <span class="keyword">new</span> Padding(<span class="number">0</span>);</span><br><span class="line">            num.Width = width;</span><br><span class="line">            num.Text = statusEntity.IPAddress</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 显示 延迟 标签</span></span><br><span class="line">            Label ms = <span class="keyword">new</span> Label();</span><br><span class="line">            ms.AutoSize = <span class="literal">false</span>;</span><br><span class="line">            ms.Margin = <span class="keyword">new</span> Padding(<span class="number">0</span>);</span><br><span class="line">            ms.Width = width;</span><br><span class="line">            ms.Text = statusEntity.Ms</span><br><span class="line"></span><br><span class="line">            panel.Controls.Add(num);</span><br><span class="line">            panel.Controls.Add(ms);</span><br><span class="line"></span><br><span class="line">            <span class="comment">//将控件加入到主控件内。</span></span><br><span class="line">            Panel_Main.Controls.Add(panel);</span><br><span class="line">        &#125;));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="后续更新方向"><a href="#后续更新方向" class="headerlink" title="后续更新方向"></a>后续更新方向</h2><ul>
+<li>有些时候 Ping 可能也不能准确获取状态，比如防火墙拦截之类的。需要多个方案配合会更稳定。</li>
+<li>增加更详细的 UI 状态显示。</li>
+</ul>
+
+      
+    
+    
+
+    
+        
+            <a href="/tags/%E5%B7%A5%E5%85%B7/"><span class="tag-item" data-tag="工具">#工具</span></a>
+        
+            <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/"><span class="tag-item" data-tag="软件开发">#软件开发</span></a>
+        
+            <a href="/tags/%E5%B1%80%E5%9F%9F%E7%BD%91/"><span class="tag-item" data-tag="局域网">#局域网</span></a>
+        
+    
+
+</div>
+    </div>
+
+    
+<!-- 返回顶部 -->
+<a href="#" id="back-to-top" class="btn btn-secondary back-to-top" title="返回顶部"><i class="bi bi-arrow-up" style="width: auto;"></i></a>
+
+<script src="/js/utils/back-to-top.js"></script>
+
+
+    <footer class="border-top bg-body">
+  <div class="container">
+    
+    <div class="d-flex flex-column flex-sm-row justify-content-between py-3 mt-3">
+      <div>
+        <a href="/" class="link-body-emphasis text-decoration-none">
+          <img class="logo-light" width="32" height="32" src="/images/logo_2022_256.png" />
+          <img class="logo-dark" width="32" height="32" src="/images/logo_white_256.png" />
+        </a>
+        <span class="ms-2">
+          © 2025 <a href="https://fastchen.com">FASTCHEN</a> All Rights Reserved. 由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> &amp; <a href="https://github.com/FastChen/hexo-theme-sujian" rel="noopener" target="_blank">SuJian</a> 强力驱动
+        </span>
+      </div>
+
+      <ul class="list-unstyled d-flex d-grid gap-3">
+          
+            
+            
+            
+            <li>
+                <a class="link-body-emphasis" target="_blank" rel="noopener" href="https://github.com/fastchen">
+                <i class="bi bi-github" style="font-size: 24px;"></i>
+              </a>
+            </li>
+          
+      </ul>
+    </div>
+  </div>
+</footer>
+
+
+
+<script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+
+<script src="/js/utils/tag-color.js"></script>
+
+
+<script>
+// 页面加载后设置标签颜色
+document.addEventListener('DOMContentLoaded', function() {
+    TagColor.applyRandomColorsToAll('.tag-item');
+});
+</script>
+  </body>
+  
+</html>

@@ -1,0 +1,267 @@
+<!doctype html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>模组加载器中心 - ModLoader Center | FASTCHEN</title>
+
+
+
+  
+<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+
+  
+<link rel="stylesheet" href="/bootstrap/css/bootstrap-icons.min.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  <meta name="description" content="一介凡人快辰的个人发牢骚之地。灵工艺的创始人。">
+  <meta name="keywords" content="快辰,FastChen,灵工艺,NullCraft,创始人">
+
+  <!-- Apple设备图标 -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/logo_2022_256.png">
+  <!-- Android设备图标 -->
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/logo_2022_256.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/images/logo_2022_256.png">
+
+  <!-- Open Graph协议(社交媒体分享) -->
+  <meta name="description" content="前言 2024年04月09日，又一个软件诞生了。这是今年(2024)第二款软件了，也是至今第20款不同的软件。模组加载器中心，也就是模组加载器的中心集中工具 (废话)，主要是为了把我自己用到的模组加载器或者我软件涉及到的项目，融合到这里，方便下载与更新。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="模组加载器中心 - ModLoader Center">
+<meta property="og:url" content="https://fastchen.com/project/modloader_center/index.html">
+<meta property="og:site_name" content="FASTCHEN">
+<meta property="og:description" content="前言 2024年04月09日，又一个软件诞生了。这是今年(2024)第二款软件了，也是至今第20款不同的软件。模组加载器中心，也就是模组加载器的中心集中工具 (废话)，主要是为了把我自己用到的模组加载器或者我软件涉及到的项目，融合到这里，方便下载与更新。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://fastchen.com/images/software/modloader_center/home.png">
+<meta property="og:image" content="https://fastchen.com/images/software/modloader_center/minecraft_fabric.png">
+<meta property="og:image" content="https://fastchen.com/images/software/modloader_center/home.png">
+<meta property="og:image" content="https://fastchen.com/images/software/modloader_center/minecraft_forge.png">
+<meta property="og:image" content="https://fastchen.com/images/software/modloader_center/minecraft_fabric.png">
+<meta property="og:image" content="https://fastchen.com/images/software/modloader_center/minecraft_quilt.png">
+<meta property="og:image" content="https://fastchen.com/images/software/modloader_center/minecraft_optifine.png">
+<meta property="og:image" content="https://fastchen.com/images/software/modloader_center/rust_oxide.png">
+<meta property="og:image" content="https://fastchen.com/images/software/modloader_center/terraria_tmodloader.png">
+<meta property="og:image" content="https://fastchen.com/images/software/modloader_center/stardew_valley_smapi.png">
+<meta property="article:published_time" content="2024-04-20T11:30:00.000Z">
+<meta property="article:modified_time" content="2024-04-23T11:25:00.188Z">
+<meta property="article:author" content="FastChen">
+<meta property="article:tag" content=".NET">
+<meta property="article:tag" content="C#">
+<meta property="article:tag" content="Windows">
+<meta property="article:tag" content="工具">
+<meta property="article:tag" content="模组">
+<meta property="article:tag" content="软件开发">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://fastchen.com/images/software/modloader_center/home.png">
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+<!-- 内联脚本立即设置主题，防止闪烁 -->
+<script>
+  // 立即从localStorage获取主题设置或使用系统偏好
+  const savedTheme = localStorage.getItem('theme') || 'auto';
+  let theme = 'light';
+  
+  if (savedTheme === 'dark') {
+      theme = 'dark';
+  } else if (savedTheme === 'auto') {
+      // 检测系统偏好
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          theme = 'dark';
+      }
+  }
+  
+  // 立即设置主题
+  document.documentElement.setAttribute('data-bs-theme', theme);
+</script>
+
+  <body class="theme-transition bg-body-tertiary">
+    <header class="bg-body p-3 mb-3 border-bottom">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+      <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none">
+        <img class="logo-light" width="32" height="32" src="/images/logo_2022_256.png" />
+        <img class="logo-dark" width="32" height="32" src="/images/logo_white_256.png" />
+      </a>
+      <ul class="nav nav-underline col-12 col-lg-auto me-lg-auto ms-3 mb-2 justify-content-center mb-md-0">
+        
+        <li><a href="/" class="nav-link px-2 link-body-emphasis">主页</a></li>
+        
+        <li><a href="/archives" class="nav-link px-2 link-body-emphasis">归档</a></li>
+        
+        <li><a href="/categories" class="nav-link px-2 link-body-emphasis">分类</a></li>
+        
+        <li><a href="/tags" class="nav-link px-2 link-body-emphasis">标签</a></li>
+        
+        <li><a href="/about" class="nav-link px-2 link-body-emphasis">关于我</a></li>
+        
+      </ul>
+
+      <div class="dropdown">
+    <button class="btn btn-link nav-link dropdown-toggle" type="button" id="themeDropdown" data-bs-toggle="dropdown" aria-expanded="false"></button>
+    <ul class="dropdown-menu p-2 rounded-3 mx-0 border-0 shadow" aria-labelledby="themeDropdown">
+        <li>
+        <a class="dropdown-item rounded-2 theme-option" href="#" data-theme="light"><i class="me-2 opacity-50 bi bi-sun-fill"></i> 浅色</a>
+        </li>
+        <li>
+        <a class="dropdown-item rounded-2 theme-option" href="#" data-theme="dark"><i class="me-2 opacity-50 bi bi-moon-stars-fill"></i> 深色</a>
+        </li>
+        <li><hr class="dropdown-divider"></li>
+        <li>
+        <a class="dropdown-item rounded-2 theme-option active" href="#" data-theme="auto"><i class="me-2 opacity-50 bi bi-circle-half"></i> 系统</a>
+        </li>
+    </ul>
+</div>
+
+
+<script src="/js/utils/theme.js"></script>
+
+
+    </div>
+  </div>
+</header>
+    
+    <div class="container my-5">
+      <div class="post">
+    <h1 class="post-title fw-semibold">
+    
+        <div class="text-center">
+            模组加载器中心 - ModLoader Center
+        </div>
+    
+</h1>
+
+    
+        <div class="text-center">
+            
+<div class="mb-4 text-muted author-info">
+    
+        <span title="2024-04-20T11:30:00.000Z"><i class="bi bi-calendar2 me-2" title="发布于 2024-04-20"></i>发布于 2024-04-20</span>
+    
+    
+        <span class="ms-3" title="2024-04-23T11:25:00.188Z"><i class="bi bi-calendar2-plus me-2" title="更新于 2024-04-23"></i>更新于 2024-04-23</span>
+    
+    
+    
+        
+            <span class="ms-3">
+                <i class="bi bi-folder me-2"></i><a class="category-link" href="/categories/development/">开发</a>、<a class="category-link" href="/categories/project/">我的项目</a>
+            </span>
+        
+    
+</div>
+        </div>
+    
+
+    
+        <p><strong>前言</strong></p>
+<p>2024年04月09日，又一个软件诞生了。<br>这是今年(2024)第二款软件了，也是至今第20款不同的软件。<br>模组加载器中心，也就是模组加载器的中心集中工具 <del>(废话)</del>，主要是为了把我自己用到的模组加载器或者我软件涉及到的项目，融合到这里，方便下载与更新。</p>
+<span id="more"></span>
+
+<p><strong>拓展知识：</strong><br>什么是模组加载器？<br>模组加载器、英文名字：ModLoader，也就是为游戏提供加载和管理 Mods(模组)的工具。</p>
+<h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>此工具开发主要集合了灵工艺涉及游戏的周边模组加载器(ModLoader)项目，为了方便用户下载和安装(适配中)模组加载器而制作。</p>
+<p><strong>已支持列表：</strong>(为了同步更新请到原始发布贴或软件文档进行查看)</p>
+<p>前往：</p>
+<ul>
+<li>原始发布贴：<a target="_blank" rel="noopener" href="https://nullcraft.org/d/87">[BETA][免费] 模组加载器中心 - ModLoader Center - 灵工艺 向着完美无限接近</a></li>
+<li>文档：<a target="_blank" rel="noopener" href="https://docs.nullcraft.org/software/modloader-center">模组加载器中心 | 灵工艺 | 帮助文档</a></li>
+</ul>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><ol>
+<li>运行《模组加载器中心》进入工具主界面</li>
+</ol>
+<p><img src="/images/software/modloader_center/home.png" alt="modloader_center_home"></p>
+<ol start="2">
+<li>选择你要安装的 <strong>游戏</strong> 下的 <strong>加载器(ModLoader)</strong>，这里我们以 <strong>Minecraft-Fabric</strong> 为例。</li>
+</ol>
+<p><img src="/images/software/modloader_center/minecraft_fabric.png" alt="modloader_center_home"></p>
+<ol start="3">
+<li>将载入对应的加载器下载窗口，通常 <strong>选择</strong> 对应类型，或直接点击 <strong>下载</strong> 按钮即可。</li>
+</ol>
+<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p>目前软件为测试期，您可以到用户群下载体验。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://jq.qq.com/?_wv=1027&k=A9YzWvbS">灵工艺 用户群(239336981)</a></li>
+</ul>
+<h2 id="软件图片"><a href="#软件图片" class="headerlink" title="软件图片"></a>软件图片</h2><p><img src="/images/software/modloader_center/home.png" alt="modloader_center_home"><br><img src="/images/software/modloader_center/minecraft_forge.png" alt="modloader_center_forge"><br><img src="/images/software/modloader_center/minecraft_fabric.png" alt="modloader_center_fabric"><br><img src="/images/software/modloader_center/minecraft_quilt.png" alt="modloader_center_fabric"><br><img src="/images/software/modloader_center/minecraft_optifine.png" alt="modloader_center_fabric"><br><img src="/images/software/modloader_center/rust_oxide.png" alt="modloader_center_fabric"><br><img src="/images/software/modloader_center/terraria_tmodloader.png" alt="modloader_center_fabric"><br><img src="/images/software/modloader_center/stardew_valley_smapi.png" alt="modloader_center_fabric"></p>
+
+      
+    
+    
+
+    
+        
+            <a href="/tags/%E5%B7%A5%E5%85%B7/"><span class="tag-item" data-tag="工具">#工具</span></a>
+        
+            <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/"><span class="tag-item" data-tag="软件开发">#软件开发</span></a>
+        
+            <a href="/tags/Windows/"><span class="tag-item" data-tag="Windows">#Windows</span></a>
+        
+            <a href="/tags/NET/"><span class="tag-item" data-tag=".NET">#.NET</span></a>
+        
+            <a href="/tags/C/"><span class="tag-item" data-tag="C#">#C#</span></a>
+        
+            <a href="/tags/%E6%A8%A1%E7%BB%84/"><span class="tag-item" data-tag="模组">#模组</span></a>
+        
+    
+
+</div>
+    </div>
+
+    
+<!-- 返回顶部 -->
+<a href="#" id="back-to-top" class="btn btn-secondary back-to-top" title="返回顶部"><i class="bi bi-arrow-up" style="width: auto;"></i></a>
+
+<script src="/js/utils/back-to-top.js"></script>
+
+
+    <footer class="border-top bg-body">
+  <div class="container">
+    
+    <div class="d-flex flex-column flex-sm-row justify-content-between py-3 mt-3">
+      <div>
+        <a href="/" class="link-body-emphasis text-decoration-none">
+          <img class="logo-light" width="32" height="32" src="/images/logo_2022_256.png" />
+          <img class="logo-dark" width="32" height="32" src="/images/logo_white_256.png" />
+        </a>
+        <span class="ms-2">
+          © 2025 <a href="https://fastchen.com">FASTCHEN</a> All Rights Reserved. 由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> &amp; <a href="https://github.com/FastChen/hexo-theme-sujian" rel="noopener" target="_blank">SuJian</a> 强力驱动
+        </span>
+      </div>
+
+      <ul class="list-unstyled d-flex d-grid gap-3">
+          
+            
+            
+            
+            <li>
+                <a class="link-body-emphasis" target="_blank" rel="noopener" href="https://github.com/fastchen">
+                <i class="bi bi-github" style="font-size: 24px;"></i>
+              </a>
+            </li>
+          
+      </ul>
+    </div>
+  </div>
+</footer>
+
+
+
+<script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+
+<script src="/js/utils/tag-color.js"></script>
+
+
+<script>
+// 页面加载后设置标签颜色
+document.addEventListener('DOMContentLoaded', function() {
+    TagColor.applyRandomColorsToAll('.tag-item');
+});
+</script>
+  </body>
+  
+</html>

@@ -1,0 +1,236 @@
+<!doctype html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>Windows10/11 更新暂停工具 | FASTCHEN</title>
+
+
+
+  
+<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+
+  
+<link rel="stylesheet" href="/bootstrap/css/bootstrap-icons.min.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  <meta name="description" content="一介凡人快辰的个人发牢骚之地。灵工艺的创始人。">
+  <meta name="keywords" content="快辰,FastChen,灵工艺,NullCraft,创始人">
+
+  <!-- Apple设备图标 -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/logo_2022_256.png">
+  <!-- Android设备图标 -->
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/logo_2022_256.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/images/logo_2022_256.png">
+
+  <!-- Open Graph协议(社交媒体分享) -->
+  <meta name="description" content="前言 你，厌倦了 Windows 的自动更新吗？你，还在对需要使用电脑时让你坐和放宽吗？来试一试这款超长时间暂停更新工具吧！同时它还不会影响微软商店以及XBOX游戏服务的使用。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Windows10&#x2F;11 更新暂停工具">
+<meta property="og:url" content="https://fastchen.com/project/pause-windows-update/index.html">
+<meta property="og:site_name" content="FASTCHEN">
+<meta property="og:description" content="前言 你，厌倦了 Windows 的自动更新吗？你，还在对需要使用电脑时让你坐和放宽吗？来试一试这款超长时间暂停更新工具吧！同时它还不会影响微软商店以及XBOX游戏服务的使用。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://fastchen.com/images/software/pause-windows-update/pause-windows-update_1.png">
+<meta property="og:image" content="https://fastchen.com/images/software/pause-windows-update/pause-windows-update_2.png">
+<meta property="og:image" content="https://fastchen.com/images/software/pause-windows-update/pause-windows-update_3.png">
+<meta property="og:image" content="https://fastchen.com/images/software/pause-windows-update/pause-windows-update_4.png">
+<meta property="og:image" content="https://fastchen.com/images/software/pause-windows-update/pause-windows-update_5.png">
+<meta property="article:published_time" content="2024-01-20T10:40:00.000Z">
+<meta property="article:modified_time" content="2024-04-20T11:30:36.804Z">
+<meta property="article:author" content="FastChen">
+<meta property="article:tag" content="Windows">
+<meta property="article:tag" content="工具">
+<meta property="article:tag" content="软件开发">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://fastchen.com/images/software/pause-windows-update/pause-windows-update_1.png">
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+<!-- 内联脚本立即设置主题，防止闪烁 -->
+<script>
+  // 立即从localStorage获取主题设置或使用系统偏好
+  const savedTheme = localStorage.getItem('theme') || 'auto';
+  let theme = 'light';
+  
+  if (savedTheme === 'dark') {
+      theme = 'dark';
+  } else if (savedTheme === 'auto') {
+      // 检测系统偏好
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          theme = 'dark';
+      }
+  }
+  
+  // 立即设置主题
+  document.documentElement.setAttribute('data-bs-theme', theme);
+</script>
+
+  <body class="theme-transition bg-body-tertiary">
+    <header class="bg-body p-3 mb-3 border-bottom">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+      <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none">
+        <img class="logo-light" width="32" height="32" src="/images/logo_2022_256.png" />
+        <img class="logo-dark" width="32" height="32" src="/images/logo_white_256.png" />
+      </a>
+      <ul class="nav nav-underline col-12 col-lg-auto me-lg-auto ms-3 mb-2 justify-content-center mb-md-0">
+        
+        <li><a href="/" class="nav-link px-2 link-body-emphasis">主页</a></li>
+        
+        <li><a href="/archives" class="nav-link px-2 link-body-emphasis">归档</a></li>
+        
+        <li><a href="/categories" class="nav-link px-2 link-body-emphasis">分类</a></li>
+        
+        <li><a href="/tags" class="nav-link px-2 link-body-emphasis">标签</a></li>
+        
+        <li><a href="/about" class="nav-link px-2 link-body-emphasis">关于我</a></li>
+        
+      </ul>
+
+      <div class="dropdown">
+    <button class="btn btn-link nav-link dropdown-toggle" type="button" id="themeDropdown" data-bs-toggle="dropdown" aria-expanded="false"></button>
+    <ul class="dropdown-menu p-2 rounded-3 mx-0 border-0 shadow" aria-labelledby="themeDropdown">
+        <li>
+        <a class="dropdown-item rounded-2 theme-option" href="#" data-theme="light"><i class="me-2 opacity-50 bi bi-sun-fill"></i> 浅色</a>
+        </li>
+        <li>
+        <a class="dropdown-item rounded-2 theme-option" href="#" data-theme="dark"><i class="me-2 opacity-50 bi bi-moon-stars-fill"></i> 深色</a>
+        </li>
+        <li><hr class="dropdown-divider"></li>
+        <li>
+        <a class="dropdown-item rounded-2 theme-option active" href="#" data-theme="auto"><i class="me-2 opacity-50 bi bi-circle-half"></i> 系统</a>
+        </li>
+    </ul>
+</div>
+
+
+<script src="/js/utils/theme.js"></script>
+
+
+    </div>
+  </div>
+</header>
+    
+    <div class="container my-5">
+      <div class="post">
+    <h1 class="post-title fw-semibold">
+    
+        <div class="text-center">
+            Windows10/11 更新暂停工具
+        </div>
+    
+</h1>
+
+    
+        <div class="text-center">
+            
+<div class="mb-4 text-muted author-info">
+    
+        <span title="2024-01-20T10:40:00.000Z"><i class="bi bi-calendar2 me-2" title="发布于 2024-01-20"></i>发布于 2024-01-20</span>
+    
+    
+        <span class="ms-3" title="2024-04-20T11:30:36.804Z"><i class="bi bi-calendar2-plus me-2" title="更新于 2024-04-20"></i>更新于 2024-04-20</span>
+    
+    
+    
+        
+            <span class="ms-3">
+                <i class="bi bi-folder me-2"></i><a class="category-link" href="/categories/development/">开发</a>、<a class="category-link" href="/categories/project/">我的项目</a>
+            </span>
+        
+    
+</div>
+        </div>
+    
+
+    
+        <p><strong>前言</strong></p>
+<p>你，厌倦了 Windows 的自动更新吗？你，还在对需要使用电脑时让你坐和放宽吗？来试一试这款超长时间暂停更新工具吧！同时它还不会影响微软商店以及XBOX游戏服务的使用。</p>
+<span id="more"></span>
+
+<h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><h2 id="软件简介"><a href="#软件简介" class="headerlink" title="软件简介"></a>软件简介</h2><p>一个可以快捷自定义 Windows 暂停更新天数的工具，实现基本永久的禁用更新。<br>同时不影响 Microsoft Store (微软商店) 与 Xbox 游戏服务的使用，以及随时可以再次获得更新。</p>
+<h2 id="使用教学"><a href="#使用教学" class="headerlink" title="使用教学"></a>使用教学</h2><p>有关使用教学，可前往软件文档内查看：<a target="_blank" rel="noopener" href="https://docs.nullcraft.org/software/pause-windows-update/tutorial">传送门</a></p>
+<h2 id="下载软件"><a href="#下载软件" class="headerlink" title="下载软件"></a>下载软件</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://nullcraft.org/d/80">官方发布页面</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/FastChen/Pause-Windows-Update/releases">Github Releases</a></li>
+</ul>
+<h2 id="软件图片"><a href="#软件图片" class="headerlink" title="软件图片"></a>软件图片</h2><p><img src="/images/software/pause-windows-update/pause-windows-update_1.png" alt="Windows10&#x2F;11 更新暂停工具1"><br><img src="/images/software/pause-windows-update/pause-windows-update_2.png" alt="Windows10&#x2F;11 更新暂停工具2"><br><img src="/images/software/pause-windows-update/pause-windows-update_3.png" alt="Windows10&#x2F;11 更新暂停工具3"><br><img src="/images/software/pause-windows-update/pause-windows-update_4.png" alt="Windows10&#x2F;11 更新暂停工具4"><br><img src="/images/software/pause-windows-update/pause-windows-update_5.png" alt="Windows10&#x2F;11 更新暂停工具5"></p>
+
+      
+    
+    
+
+    
+        
+            <a href="/tags/%E5%B7%A5%E5%85%B7/"><span class="tag-item" data-tag="工具">#工具</span></a>
+        
+            <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/"><span class="tag-item" data-tag="软件开发">#软件开发</span></a>
+        
+            <a href="/tags/Windows/"><span class="tag-item" data-tag="Windows">#Windows</span></a>
+        
+    
+
+</div>
+    </div>
+
+    
+<!-- 返回顶部 -->
+<a href="#" id="back-to-top" class="btn btn-secondary back-to-top" title="返回顶部"><i class="bi bi-arrow-up" style="width: auto;"></i></a>
+
+<script src="/js/utils/back-to-top.js"></script>
+
+
+    <footer class="border-top bg-body">
+  <div class="container">
+    
+    <div class="d-flex flex-column flex-sm-row justify-content-between py-3 mt-3">
+      <div>
+        <a href="/" class="link-body-emphasis text-decoration-none">
+          <img class="logo-light" width="32" height="32" src="/images/logo_2022_256.png" />
+          <img class="logo-dark" width="32" height="32" src="/images/logo_white_256.png" />
+        </a>
+        <span class="ms-2">
+          © 2025 <a href="https://fastchen.com">FASTCHEN</a> All Rights Reserved. 由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> &amp; <a href="https://github.com/FastChen/hexo-theme-sujian" rel="noopener" target="_blank">SuJian</a> 强力驱动
+        </span>
+      </div>
+
+      <ul class="list-unstyled d-flex d-grid gap-3">
+          
+            
+            
+            
+            <li>
+                <a class="link-body-emphasis" target="_blank" rel="noopener" href="https://github.com/fastchen">
+                <i class="bi bi-github" style="font-size: 24px;"></i>
+              </a>
+            </li>
+          
+      </ul>
+    </div>
+  </div>
+</footer>
+
+
+
+<script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+
+<script src="/js/utils/tag-color.js"></script>
+
+
+<script>
+// 页面加载后设置标签颜色
+document.addEventListener('DOMContentLoaded', function() {
+    TagColor.applyRandomColorsToAll('.tag-item');
+});
+</script>
+  </body>
+  
+</html>

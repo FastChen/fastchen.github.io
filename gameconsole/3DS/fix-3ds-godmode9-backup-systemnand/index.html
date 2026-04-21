@@ -1,0 +1,296 @@
+<!doctype html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>修复3DS无卡开机导致GodMode9(gm9)不可用和备份系统教程 | FASTCHEN</title>
+
+
+
+  
+<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+
+  
+<link rel="stylesheet" href="/bootstrap/css/bootstrap-icons.min.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  <meta name="description" content="一介凡人快辰的个人发牢骚之地。灵工艺的创始人。">
+  <meta name="keywords" content="快辰,FastChen,灵工艺,NullCraft,创始人">
+
+  <!-- Apple设备图标 -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/logo_2022_256.png">
+  <!-- Android设备图标 -->
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/logo_2022_256.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/images/logo_2022_256.png">
+
+  <!-- Open Graph协议(社交媒体分享) -->
+  <meta name="description" content="折腾的开始。从PDD买了一台”9新”老小三(3DS)，仅机器+充电器，商家为了赚钱，做了无卡开机，能理解毕竟能多赚一点是一点。 其中还有一些我对机器整体的定义总体评价就是7，8新撑死，不仅有裂痕还有很多磕痕和长划痕。给后续的商品评价做了一个500字左右的买家测评(笑)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="修复3DS无卡开机导致GodMode9(gm9)不可用和备份系统教程">
+<meta property="og:url" content="https://fastchen.com/gameconsole/3DS/fix-3ds-godmode9-backup-systemnand/index.html">
+<meta property="og:site_name" content="FASTCHEN">
+<meta property="og:description" content="折腾的开始。从PDD买了一台”9新”老小三(3DS)，仅机器+充电器，商家为了赚钱，做了无卡开机，能理解毕竟能多赚一点是一点。 其中还有一些我对机器整体的定义总体评价就是7，8新撑死，不仅有裂痕还有很多磕痕和长划痕。给后续的商品评价做了一个500字左右的买家测评(笑)">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://fastchen.com/images/blog/20230106/charcount.png">
+<meta property="og:image" content="https://fastchen.com/images/blog/20230106/folder_1.png">
+<meta property="og:image" content="https://fastchen.com/images/blog/20230106/gm9_1.png">
+<meta property="og:image" content="https://fastchen.com/images/blog/20230106/gm9_2.png">
+<meta property="og:image" content="https://fastchen.com/images/blog/20230106/gm9_3.png">
+<meta property="og:image" content="https://fastchen.com/images/blog/20230106/gm9_4.png">
+<meta property="og:image" content="https://fastchen.com/images/blog/20230106/gm9_5.png">
+<meta property="og:image" content="https://fastchen.com/images/blog/20230106/gm9_6.png">
+<meta property="article:published_time" content="2023-01-06T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-03-22T11:50:01.241Z">
+<meta property="article:author" content="FastChen">
+<meta property="article:tag" content="3DS">
+<meta property="article:tag" content="GodMode9">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://fastchen.com/images/blog/20230106/charcount.png">
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+<!-- 内联脚本立即设置主题，防止闪烁 -->
+<script>
+  // 立即从localStorage获取主题设置或使用系统偏好
+  const savedTheme = localStorage.getItem('theme') || 'auto';
+  let theme = 'light';
+  
+  if (savedTheme === 'dark') {
+      theme = 'dark';
+  } else if (savedTheme === 'auto') {
+      // 检测系统偏好
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          theme = 'dark';
+      }
+  }
+  
+  // 立即设置主题
+  document.documentElement.setAttribute('data-bs-theme', theme);
+</script>
+
+  <body class="theme-transition bg-body-tertiary">
+    <header class="bg-body p-3 mb-3 border-bottom">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+      <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none">
+        <img class="logo-light" width="32" height="32" src="/images/logo_2022_256.png" />
+        <img class="logo-dark" width="32" height="32" src="/images/logo_white_256.png" />
+      </a>
+      <ul class="nav nav-underline col-12 col-lg-auto me-lg-auto ms-3 mb-2 justify-content-center mb-md-0">
+        
+        <li><a href="/" class="nav-link px-2 link-body-emphasis">主页</a></li>
+        
+        <li><a href="/archives" class="nav-link px-2 link-body-emphasis">归档</a></li>
+        
+        <li><a href="/categories" class="nav-link px-2 link-body-emphasis">分类</a></li>
+        
+        <li><a href="/tags" class="nav-link px-2 link-body-emphasis">标签</a></li>
+        
+        <li><a href="/about" class="nav-link px-2 link-body-emphasis">关于我</a></li>
+        
+      </ul>
+
+      <div class="dropdown">
+    <button class="btn btn-link nav-link dropdown-toggle" type="button" id="themeDropdown" data-bs-toggle="dropdown" aria-expanded="false"></button>
+    <ul class="dropdown-menu p-2 rounded-3 mx-0 border-0 shadow" aria-labelledby="themeDropdown">
+        <li>
+        <a class="dropdown-item rounded-2 theme-option" href="#" data-theme="light"><i class="me-2 opacity-50 bi bi-sun-fill"></i> 浅色</a>
+        </li>
+        <li>
+        <a class="dropdown-item rounded-2 theme-option" href="#" data-theme="dark"><i class="me-2 opacity-50 bi bi-moon-stars-fill"></i> 深色</a>
+        </li>
+        <li><hr class="dropdown-divider"></li>
+        <li>
+        <a class="dropdown-item rounded-2 theme-option active" href="#" data-theme="auto"><i class="me-2 opacity-50 bi bi-circle-half"></i> 系统</a>
+        </li>
+    </ul>
+</div>
+
+
+<script src="/js/utils/theme.js"></script>
+
+
+    </div>
+  </div>
+</header>
+    
+    <div class="container my-5">
+      <div class="post">
+    <h1 class="post-title fw-semibold">
+    
+        <div class="text-center">
+            修复3DS无卡开机导致GodMode9(gm9)不可用和备份系统教程
+        </div>
+    
+</h1>
+
+    
+        <div class="text-center">
+            
+<div class="mb-4 text-muted author-info">
+    
+        <span title="2023-01-06T16:00:00.000Z"><i class="bi bi-calendar2 me-2" title="发布于 2023-01-07"></i>发布于 2023-01-07</span>
+    
+    
+        <span class="ms-3" title="2023-03-22T11:50:01.241Z"><i class="bi bi-calendar2-plus me-2" title="更新于 2023-03-22"></i>更新于 2023-03-22</span>
+    
+    
+    
+        
+            <span class="ms-3">
+                <i class="bi bi-folder me-2"></i><a class="category-link" href="/categories/gameconsole/">游戏机</a>、<a class="category-link" href="/categories/gameconsole/3DS/">3DS</a>
+            </span>
+        
+    
+</div>
+        </div>
+    
+
+    
+        <h3 id="折腾的开始。"><a href="#折腾的开始。" class="headerlink" title="折腾的开始。"></a>折腾的开始。</h3><p>从PDD买了一台”9新”老小三(3DS)，仅机器+充电器，商家为了赚钱，做了无卡开机，能理解毕竟能多赚一点是一点。</p>
+<p>其中还有一些我对机器整体的定义总体评价就是7，8新撑死，不仅有裂痕还有很多磕痕和长划痕。给后续的商品评价做了一个500字左右的买家测评(笑)</p>
+<span id="more"></span>
+
+<p><img src="/images/blog/20230106/charcount.png" alt="评论文字数量"></p>
+<h1 id="开始折腾"><a href="#开始折腾" class="headerlink" title="开始折腾!"></a>开始折腾!</h1><h2 id="解决无卡开机按start-开机无法进入godmode9的问题"><a href="#解决无卡开机按start-开机无法进入godmode9的问题" class="headerlink" title="解决无卡开机按start+开机无法进入godmode9的问题"></a>解决无卡开机按start+开机无法进入godmode9的问题</h2><h3 id="0x01-下载并导入必要文件"><a href="#0x01-下载并导入必要文件" class="headerlink" title="0x01 下载并导入必要文件"></a>0x01 下载并导入必要文件</h3><p>这里感谢<a target="_blank" rel="noopener" href="https://stray-soul.com/" title="一只火狐">一只火狐</a>提供的gm9文件和部分使用教程</p>
+<blockquote>
+<p><strong>注意！</strong> 本教程只适用于<code>b9s</code>破解的系统，也就是<code>luma7.0.5</code><strong>以上</strong>的版本</p>
+</blockquote>
+<p>首先要下载两个文件一个是godmode9、一个是luma11的boot文件，文件不大可以用百度网盘网页直接下或者自己去Github下载最新的，gm9不知道哪个是对的仓库。</p>
+<ul>
+<li>godmode9 <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1mJ0dcDnV47BPBhhsMpqXYw?pwd=agm9" title="百度网盘">百度网盘</a> 提取码: agm9</li>
+<li>luma11 <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1BN_vfrqgsjHUk3w2I1Ouvg?pwd=luma" title="百度网盘">百度网盘</a> 提取码:luma | <a target="_blank" rel="noopener" href="https://github.com/LumaTeam/Luma3DS/releases" title="Github-LumaTeam&#x2F;Luma3DS">Github-LumaTeam&#x2F;Luma3DS</a></li>
+</ul>
+<p>然后我们解压这两个压缩包，得到对应文件夹。</p>
+<p><img src="/images/blog/20230106/folder_1.png" alt="folder_1"></p>
+<p>然后把你3DS关机，拔出SD卡，插入电脑读取。</p>
+<blockquote>
+<p><strong>注意！<strong>开始操作时</strong>一定要备份SD卡</strong>的文件！</p>
+</blockquote>
+<p>然后进入解压的<strong>godmode9</strong>文件夹，里面有<strong>两个文件夹</strong>，分别是<code>gm9</code>和<code>luma</code> 文件夹，我们把这两个文件夹直接复制，然后到3DS的SD卡粘贴，如果<strong>提示替换</strong>直接选<strong>是</strong></p>
+<p>然后再进入<strong>Luma3DSv11.0</strong>文件夹，里面分别是2个文件</p>
+<ul>
+<li>boot.3dsx</li>
+<li>boot.firm</li>
+</ul>
+<p>将这两个文件直接复制到SD里，如果提示替换，选择是。</p>
+<p>那么你的SD卡里现在应该有以下4个文件</p>
+<ul>
+<li>gm9 文件夹</li>
+<li>luma 文件夹</li>
+<li>boot.3dsx 文件</li>
+<li>boot.firm 文件</li>
+</ul>
+<p>当然如果你的SD卡之前插入过3DS还会有其它文件夹，不用管它们，影响不到操作。也不要去删除！</p>
+<blockquote>
+<p>如果你只是想用godmode9不需要备份系统和还原到最初的对应机器系统，下面的内容就不用看了！</p>
+</blockquote>
+<h2 id="使用gm9备份系统"><a href="#使用gm9备份系统" class="headerlink" title="使用gm9备份系统"></a>使用gm9备份系统</h2><blockquote>
+<p>需要确定你的SD卡里还有至少2G左右的空间用于创建备份。</p>
+</blockquote>
+<p>按住<strong>START</strong>键开机，选择<strong>Godmode9</strong>进入</p>
+<p>上屏会出现GODMODE9的LOGO，下屏幕会出现文字就对了。</p>
+<h4 id="如果出现"><a href="#如果出现" class="headerlink" title="如果出现"></a>如果出现</h4><p>Essential files backup not fount. Create one now?<br><strong>翻译:</strong> 基本文件备份未找到。是否创建一个?</p>
+<p>此时按 A 选择 yes 并进行下一步</p>
+<p>然后出现</p>
+<p>RTC date&amp;time seems to be wrong. Setit now?<br><strong>翻译:</strong> 实时时钟日期和时间似乎错误。现在设置？</p>
+<p>按A然后设置正确的时间，设置完毕后按A进行下一步</p>
+<p>然后上屏和下屏会有变化，上屏变成一个列表，下屏变成GodMode9 v版本号和一些快捷键菜单。</p>
+<p><img src="/images/blog/20230106/gm9_1.png" alt="gm9_1"></p>
+<p>这时候我们按 Home 键，进入 Home菜单</p>
+<p>使用十字键选择 <strong>Scripts…</strong> 按 A 选择</p>
+<p><img src="/images/blog/20230106/gm9_2.png" alt="gm9_2"></p>
+<p>然后选择 <strong>GM9Megascript</strong> 按 A 下一步</p>
+<p><img src="/images/blog/20230106/gm9_3.png" alt="gm9_3"></p>
+<p>选择 <strong>Backup Options</strong> 按 A 下一步</p>
+<p><img src="/images/blog/20230106/gm9_4.png" alt="gm9_4"></p>
+<p>选择 <strong>SysNAND Backup</strong> 按 A 下一步</p>
+<p><img src="/images/blog/20230106/gm9_5.png" alt="gm9_5"></p>
+<p>提示 <strong>Create a SysNAND backup in 0:&#x2F;gm9&#x2F;out?</strong> 选择 A 确认。</p>
+<p><img src="/images/blog/20230106/gm9_6.png" alt="gm9_6"></p>
+<p>然后等进度条跑完。</p>
+<p>备份完毕后按 A 继续，然后按B回到主菜单，选择 Exit 按 A退出</p>
+<p>然后按电源键，选择 Poweroff system 关机。</p>
+<h2 id="导出备份到电脑"><a href="#导出备份到电脑" class="headerlink" title="导出备份到电脑"></a>导出备份到电脑</h2><p>关机后把SD卡插入到电脑，打开SD卡，进入下面目录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SD卡:\gm9\out\日期_编号_sysnand_编号.bin</span><br><span class="line">SD卡:\gm9\out\日期_编号_sysnand_编号.bin.sha</span><br></pre></td></tr></table></figure>
+
+<p>你的备份文件就是上面这两个，把他复制走，多备份几个，比如本地，网盘，什么的。以后可以用来救砖。</p>
+<blockquote>
+<p>快辰提示你：建议养成良好的定期备份习惯！</p>
+</blockquote>
+
+      
+    
+    
+
+    
+        
+            <a href="/tags/3DS/"><span class="tag-item" data-tag="3DS">#3DS</span></a>
+        
+            <a href="/tags/GodMode9/"><span class="tag-item" data-tag="GodMode9">#GodMode9</span></a>
+        
+    
+
+</div>
+    </div>
+
+    
+<!-- 返回顶部 -->
+<a href="#" id="back-to-top" class="btn btn-secondary back-to-top" title="返回顶部"><i class="bi bi-arrow-up" style="width: auto;"></i></a>
+
+<script src="/js/utils/back-to-top.js"></script>
+
+
+    <footer class="border-top bg-body">
+  <div class="container">
+    
+    <div class="d-flex flex-column flex-sm-row justify-content-between py-3 mt-3">
+      <div>
+        <a href="/" class="link-body-emphasis text-decoration-none">
+          <img class="logo-light" width="32" height="32" src="/images/logo_2022_256.png" />
+          <img class="logo-dark" width="32" height="32" src="/images/logo_white_256.png" />
+        </a>
+        <span class="ms-2">
+          © 2025 <a href="https://fastchen.com">FASTCHEN</a> All Rights Reserved. 由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> &amp; <a href="https://github.com/FastChen/hexo-theme-sujian" rel="noopener" target="_blank">SuJian</a> 强力驱动
+        </span>
+      </div>
+
+      <ul class="list-unstyled d-flex d-grid gap-3">
+          
+            
+            
+            
+            <li>
+                <a class="link-body-emphasis" target="_blank" rel="noopener" href="https://github.com/fastchen">
+                <i class="bi bi-github" style="font-size: 24px;"></i>
+              </a>
+            </li>
+          
+      </ul>
+    </div>
+  </div>
+</footer>
+
+
+
+<script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+
+<script src="/js/utils/tag-color.js"></script>
+
+
+<script>
+// 页面加载后设置标签颜色
+document.addEventListener('DOMContentLoaded', function() {
+    TagColor.applyRandomColorsToAll('.tag-item');
+});
+</script>
+  </body>
+  
+</html>

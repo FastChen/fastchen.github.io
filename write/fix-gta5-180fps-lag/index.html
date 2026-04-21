@@ -1,0 +1,257 @@
+<!doctype html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>解决 GTA5 超过 180FPS 后突然卡顿掉帧问题 | FASTCHEN</title>
+
+
+
+  
+<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+
+  
+<link rel="stylesheet" href="/bootstrap/css/bootstrap-icons.min.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  <meta name="description" content="一介凡人快辰的个人发牢骚之地。灵工艺的创始人。">
+  <meta name="keywords" content="快辰,FastChen,灵工艺,NullCraft,创始人">
+
+  <!-- Apple设备图标 -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/logo_2022_256.png">
+  <!-- Android设备图标 -->
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/logo_2022_256.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/images/logo_2022_256.png">
+
+  <!-- Open Graph协议(社交媒体分享) -->
+  <meta name="description" content="前言 之前的老工作站坏了，换了台新电脑，在游玩 GTA5 的时候发现每当帧数超过 180 后就会发生帧数骤降，出现卡顿 0.5-1 秒左右的现象，由于卡顿结束后帧数还会再次上到 180 导致出现连续卡顿效果。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="解决 GTA5 超过 180FPS 后突然卡顿掉帧问题">
+<meta property="og:url" content="https://fastchen.com/write/fix-gta5-180fps-lag/index.html">
+<meta property="og:site_name" content="FASTCHEN">
+<meta property="og:description" content="前言 之前的老工作站坏了，换了台新电脑，在游玩 GTA5 的时候发现每当帧数超过 180 后就会发生帧数骤降，出现卡顿 0.5-1 秒左右的现象，由于卡顿结束后帧数还会再次上到 180 导致出现连续卡顿效果。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://fastchen.com/images/blog/fix-gta5-180fps-lag/gamesetting_1.png">
+<meta property="article:published_time" content="2023-07-07T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-07-07T15:58:38.368Z">
+<meta property="article:author" content="FastChen">
+<meta property="article:tag" content="卡顿">
+<meta property="article:tag" content="掉帧">
+<meta property="article:tag" content="游戏">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://fastchen.com/images/blog/fix-gta5-180fps-lag/gamesetting_1.png">
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+<!-- 内联脚本立即设置主题，防止闪烁 -->
+<script>
+  // 立即从localStorage获取主题设置或使用系统偏好
+  const savedTheme = localStorage.getItem('theme') || 'auto';
+  let theme = 'light';
+  
+  if (savedTheme === 'dark') {
+      theme = 'dark';
+  } else if (savedTheme === 'auto') {
+      // 检测系统偏好
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          theme = 'dark';
+      }
+  }
+  
+  // 立即设置主题
+  document.documentElement.setAttribute('data-bs-theme', theme);
+</script>
+
+  <body class="theme-transition bg-body-tertiary">
+    <header class="bg-body p-3 mb-3 border-bottom">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+      <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none">
+        <img class="logo-light" width="32" height="32" src="/images/logo_2022_256.png" />
+        <img class="logo-dark" width="32" height="32" src="/images/logo_white_256.png" />
+      </a>
+      <ul class="nav nav-underline col-12 col-lg-auto me-lg-auto ms-3 mb-2 justify-content-center mb-md-0">
+        
+        <li><a href="/" class="nav-link px-2 link-body-emphasis">主页</a></li>
+        
+        <li><a href="/archives" class="nav-link px-2 link-body-emphasis">归档</a></li>
+        
+        <li><a href="/categories" class="nav-link px-2 link-body-emphasis">分类</a></li>
+        
+        <li><a href="/tags" class="nav-link px-2 link-body-emphasis">标签</a></li>
+        
+        <li><a href="/about" class="nav-link px-2 link-body-emphasis">关于我</a></li>
+        
+      </ul>
+
+      <div class="dropdown">
+    <button class="btn btn-link nav-link dropdown-toggle" type="button" id="themeDropdown" data-bs-toggle="dropdown" aria-expanded="false"></button>
+    <ul class="dropdown-menu p-2 rounded-3 mx-0 border-0 shadow" aria-labelledby="themeDropdown">
+        <li>
+        <a class="dropdown-item rounded-2 theme-option" href="#" data-theme="light"><i class="me-2 opacity-50 bi bi-sun-fill"></i> 浅色</a>
+        </li>
+        <li>
+        <a class="dropdown-item rounded-2 theme-option" href="#" data-theme="dark"><i class="me-2 opacity-50 bi bi-moon-stars-fill"></i> 深色</a>
+        </li>
+        <li><hr class="dropdown-divider"></li>
+        <li>
+        <a class="dropdown-item rounded-2 theme-option active" href="#" data-theme="auto"><i class="me-2 opacity-50 bi bi-circle-half"></i> 系统</a>
+        </li>
+    </ul>
+</div>
+
+
+<script src="/js/utils/theme.js"></script>
+
+
+    </div>
+  </div>
+</header>
+    
+    <div class="container my-5">
+      <div class="post">
+    <h1 class="post-title fw-semibold">
+    
+        <div class="text-center">
+            解决 GTA5 超过 180FPS 后突然卡顿掉帧问题
+        </div>
+    
+</h1>
+
+    
+        <div class="text-center">
+            
+<div class="mb-4 text-muted author-info">
+    
+        <span title="2023-07-07T16:00:00.000Z"><i class="bi bi-calendar2 me-2" title="发布于 2023-07-08"></i>发布于 2023-07-08</span>
+    
+    
+        <span class="ms-3" title="2023-07-07T15:58:38.368Z"><i class="bi bi-calendar2-plus me-2" title="更新于 2023-07-07"></i>更新于 2023-07-07</span>
+    
+    
+    
+        
+            <span class="ms-3">
+                <i class="bi bi-folder me-2"></i><a class="category-link" href="/categories/write/">随便写写</a>
+            </span>
+        
+    
+</div>
+        </div>
+    
+
+    
+        <p><strong>前言</strong></p>
+<p>之前的老工作站坏了，换了台新电脑，在游玩 GTA5 的时候发现每当帧数超过 180 后就会发生帧数骤降，出现卡顿 0.5-1 秒左右的现象，由于卡顿结束后帧数还会再次上到 180 导致出现连续卡顿效果。</p>
+<span id="more"></span>
+
+<h1 id="先说解决方案"><a href="#先说解决方案" class="headerlink" title="先说解决方案"></a>先说解决方案</h1><blockquote>
+<p>这个方法理论上适用于配置足够，且为游戏超过 180FPS 导致掉帧卡顿的朋友。</p>
+</blockquote>
+<p>因为我使用的是 N卡 所以这里以 NVIDIA 控制面板为例：</p>
+<ol>
+<li>打开 <code>NVIDIA 控制面板</code></li>
+<li>左侧列表选择 <code>管理 3D 设置</code></li>
+<li>进入 <code>管理 3D 设置</code> 后选择 <code>程序设置</code> 页面</li>
+<li>在 <code>选择要自定义的程序(S)</code> 中选择 <code>Grand Theft Auto V (gta5.exe)</code> 注意！不要选成 Launcher !</li>
+<li>在 <code>指定该程序的设置值(C)</code> 中 找到 <code>最大帧速率</code></li>
+<li>将 <code>最大帧速率</code> 点开 选择 <code>开</code> 然后将数值改成低于 180 的数值 例如 144、165 等</li>
+<li>改完点击 确定 按钮，然后确认 <code>最大帧速率</code> 显示的为你修改的帧数数值。</li>
+</ol>
+<blockquote>
+<p>我不清楚其它显卡是否存在此问题，如果存在寻找你对应的显卡驱动将游戏的最大帧数限制在低于 180 以下即可。</p>
+</blockquote>
+<h1 id="解决思路"><a href="#解决思路" class="headerlink" title="解决思路"></a>解决思路</h1><h2 id="定位问题根源"><a href="#定位问题根源" class="headerlink" title="定位问题根源"></a>定位问题根源</h2><p>通过搜索引擎搜索 <code>GTA5 间歇性 掉帧 卡顿</code> 等关键词后，获得大致两类结果</p>
+<ol>
+<li>配置不足导致?</li>
+<li>游戏底层代码问题?</li>
+</ol>
+<p>接下来就是尝试解决方案了。</p>
+<h3 id="配置不足导致"><a href="#配置不足导致" class="headerlink" title="配置不足导致?"></a>配置不足导致?</h3><p>通过降低游戏画质等，无果。</p>
+<p>同时搜索到了一个修改游戏配置的解决方法：<br>修改 Post FX 为 正常<br><img src="/images/blog/fix-gta5-180fps-lag/gamesetting_1.png" alt="fix-gta5-180fps-lag&#x2F;gamesetting_1.png"></p>
+<p>经过测试，<strong>无效。</strong></p>
+<p>但是发现卡顿基本仅在游戏的线下模式出现，从而引出另一个猜想：《下线帧数与线上帧数差距大，线下帧数高从而导致问题所在？》</p>
+<h3 id="游戏底层代码问题"><a href="#游戏底层代码问题" class="headerlink" title="游戏底层代码问题?"></a>游戏底层代码问题?</h3><p>再次深入搜索后，发现了几篇帖子，其中共同点就是游戏帧数超过一定数值(180)后就会发生掉帧卡顿的情况。<br>通过驱动限制游戏最大帧数为 144FPS 后，重启游戏，开车跑图测试，没有卡顿，同时<strong>问题解决</strong>。</p>
+<h2 id="相关问题与解决方案引用地址"><a href="#相关问题与解决方案引用地址" class="headerlink" title="相关问题与解决方案引用地址"></a>相关问题与解决方案引用地址</h2><ul>
+<li>[#5楼] <a target="_blank" rel="noopener" href="https://tieba.baidu.com/p/8472535119">大佬们，我这个配置玩GTAV怎么一卡一卡的 - 百度贴吧</a></li>
+<li>[#15楼] <a target="_blank" rel="noopener" href="https://tieba.baidu.com/p/7164810398">3080玩GTA5很卡 - 百度贴吧</a></li>
+<li>[已解决] <a target="_blank" rel="noopener" href="https://ngabbs.com/read.php?tid=29935737&rand=610">求助，gta5掉帧严重，3080ti - NGA</a></li>
+</ul>
+
+      
+    
+    
+
+    
+        
+            <a href="/tags/%E6%B8%B8%E6%88%8F/"><span class="tag-item" data-tag="游戏">#游戏</span></a>
+        
+            <a href="/tags/%E5%8D%A1%E9%A1%BF/"><span class="tag-item" data-tag="卡顿">#卡顿</span></a>
+        
+            <a href="/tags/%E6%8E%89%E5%B8%A7/"><span class="tag-item" data-tag="掉帧">#掉帧</span></a>
+        
+    
+
+</div>
+    </div>
+
+    
+<!-- 返回顶部 -->
+<a href="#" id="back-to-top" class="btn btn-secondary back-to-top" title="返回顶部"><i class="bi bi-arrow-up" style="width: auto;"></i></a>
+
+<script src="/js/utils/back-to-top.js"></script>
+
+
+    <footer class="border-top bg-body">
+  <div class="container">
+    
+    <div class="d-flex flex-column flex-sm-row justify-content-between py-3 mt-3">
+      <div>
+        <a href="/" class="link-body-emphasis text-decoration-none">
+          <img class="logo-light" width="32" height="32" src="/images/logo_2022_256.png" />
+          <img class="logo-dark" width="32" height="32" src="/images/logo_white_256.png" />
+        </a>
+        <span class="ms-2">
+          © 2025 <a href="https://fastchen.com">FASTCHEN</a> All Rights Reserved. 由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> &amp; <a href="https://github.com/FastChen/hexo-theme-sujian" rel="noopener" target="_blank">SuJian</a> 强力驱动
+        </span>
+      </div>
+
+      <ul class="list-unstyled d-flex d-grid gap-3">
+          
+            
+            
+            
+            <li>
+                <a class="link-body-emphasis" target="_blank" rel="noopener" href="https://github.com/fastchen">
+                <i class="bi bi-github" style="font-size: 24px;"></i>
+              </a>
+            </li>
+          
+      </ul>
+    </div>
+  </div>
+</footer>
+
+
+
+<script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+
+<script src="/js/utils/tag-color.js"></script>
+
+
+<script>
+// 页面加载后设置标签颜色
+document.addEventListener('DOMContentLoaded', function() {
+    TagColor.applyRandomColorsToAll('.tag-item');
+});
+</script>
+  </body>
+  
+</html>

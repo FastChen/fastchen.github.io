@@ -1,0 +1,288 @@
+<!doctype html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>记录一下VMWare安装Windows11和跳过登录 | FASTCHEN</title>
+
+
+
+  
+<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+
+  
+<link rel="stylesheet" href="/bootstrap/css/bootstrap-icons.min.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  <meta name="description" content="一介凡人快辰的个人发牢骚之地。灵工艺的创始人。">
+  <meta name="keywords" content="快辰,FastChen,灵工艺,NullCraft,创始人">
+
+  <!-- Apple设备图标 -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/logo_2022_256.png">
+  <!-- Android设备图标 -->
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/logo_2022_256.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/images/logo_2022_256.png">
+
+  <!-- Open Graph协议(社交媒体分享) -->
+  <meta name="description" content="关于使用 VMware 安装并体验 Windows11 和绕过 OOBE 微软登录，顺便记录一下安装流程，留给以后的自己看。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="记录一下VMWare安装Windows11和跳过登录">
+<meta property="og:url" content="https://fastchen.com/write/vmware-install-windows11/index.html">
+<meta property="og:site_name" content="FASTCHEN">
+<meta property="og:description" content="关于使用 VMware 安装并体验 Windows11 和绕过 OOBE 微软登录，顺便记录一下安装流程，留给以后的自己看。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://fastchen.com/images/blog/20230113/vmware16_1.png">
+<meta property="og:image" content="https://fastchen.com/images/blog/20230113/vmware16_2.png">
+<meta property="og:image" content="https://fastchen.com/images/blog/20230113/vmware16_3.png">
+<meta property="og:image" content="https://fastchen.com/images/blog/20230113/vmware16_4.png">
+<meta property="og:image" content="https://fastchen.com/images/blog/20230113/vmware16_5.png">
+<meta property="og:image" content="https://fastchen.com/images/blog/20230113/vmware16_6.png">
+<meta property="og:image" content="https://fastchen.com/images/blog/20230113/vmware16_7.png">
+<meta property="og:image" content="https://fastchen.com/images/blog/20230113/vmware16_8.png">
+<meta property="og:image" content="https://fastchen.com/images/blog/20230113/vmware16_9.png">
+<meta property="og:image" content="https://fastchen.com/images/blog/20230113/vmware16_10.png">
+<meta property="og:image" content="https://fastchen.com/images/blog/20230113/vmware16_11.png">
+<meta property="og:image" content="https://fastchen.com/images/blog/20230113/vmware16_12.png">
+<meta property="og:image" content="https://fastchen.com/images/blog/20230113/vmware16_13.png">
+<meta property="og:image" content="https://fastchen.com/images/blog/20230113/vmware16_14.png">
+<meta property="og:image" content="https://fastchen.com/images/blog/20230113/vmware16_17.png">
+<meta property="og:image" content="https://fastchen.com/images/blog/20230113/vmware16_15.png">
+<meta property="og:image" content="https://fastchen.com/images/blog/20230113/vmware16_16.png">
+<meta property="og:image" content="https://fastchen.com/images/blog/20230113/vmware16_18.png">
+<meta property="og:image" content="https://fastchen.com/images/blog/20230113/windows11_1.png">
+<meta property="og:image" content="https://fastchen.com/images/blog/20230113/windows11_2.png">
+<meta property="og:image" content="https://fastchen.com/images/blog/20230113/windows11_3.png">
+<meta property="og:image" content="https://fastchen.com/images/blog/20230113/windows11_4.png">
+<meta property="article:published_time" content="2023-01-12T17:05:00.000Z">
+<meta property="article:modified_time" content="2023-03-20T16:41:34.821Z">
+<meta property="article:author" content="FastChen">
+<meta property="article:tag" content="快辰,FastChen,灵工艺,NullCraft,创始人">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://fastchen.com/images/blog/20230113/vmware16_1.png">
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+<!-- 内联脚本立即设置主题，防止闪烁 -->
+<script>
+  // 立即从localStorage获取主题设置或使用系统偏好
+  const savedTheme = localStorage.getItem('theme') || 'auto';
+  let theme = 'light';
+  
+  if (savedTheme === 'dark') {
+      theme = 'dark';
+  } else if (savedTheme === 'auto') {
+      // 检测系统偏好
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          theme = 'dark';
+      }
+  }
+  
+  // 立即设置主题
+  document.documentElement.setAttribute('data-bs-theme', theme);
+</script>
+
+  <body class="theme-transition bg-body-tertiary">
+    <header class="bg-body p-3 mb-3 border-bottom">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+      <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none">
+        <img class="logo-light" width="32" height="32" src="/images/logo_2022_256.png" />
+        <img class="logo-dark" width="32" height="32" src="/images/logo_white_256.png" />
+      </a>
+      <ul class="nav nav-underline col-12 col-lg-auto me-lg-auto ms-3 mb-2 justify-content-center mb-md-0">
+        
+        <li><a href="/" class="nav-link px-2 link-body-emphasis">主页</a></li>
+        
+        <li><a href="/archives" class="nav-link px-2 link-body-emphasis">归档</a></li>
+        
+        <li><a href="/categories" class="nav-link px-2 link-body-emphasis">分类</a></li>
+        
+        <li><a href="/tags" class="nav-link px-2 link-body-emphasis">标签</a></li>
+        
+        <li><a href="/about" class="nav-link px-2 link-body-emphasis">关于我</a></li>
+        
+      </ul>
+
+      <div class="dropdown">
+    <button class="btn btn-link nav-link dropdown-toggle" type="button" id="themeDropdown" data-bs-toggle="dropdown" aria-expanded="false"></button>
+    <ul class="dropdown-menu p-2 rounded-3 mx-0 border-0 shadow" aria-labelledby="themeDropdown">
+        <li>
+        <a class="dropdown-item rounded-2 theme-option" href="#" data-theme="light"><i class="me-2 opacity-50 bi bi-sun-fill"></i> 浅色</a>
+        </li>
+        <li>
+        <a class="dropdown-item rounded-2 theme-option" href="#" data-theme="dark"><i class="me-2 opacity-50 bi bi-moon-stars-fill"></i> 深色</a>
+        </li>
+        <li><hr class="dropdown-divider"></li>
+        <li>
+        <a class="dropdown-item rounded-2 theme-option active" href="#" data-theme="auto"><i class="me-2 opacity-50 bi bi-circle-half"></i> 系统</a>
+        </li>
+    </ul>
+</div>
+
+
+<script src="/js/utils/theme.js"></script>
+
+
+    </div>
+  </div>
+</header>
+    
+    <div class="container my-5">
+      <div class="post">
+    <h1 class="post-title fw-semibold">
+    
+        <div class="text-center">
+            记录一下VMWare安装Windows11和跳过登录
+        </div>
+    
+</h1>
+
+    
+        <div class="text-center">
+            
+<div class="mb-4 text-muted author-info">
+    
+        <span title="2023-01-12T17:05:00.000Z"><i class="bi bi-calendar2 me-2" title="发布于 2023-01-13"></i>发布于 2023-01-13</span>
+    
+    
+        <span class="ms-3" title="2023-03-20T16:41:34.821Z"><i class="bi bi-calendar2-plus me-2" title="更新于 2023-03-21"></i>更新于 2023-03-21</span>
+    
+    
+    
+        
+            <span class="ms-3">
+                <i class="bi bi-folder me-2"></i><a class="category-link" href="/categories/write/">随便写写</a>
+            </span>
+        
+    
+</div>
+        </div>
+    
+
+    
+        <p>关于使用 VMware 安装并体验 Windows11 和绕过 OOBE 微软登录，顺便记录一下安装流程，留给以后的自己看。</p>
+<span id="more"></span>
+
+<h1 id="0x01-下需要的东西"><a href="#0x01-下需要的东西" class="headerlink" title="0x01 下需要的东西"></a>0x01 下需要的东西</h1><h2 id="VMware-Workstation-Pro"><a href="#VMware-Workstation-Pro" class="headerlink" title="VMware Workstation Pro"></a>VMware Workstation Pro</h2><p>都已经出到17版了，目前我还在用16（）</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.vmware.com/cn/products/workstation-pro/workstation-pro-evaluation.html" title="官方地址">官方地址</a></li>
+</ul>
+<h2 id="Windows11-ISO镜像"><a href="#Windows11-ISO镜像" class="headerlink" title="Windows11 ISO镜像"></a>Windows11 ISO镜像</h2><p>你可以到微软官网下载ISO镜像或前往我告诉你使用BT下载镜像。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.microsoft.com/zh-cn/software-download/windows11" title="微软官方">微软官方</a></li>
+<li><a target="_blank" rel="noopener" href="https://msdn.itellyou.cn/" title="我告诉你">我告诉你</a></li>
+</ul>
+<p>对于软件和系统的那啥，自行百度搜索哈，不提供教学。</p>
+<h1 id="0x02-开始安装Win11"><a href="#0x02-开始安装Win11" class="headerlink" title="0x02 开始安装Win11"></a>0x02 开始安装Win11</h1><p>打开VMware，选择主界面的 <strong>创建新虚拟机</strong></p>
+<p><img src="/images/blog/20230113/vmware16_1.png" alt="vmware16_1"></p>
+<p>在创建界面选择 <strong>典型</strong> 下一步</p>
+<p><img src="/images/blog/20230113/vmware16_2.png" alt="vmware16_2"></p>
+<p>浏览选择你的ISO镜像，下一步</p>
+<p><img src="/images/blog/20230113/vmware16_3.png" alt="vmware16_3"></p>
+<p>选择 Microsoft Windows 版本 Windows 10 x64 (如果你的有Windows 11 x64就选它)</p>
+<p><img src="/images/blog/20230113/vmware16_4.png" alt="vmware16_4"></p>
+<p>自定义一下名字</p>
+<p><img src="/images/blog/20230113/vmware16_5.png" alt="vmware16_5"></p>
+<p>改一下硬盘大小</p>
+<p><img src="/images/blog/20230113/vmware16_6.png" alt="vmware16_6"></p>
+<h1 id="0x03-安装前配置"><a href="#0x03-安装前配置" class="headerlink" title="0x03 安装前配置"></a>0x03 安装前配置</h1><p>然后一路一下一步，完成创建，然后点击 <strong>编辑虚拟机设置</strong></p>
+<p><img src="/images/blog/20230113/vmware16_7.png" alt="vmware16_7"></p>
+<p>虚拟机设置里选择 <strong>选项</strong> 页面，切换到 <strong>访问控制</strong> 点击 <strong>加密</strong> 按钮</p>
+<p><img src="/images/blog/20230113/vmware16_8.png" alt="vmware16_8"></p>
+<p>输入一个密码</p>
+<p><img src="/images/blog/20230113/vmware16_9.png" alt="vmware16_9"></p>
+<p>然后选择 <strong>高级</strong> 固件类型 选择 <strong>UEFI</strong> 勾选 <strong>启用安全引导</strong></p>
+<p><img src="/images/blog/20230113/vmware16_10.png" alt="vmware16_10"></p>
+<p>在切换到 <strong>硬件</strong> 页面，点击下面的 <strong>添加</strong> 按钮</p>
+<p><img src="/images/blog/20230113/vmware16_11.png" alt="vmware16_11"></p>
+<p>添加 <strong>可信平台模块</strong> 然后点击 <strong>完成</strong> 按钮</p>
+<p><img src="/images/blog/20230113/vmware16_12.png" alt="vmware16_12"></p>
+<p>然后自己再改改内存大小，和CPU什么的。然后 <strong>开启此虚拟机</strong></p>
+<p><img src="/images/blog/20230113/vmware16_13.png" alt="vmware16_13"></p>
+<p>然后启动后会出现这个界面，没事，点进去然后一路按 <strong>ESC键</strong>，就可以正常引导了。</p>
+<p><img src="/images/blog/20230113/vmware16_14.png" alt="vmware16_14"></p>
+<p>如果出现一个 <strong>蓝色界面</strong>，选择 <strong>第二个</strong> 也能进入引导。</p>
+<p><img src="/images/blog/20230113/vmware16_17.png" alt="vmware16_17"></p>
+<h1 id="0x04-开始安装"><a href="#0x04-开始安装" class="headerlink" title="0x04 开始安装"></a>0x04 开始安装</h1><p>正常进入安装</p>
+<p><img src="/images/blog/20230113/vmware16_15.png" alt="vmware16_15"></p>
+<p>然后自己根据安装程序来选择就行了，接下来就 <strong>坐和放宽</strong> 就行了。</p>
+<p><img src="/images/blog/20230113/vmware16_16.png" alt="vmware16_16"></p>
+<h1 id="额外内容"><a href="#额外内容" class="headerlink" title="额外内容"></a>额外内容</h1><h2 id="跳过微软登录"><a href="#跳过微软登录" class="headerlink" title="跳过微软登录"></a>跳过微软登录</h2><p>从虚拟机设置里给虚拟机断网</p>
+<p><img src="/images/blog/20230113/vmware16_18.png" alt="vmware16_18"></p>
+<p>在提示让你登录的OOBE时按下组合键 <code>Shift+10</code> 然后会打开命令行，输入 <code>oobe\bypassnro</code> 回车</p>
+<p><img src="/images/blog/20230113/windows11_1.png" alt="windows11_1"></p>
+<p>然后就等待再次进入oobe，正常走流程，直到让你登录页面变成让你联网，然后选择我没有网络连接就能创建本地账户了</p>
+<p><img src="/images/blog/20230113/windows11_2.png" alt="windows11_2"></p>
+<p><img src="/images/blog/20230113/windows11_3.png" alt="windows11_3"></p>
+<p>完成安装</p>
+<p><img src="/images/blog/20230113/windows11_4.png" alt="windows11_4"></p>
+
+      
+    
+    
+
+    
+
+</div>
+    </div>
+
+    
+<!-- 返回顶部 -->
+<a href="#" id="back-to-top" class="btn btn-secondary back-to-top" title="返回顶部"><i class="bi bi-arrow-up" style="width: auto;"></i></a>
+
+<script src="/js/utils/back-to-top.js"></script>
+
+
+    <footer class="border-top bg-body">
+  <div class="container">
+    
+    <div class="d-flex flex-column flex-sm-row justify-content-between py-3 mt-3">
+      <div>
+        <a href="/" class="link-body-emphasis text-decoration-none">
+          <img class="logo-light" width="32" height="32" src="/images/logo_2022_256.png" />
+          <img class="logo-dark" width="32" height="32" src="/images/logo_white_256.png" />
+        </a>
+        <span class="ms-2">
+          © 2025 <a href="https://fastchen.com">FASTCHEN</a> All Rights Reserved. 由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> &amp; <a href="https://github.com/FastChen/hexo-theme-sujian" rel="noopener" target="_blank">SuJian</a> 强力驱动
+        </span>
+      </div>
+
+      <ul class="list-unstyled d-flex d-grid gap-3">
+          
+            
+            
+            
+            <li>
+                <a class="link-body-emphasis" target="_blank" rel="noopener" href="https://github.com/fastchen">
+                <i class="bi bi-github" style="font-size: 24px;"></i>
+              </a>
+            </li>
+          
+      </ul>
+    </div>
+  </div>
+</footer>
+
+
+
+<script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+
+<script src="/js/utils/tag-color.js"></script>
+
+
+<script>
+// 页面加载后设置标签颜色
+document.addEventListener('DOMContentLoaded', function() {
+    TagColor.applyRandomColorsToAll('.tag-item');
+});
+</script>
+  </body>
+  
+</html>

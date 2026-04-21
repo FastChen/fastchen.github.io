@@ -1,0 +1,263 @@
+<!doctype html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>自记 Linux 的一些常用设置与命令 | FASTCHEN</title>
+
+
+
+  
+<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+
+  
+<link rel="stylesheet" href="/bootstrap/css/bootstrap-icons.min.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  <meta name="description" content="一介凡人快辰的个人发牢骚之地。灵工艺的创始人。">
+  <meta name="keywords" content="快辰,FastChen,灵工艺,NullCraft,创始人">
+
+  <!-- Apple设备图标 -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/logo_2022_256.png">
+  <!-- Android设备图标 -->
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/logo_2022_256.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/images/logo_2022_256.png">
+
+  <!-- Open Graph协议(社交媒体分享) -->
+  <meta name="description" content="可能是年纪大了，很多东西都记不住了。  这篇文章推荐的音乐是《Louder - CVBZ》">
+<meta property="og:type" content="article">
+<meta property="og:title" content="自记 Linux 的一些常用设置与命令">
+<meta property="og:url" content="https://fastchen.com/linux/linux-command/index.html">
+<meta property="og:site_name" content="FASTCHEN">
+<meta property="og:description" content="可能是年纪大了，很多东西都记不住了。  这篇文章推荐的音乐是《Louder - CVBZ》">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-06-03T01:45:59.000Z">
+<meta property="article:modified_time" content="2024-12-01T04:38:02.248Z">
+<meta property="article:author" content="FastChen">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="运维">
+<meta name="twitter:card" content="summary">
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+<!-- 内联脚本立即设置主题，防止闪烁 -->
+<script>
+  // 立即从localStorage获取主题设置或使用系统偏好
+  const savedTheme = localStorage.getItem('theme') || 'auto';
+  let theme = 'light';
+  
+  if (savedTheme === 'dark') {
+      theme = 'dark';
+  } else if (savedTheme === 'auto') {
+      // 检测系统偏好
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          theme = 'dark';
+      }
+  }
+  
+  // 立即设置主题
+  document.documentElement.setAttribute('data-bs-theme', theme);
+</script>
+
+  <body class="theme-transition bg-body-tertiary">
+    <header class="bg-body p-3 mb-3 border-bottom">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+      <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none">
+        <img class="logo-light" width="32" height="32" src="/images/logo_2022_256.png" />
+        <img class="logo-dark" width="32" height="32" src="/images/logo_white_256.png" />
+      </a>
+      <ul class="nav nav-underline col-12 col-lg-auto me-lg-auto ms-3 mb-2 justify-content-center mb-md-0">
+        
+        <li><a href="/" class="nav-link px-2 link-body-emphasis">主页</a></li>
+        
+        <li><a href="/archives" class="nav-link px-2 link-body-emphasis">归档</a></li>
+        
+        <li><a href="/categories" class="nav-link px-2 link-body-emphasis">分类</a></li>
+        
+        <li><a href="/tags" class="nav-link px-2 link-body-emphasis">标签</a></li>
+        
+        <li><a href="/about" class="nav-link px-2 link-body-emphasis">关于我</a></li>
+        
+      </ul>
+
+      <div class="dropdown">
+    <button class="btn btn-link nav-link dropdown-toggle" type="button" id="themeDropdown" data-bs-toggle="dropdown" aria-expanded="false"></button>
+    <ul class="dropdown-menu p-2 rounded-3 mx-0 border-0 shadow" aria-labelledby="themeDropdown">
+        <li>
+        <a class="dropdown-item rounded-2 theme-option" href="#" data-theme="light"><i class="me-2 opacity-50 bi bi-sun-fill"></i> 浅色</a>
+        </li>
+        <li>
+        <a class="dropdown-item rounded-2 theme-option" href="#" data-theme="dark"><i class="me-2 opacity-50 bi bi-moon-stars-fill"></i> 深色</a>
+        </li>
+        <li><hr class="dropdown-divider"></li>
+        <li>
+        <a class="dropdown-item rounded-2 theme-option active" href="#" data-theme="auto"><i class="me-2 opacity-50 bi bi-circle-half"></i> 系统</a>
+        </li>
+    </ul>
+</div>
+
+
+<script src="/js/utils/theme.js"></script>
+
+
+    </div>
+  </div>
+</header>
+    
+    <div class="container my-5">
+      <div class="post">
+    <h1 class="post-title fw-semibold">
+    
+        <div class="text-center">
+            自记 Linux 的一些常用设置与命令
+        </div>
+    
+</h1>
+
+    
+        <div class="text-center">
+            
+<div class="mb-4 text-muted author-info">
+    
+        <span title="2022-06-03T01:45:59.000Z"><i class="bi bi-calendar2 me-2" title="发布于 2022-06-03"></i>发布于 2022-06-03</span>
+    
+    
+        <span class="ms-3" title="2024-12-01T04:38:02.248Z"><i class="bi bi-calendar2-plus me-2" title="更新于 2024-12-01"></i>更新于 2024-12-01</span>
+    
+    
+    
+        
+            <span class="ms-3">
+                <i class="bi bi-folder me-2"></i><a class="category-link" href="/categories/linux/">Linux</a>、<a class="category-link" href="/categories/write/">随便写写</a>
+            </span>
+        
+    
+</div>
+        </div>
+    
+
+    
+        <p>可能是年纪大了，很多东西都记不住了。</p>
+<blockquote>
+<p>这篇文章推荐的音乐是《<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1i5411R7Kz">Louder - CVBZ</a>》</p>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="主机名"><a href="#主机名" class="headerlink" title="主机名"></a>主机名</h2><h3 id="查看当前主机名"><a href="#查看当前主机名" class="headerlink" title="查看当前主机名"></a>查看当前主机名</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hostname</span><br><span class="line"><span class="comment"># 或</span></span><br><span class="line">hostnamectl</span><br></pre></td></tr></table></figure>
+
+<h3 id="设置主机名"><a href="#设置主机名" class="headerlink" title="设置主机名"></a>设置主机名</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hostnamectl set-hostname 新名字</span><br></pre></td></tr></table></figure>
+
+<h3 id="临时修改主机名"><a href="#临时修改主机名" class="headerlink" title="临时修改主机名"></a>临时修改主机名</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hostname 新名字</span><br></pre></td></tr></table></figure>
+
+<h2 id="Swap分区"><a href="#Swap分区" class="headerlink" title="Swap分区"></a>Swap分区</h2><h3 id="1-查看当前状态"><a href="#1-查看当前状态" class="headerlink" title="1.查看当前状态"></a>1.查看当前状态</h3><p>使用 <code>free -h</code> 查看当前情况</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">root@debian:~# free -h</span><br><span class="line">               total        used        free      shared  buff/cache   available</span><br><span class="line">Mem:           3.8Gi       653Mi       2.9Gi       1.0Mi       320Mi       2.9Gi</span><br><span class="line">Swap:          974Mi          0B       974Mi</span><br></pre></td></tr></table></figure>
+
+<p>如果存在Swap先查看位置</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span> /proc/swaps</span><br></pre></td></tr></table></figure>
+
+<p>Swap有时不一定叫<code>swap</code>，或许叫 <code>/dev/sdb5</code></p>
+<h3 id="2-关闭并删除之前的Swap分区"><a href="#2-关闭并删除之前的Swap分区" class="headerlink" title="2.关闭并删除之前的Swap分区"></a>2.关闭并删除之前的Swap分区</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> swapoff 分区名字</span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">rm</span> 分区名字</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-创建新的Swap分区"><a href="#3-创建新的Swap分区" class="headerlink" title="3.创建新的Swap分区"></a>3.创建新的Swap分区</h3><p>创建一个4096大小的分区</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> <span class="built_in">dd</span> <span class="keyword">if</span>=/dev/zero of=/swapfile bs=1M count=4096</span><br></pre></td></tr></table></figure>
+
+<p>挂载(启用)Swap分区</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> mkswap /swapfile</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-设置开机自动挂载"><a href="#4-设置开机自动挂载" class="headerlink" title="4.设置开机自动挂载"></a>4.设置开机自动挂载</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> vim /etc/fstab</span><br></pre></td></tr></table></figure>
+
+<p>添加</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/swapfile swap swap defaults 0 0</span><br></pre></td></tr></table></figure>
+
+<h3 id="额外内容"><a href="#额外内容" class="headerlink" title="额外内容"></a>额外内容</h3><h4 id="设置Swappiness-通常不需要设置"><a href="#设置Swappiness-通常不需要设置" class="headerlink" title="设置Swappiness (通常不需要设置)"></a>设置Swappiness (通常不需要设置)</h4><p>swappiness的作用是用于设置将页面从物理内存交换到交换空间以及从页面缓存中删除页面之间的平衡。</p>
+<h4 id="查看当前值"><a href="#查看当前值" class="headerlink" title="查看当前值"></a>查看当前值</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span> /proc/sys/vm/swappiness</span><br></pre></td></tr></table></figure>
+
+<h4 id="修改swappiness"><a href="#修改swappiness" class="headerlink" title="修改swappiness"></a>修改swappiness</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 直接设置</span></span><br><span class="line">sysctl vm.swappiness=0-100</span><br><span class="line"><span class="comment"># 返回</span></span><br><span class="line">vm.swappiness=设置的值</span><br></pre></td></tr></table></figure>
+
+<p>或者手动修改</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># vim修改配置</span></span><br><span class="line">vim /etc/sysctl.conf</span><br><span class="line"><span class="comment"># 设置属性值</span></span><br><span class="line">vm.swappiness=0-100</span><br></pre></td></tr></table></figure>
+
+<p>激活设置</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sysctl -p</span><br></pre></td></tr></table></figure>
+
+<h2 id="允许远程SSH登录Root账户"><a href="#允许远程SSH登录Root账户" class="headerlink" title="允许远程SSH登录Root账户"></a>允许远程SSH登录Root账户</h2><h3 id="1-进入SSH配置"><a href="#1-进入SSH配置" class="headerlink" title="1.进入SSH配置"></a>1.进入SSH配置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/ssh/sshd_config</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-添加-修改-配置项"><a href="#2-添加-修改-配置项" class="headerlink" title="2.添加(修改)配置项"></a>2.添加(修改)配置项</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PermitRootLogin <span class="built_in">yes</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-重启SSH服务"><a href="#3-重启SSH服务" class="headerlink" title="3.重启SSH服务"></a>3.重启SSH服务</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/ssh restart</span><br></pre></td></tr></table></figure>
+      
+    
+    
+
+    
+        
+            <a href="/tags/Linux/"><span class="tag-item" data-tag="Linux">#Linux</span></a>
+        
+            <a href="/tags/%E8%BF%90%E7%BB%B4/"><span class="tag-item" data-tag="运维">#运维</span></a>
+        
+    
+
+</div>
+    </div>
+
+    
+<!-- 返回顶部 -->
+<a href="#" id="back-to-top" class="btn btn-secondary back-to-top" title="返回顶部"><i class="bi bi-arrow-up" style="width: auto;"></i></a>
+
+<script src="/js/utils/back-to-top.js"></script>
+
+
+    <footer class="border-top bg-body">
+  <div class="container">
+    
+    <div class="d-flex flex-column flex-sm-row justify-content-between py-3 mt-3">
+      <div>
+        <a href="/" class="link-body-emphasis text-decoration-none">
+          <img class="logo-light" width="32" height="32" src="/images/logo_2022_256.png" />
+          <img class="logo-dark" width="32" height="32" src="/images/logo_white_256.png" />
+        </a>
+        <span class="ms-2">
+          © 2025 <a href="https://fastchen.com">FASTCHEN</a> All Rights Reserved. 由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> &amp; <a href="https://github.com/FastChen/hexo-theme-sujian" rel="noopener" target="_blank">SuJian</a> 强力驱动
+        </span>
+      </div>
+
+      <ul class="list-unstyled d-flex d-grid gap-3">
+          
+            
+            
+            
+            <li>
+                <a class="link-body-emphasis" target="_blank" rel="noopener" href="https://github.com/fastchen">
+                <i class="bi bi-github" style="font-size: 24px;"></i>
+              </a>
+            </li>
+          
+      </ul>
+    </div>
+  </div>
+</footer>
+
+
+
+<script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+
+<script src="/js/utils/tag-color.js"></script>
+
+
+<script>
+// 页面加载后设置标签颜色
+document.addEventListener('DOMContentLoaded', function() {
+    TagColor.applyRandomColorsToAll('.tag-item');
+});
+</script>
+  </body>
+  
+</html>

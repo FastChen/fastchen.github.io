@@ -1,0 +1,288 @@
+<!doctype html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>解锁鸣潮 120FPS 以及个人开发一键工具使用教学 | FASTCHEN</title>
+
+
+
+  
+<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+
+  
+<link rel="stylesheet" href="/bootstrap/css/bootstrap-icons.min.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  <meta name="description" content="一介凡人快辰的个人发牢骚之地。灵工艺的创始人。">
+  <meta name="keywords" content="快辰,FastChen,灵工艺,NullCraft,创始人">
+
+  <!-- Apple设备图标 -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/logo_2022_256.png">
+  <!-- Android设备图标 -->
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/logo_2022_256.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/images/logo_2022_256.png">
+
+  <!-- Open Graph协议(社交媒体分享) -->
+  <meta name="description" content="这篇博文将教学两种方式解锁鸣潮 120FPS 的方法。 分别是：  使用《鸣潮自定义帧率解锁工具》一键修改帧率 使用 SQLite 工具 《SQLiteStudio》手动编辑数据库文件  了解到鸣潮使用 SQLite 本地 DB 存储游戏配置等数据，那么对比比原神、星铁的使用注册表存储来说修改起来相较麻烦一点点(反正就是要多下个软件而已)。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="解锁鸣潮 120FPS 以及个人开发一键工具使用教学">
+<meta property="og:url" content="https://fastchen.com/project/unlook-wuthering-waves-120fps/index.html">
+<meta property="og:site_name" content="FASTCHEN">
+<meta property="og:description" content="这篇博文将教学两种方式解锁鸣潮 120FPS 的方法。 分别是：  使用《鸣潮自定义帧率解锁工具》一键修改帧率 使用 SQLite 工具 《SQLiteStudio》手动编辑数据库文件  了解到鸣潮使用 SQLite 本地 DB 存储游戏配置等数据，那么对比比原神、星铁的使用注册表存储来说修改起来相较麻烦一点点(反正就是要多下个软件而已)。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://fastchen.com/images/blog/unlook-wuthering-waves-120fps/select_db_path.png">
+<meta property="og:image" content="https://fastchen.com/images/blog/unlook-wuthering-waves-120fps/read_fps.png">
+<meta property="og:image" content="https://fastchen.com/images/blog/unlook-wuthering-waves-120fps/sqlitestudio_select_db_path.png">
+<meta property="og:image" content="https://fastchen.com/images/blog/unlook-wuthering-waves-120fps/sqlitestudio_update_db.png">
+<meta property="og:image" content="https://fastchen.com/images/blog/unlook-wuthering-waves-120fps/sqlitestudio_save_db.png">
+<meta property="og:image" content="https://fastchen.com/images/blog/unlook-wuthering-waves-120fps/sqlitestudio_sql_save_db.png">
+<meta property="article:published_time" content="2024-05-29T04:05:00.000Z">
+<meta property="article:modified_time" content="2024-05-29T04:46:43.006Z">
+<meta property="article:author" content="FastChen">
+<meta property="article:tag" content="工具">
+<meta property="article:tag" content="游戏">
+<meta property="article:tag" content="软件开发">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://fastchen.com/images/blog/unlook-wuthering-waves-120fps/select_db_path.png">
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+<!-- 内联脚本立即设置主题，防止闪烁 -->
+<script>
+  // 立即从localStorage获取主题设置或使用系统偏好
+  const savedTheme = localStorage.getItem('theme') || 'auto';
+  let theme = 'light';
+  
+  if (savedTheme === 'dark') {
+      theme = 'dark';
+  } else if (savedTheme === 'auto') {
+      // 检测系统偏好
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          theme = 'dark';
+      }
+  }
+  
+  // 立即设置主题
+  document.documentElement.setAttribute('data-bs-theme', theme);
+</script>
+
+  <body class="theme-transition bg-body-tertiary">
+    <header class="bg-body p-3 mb-3 border-bottom">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+      <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none">
+        <img class="logo-light" width="32" height="32" src="/images/logo_2022_256.png" />
+        <img class="logo-dark" width="32" height="32" src="/images/logo_white_256.png" />
+      </a>
+      <ul class="nav nav-underline col-12 col-lg-auto me-lg-auto ms-3 mb-2 justify-content-center mb-md-0">
+        
+        <li><a href="/" class="nav-link px-2 link-body-emphasis">主页</a></li>
+        
+        <li><a href="/archives" class="nav-link px-2 link-body-emphasis">归档</a></li>
+        
+        <li><a href="/categories" class="nav-link px-2 link-body-emphasis">分类</a></li>
+        
+        <li><a href="/tags" class="nav-link px-2 link-body-emphasis">标签</a></li>
+        
+        <li><a href="/about" class="nav-link px-2 link-body-emphasis">关于我</a></li>
+        
+      </ul>
+
+      <div class="dropdown">
+    <button class="btn btn-link nav-link dropdown-toggle" type="button" id="themeDropdown" data-bs-toggle="dropdown" aria-expanded="false"></button>
+    <ul class="dropdown-menu p-2 rounded-3 mx-0 border-0 shadow" aria-labelledby="themeDropdown">
+        <li>
+        <a class="dropdown-item rounded-2 theme-option" href="#" data-theme="light"><i class="me-2 opacity-50 bi bi-sun-fill"></i> 浅色</a>
+        </li>
+        <li>
+        <a class="dropdown-item rounded-2 theme-option" href="#" data-theme="dark"><i class="me-2 opacity-50 bi bi-moon-stars-fill"></i> 深色</a>
+        </li>
+        <li><hr class="dropdown-divider"></li>
+        <li>
+        <a class="dropdown-item rounded-2 theme-option active" href="#" data-theme="auto"><i class="me-2 opacity-50 bi bi-circle-half"></i> 系统</a>
+        </li>
+    </ul>
+</div>
+
+
+<script src="/js/utils/theme.js"></script>
+
+
+    </div>
+  </div>
+</header>
+    
+    <div class="container my-5">
+      <div class="post">
+    <h1 class="post-title fw-semibold">
+    
+        <div class="text-center">
+            解锁鸣潮 120FPS 以及个人开发一键工具使用教学
+        </div>
+    
+</h1>
+
+    
+        <div class="text-center">
+            
+<div class="mb-4 text-muted author-info">
+    
+        <span title="2024-05-29T04:05:00.000Z"><i class="bi bi-calendar2 me-2" title="发布于 2024-05-29"></i>发布于 2024-05-29</span>
+    
+    
+        <span class="ms-3" title="2024-05-29T04:46:43.006Z"><i class="bi bi-calendar2-plus me-2" title="更新于 2024-05-29"></i>更新于 2024-05-29</span>
+    
+    
+    
+        
+            <span class="ms-3">
+                <i class="bi bi-folder me-2"></i><a class="category-link" href="/categories/development/">开发</a>、<a class="category-link" href="/categories/project/">我的项目</a>
+            </span>
+        
+    
+</div>
+        </div>
+    
+
+    
+        <p>这篇博文将教学两种方式解锁鸣潮 120FPS 的方法。</p>
+<p><strong>分别是：</strong></p>
+<ol>
+<li>使用《鸣潮自定义帧率解锁工具》一键修改帧率</li>
+<li>使用 SQLite 工具 《SQLiteStudio》手动编辑数据库文件</li>
+</ol>
+<p>了解到鸣潮使用 SQLite 本地 DB 存储游戏配置等数据，那么对比比原神、星铁的使用注册表存储来说修改起来相较麻烦一点点(反正就是要多下个软件而已)。</p>
+<span id="more"></span>
+
+<h2 id="方式一-使用《鸣潮自定义帧率解锁工具》一键修改帧率"><a href="#方式一-使用《鸣潮自定义帧率解锁工具》一键修改帧率" class="headerlink" title="方式一 使用《鸣潮自定义帧率解锁工具》一键修改帧率"></a>方式一 使用《鸣潮自定义帧率解锁工具》一键修改帧率</h2><p><strong>这里简单说一下这个工具的工作流程：</strong><br>软件通过调用 <code>Microsoft.Data.Sqlite</code> 库来对游戏《鸣潮》的本地存储db <code>LocalStorage.db</code> 进行连接访问，然后通过 <code>SQL</code> 语句对数据库键值 <code>GameQualitySetting</code> (存储游戏设置的)，进行读取&#x2F;写入，由于 <code>GameQualitySetting</code> 的值是以 JSON 格式存储的数据，所以还包含了对 <code>GameQualitySetting</code> 实体序列化并对 <code>KeyCustomFrameRate</code> 修改数值实现 FPS 解锁。</p>
+<p><strong>使用方法</strong></p>
+<p>注意：初次打开软件可能提示需要安装 .NET8 支持库才能运行软件。点击窗口中的 <code>Download</code> 按钮即可下载，安装即可。</p>
+<ol>
+<li>关闭《鸣潮》游戏本体以及启动器</li>
+<li>打开《鸣潮自定义帧率解锁工具》</li>
+<li>点击 <code>...</code> 按钮选择 <code>LocalStorage.db</code> 文件</li>
+</ol>
+<p><img src="/images/blog/unlook-wuthering-waves-120fps/select_db_path.png" alt="鸣潮自定义帧率解锁工具"></p>
+<p>通常文件路径在你安装游戏的位置例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">盘符:\游戏目录\Wuthering Waves Game\Client\Saved\LocalStorage\LocalStorage.db</span><br><span class="line"></span><br><span class="line">例如：</span><br><span class="line">D:\Wuthering Waves\Wuthering Waves Game\Client\Saved\LocalStorage\LocalStorage.db</span><br></pre></td></tr></table></figure>
+
+<p>通常选择日期最新的哪个文件就行，修改前记得备份！</p>
+<ol start="4">
+<li>选择好路径后点击 <code>读取帧率</code> 按钮，如果弹窗为当前游戏设置的帧率则可以开启修改功能</li>
+</ol>
+<p><img src="/images/blog/unlook-wuthering-waves-120fps/read_fps.png" alt="鸣潮自定义帧率解锁工具"></p>
+<ol start="5">
+<li>在上方的输入框内，输入 <code>120</code> 数值，然后点击 <code>应用修改</code> 按钮</li>
+<li>启动游戏！</li>
+</ol>
+<p><strong>目前测试发现，似乎最高只能达到 120FPS 修改更高后会触发游戏的修复机制，导致变回 60FPS 或干脆不生效。</strong></p>
+<h3 id="下载《鸣潮自定义帧率解锁工具》"><a href="#下载《鸣潮自定义帧率解锁工具》" class="headerlink" title="下载《鸣潮自定义帧率解锁工具》"></a>下载《鸣潮自定义帧率解锁工具》</h3><p>本工具是免费开源的，可以自行下载源码编译或直接下载成品使用。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/FastChen/Wuthering-Waves-Tool/releases">FastChen&#x2F;Wuthering-Waves-Tool</a> | Github</li>
+<li><a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1qepeqOv5KfdV9hRKbz2mZg?pwd=FCFC">百度网盘</a> | 提取码: FCFC</li>
+</ul>
+<hr>
+<h2 id="方法二-使用《SQLiteStudio》手动编辑数据库文件"><a href="#方法二-使用《SQLiteStudio》手动编辑数据库文件" class="headerlink" title="方法二 使用《SQLiteStudio》手动编辑数据库文件"></a>方法二 使用《SQLiteStudio》手动编辑数据库文件</h2><p>在《SQLiteStudio》官网下载 <a target="_blank" rel="noopener" href="https://sqlitestudio.pl/">https://sqlitestudio.pl/</a> 工具</p>
+<ol>
+<li>初次运行 <code>SQLiteStudio.exe</code> 会提示选择语言</li>
+<li>进入软件左上角点击 <code>数据库</code> 菜单中的 <code>添加数据库</code></li>
+<li>添加 <code>LocalStorage.db</code> 文件</li>
+</ol>
+<p>通常文件路径在你安装游戏的位置例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">盘符:\游戏目录\Wuthering Waves Game\Client\Saved\LocalStorage\LocalStorage.db</span><br><span class="line"></span><br><span class="line">例如：</span><br><span class="line">D:\Wuthering Waves\Wuthering Waves Game\Client\Saved\LocalStorage\LocalStorage.db</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/blog/unlook-wuthering-waves-120fps/sqlitestudio_select_db_path.png" alt="鸣潮自定义帧率解锁工具"></p>
+<ol start="4">
+<li>然后根据图片指示进入 LocalStorage 并修改数据</li>
+</ol>
+<p><img src="/images/blog/unlook-wuthering-waves-120fps/sqlitestudio_update_db.png" alt="鸣潮自定义帧率解锁工具"></p>
+<ol start="5">
+<li>修改完毕后，提交修改，即可完成修改</li>
+</ol>
+<p><img src="/images/blog/unlook-wuthering-waves-120fps/sqlitestudio_save_db.png" alt="鸣潮自定义帧率解锁工具"></p>
+<ol start="6">
+<li>启动游戏！</li>
+</ol>
+<p><strong>附赠：查询修改操作</strong><br>当然，如果你熟悉 SQL 操作，也可以直接通过语句查询修改。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> LocalStorage <span class="keyword">where</span> key<span class="operator">=</span>&quot;GameQualitySetting&quot;</span><br><span class="line"><span class="operator">/</span><span class="operator">/</span> 或</span><br><span class="line"><span class="keyword">SELECT</span> key,<span class="keyword">value</span> <span class="keyword">FROM</span> LocalStorage <span class="keyword">where</span> key<span class="operator">=</span>&quot;GameQualitySetting&quot;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/blog/unlook-wuthering-waves-120fps/sqlitestudio_sql_save_db.png" alt="鸣潮自定义帧率解锁工具"></p>
+
+      
+    
+    
+
+    
+        
+            <a href="/tags/%E5%B7%A5%E5%85%B7/"><span class="tag-item" data-tag="工具">#工具</span></a>
+        
+            <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/"><span class="tag-item" data-tag="软件开发">#软件开发</span></a>
+        
+            <a href="/tags/%E6%B8%B8%E6%88%8F/"><span class="tag-item" data-tag="游戏">#游戏</span></a>
+        
+    
+
+</div>
+    </div>
+
+    
+<!-- 返回顶部 -->
+<a href="#" id="back-to-top" class="btn btn-secondary back-to-top" title="返回顶部"><i class="bi bi-arrow-up" style="width: auto;"></i></a>
+
+<script src="/js/utils/back-to-top.js"></script>
+
+
+    <footer class="border-top bg-body">
+  <div class="container">
+    
+    <div class="d-flex flex-column flex-sm-row justify-content-between py-3 mt-3">
+      <div>
+        <a href="/" class="link-body-emphasis text-decoration-none">
+          <img class="logo-light" width="32" height="32" src="/images/logo_2022_256.png" />
+          <img class="logo-dark" width="32" height="32" src="/images/logo_white_256.png" />
+        </a>
+        <span class="ms-2">
+          © 2025 <a href="https://fastchen.com">FASTCHEN</a> All Rights Reserved. 由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> &amp; <a href="https://github.com/FastChen/hexo-theme-sujian" rel="noopener" target="_blank">SuJian</a> 强力驱动
+        </span>
+      </div>
+
+      <ul class="list-unstyled d-flex d-grid gap-3">
+          
+            
+            
+            
+            <li>
+                <a class="link-body-emphasis" target="_blank" rel="noopener" href="https://github.com/fastchen">
+                <i class="bi bi-github" style="font-size: 24px;"></i>
+              </a>
+            </li>
+          
+      </ul>
+    </div>
+  </div>
+</footer>
+
+
+
+<script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+
+<script src="/js/utils/tag-color.js"></script>
+
+
+<script>
+// 页面加载后设置标签颜色
+document.addEventListener('DOMContentLoaded', function() {
+    TagColor.applyRandomColorsToAll('.tag-item');
+});
+</script>
+  </body>
+  
+</html>
