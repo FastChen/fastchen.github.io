@@ -147,7 +147,7 @@
         <p><strong>起因：</strong></p>
 <p>因为最近在开发 <a target="_blank" rel="noopener" href="https://github.com/NullCraftOrg/game-server-panel">NGSP(Github: NullCraftOrg&#x2F;game-server-panel)</a> 这个项目，为了测试跨平台能力，翻箱倒柜找到了这块ARM开发板：泰山派RK3566，刚好Armbian也针对RK35XX出了可以用的系统，还包含了SDK，直接利用起来。</p>
 <p>为什么要写这篇文章呢？因为泰山派使用Armbian的系统主板上集成的Led小灯是不会跟随系统启动点亮的，这导致我无法通过外观判断系统是否启动了，所以翻找了文档，发现Led可以通过触发器来控制点亮，例如我这个小需求只需要通过设置对应颜色Led的触发器(trigger)为<code>default-on</code>即可跟随系统启动点亮了。</p>
-<blockquote>
+<blockquote class="blockquote">
 <p>所以我顺便简单记录一下控制开发板上的Led灯上的其它功能!</p>
 </blockquote>
 <span id="more"></span>
@@ -235,11 +235,26 @@
 
     
         
-            <a href="/tags/Linux/"><span class="tag-item" data-tag="Linux">#Linux</span></a>
+            <a href="/tags/Linux/" class="text-decoration-none">
+                <div class="btn btn-secondary rounded-pill shadow-sm">
+                    #Linux
+                    <span class="badge text-bg-light rounded-pill ms-1">5</span>
+                </div>
+            </a>
         
-            <a href="/tags/%E7%A1%AC%E4%BB%B6%E5%BC%80%E5%8F%91/"><span class="tag-item" data-tag="硬件开发">#硬件开发</span></a>
+            <a href="/tags/%E7%A1%AC%E4%BB%B6%E5%BC%80%E5%8F%91/" class="text-decoration-none">
+                <div class="btn btn-secondary rounded-pill shadow-sm">
+                    #硬件开发
+                    <span class="badge text-bg-light rounded-pill ms-1">2</span>
+                </div>
+            </a>
         
-            <a href="/tags/%E6%8A%98%E8%85%BE/"><span class="tag-item" data-tag="折腾">#折腾</span></a>
+            <a href="/tags/%E6%8A%98%E8%85%BE/" class="text-decoration-none">
+                <div class="btn btn-secondary rounded-pill shadow-sm">
+                    #折腾
+                    <span class="badge text-bg-light rounded-pill ms-1">2</span>
+                </div>
+            </a>
         
     
 
@@ -286,10 +301,6 @@
 
 
 <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-
-
-<script src="/js/utils/tag-color.js"></script>
 
 
 <script>

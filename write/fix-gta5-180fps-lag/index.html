@@ -150,7 +150,7 @@
 <p>之前的老工作站坏了，换了台新电脑，在游玩 GTA5 的时候发现每当帧数超过 180 后就会发生帧数骤降，出现卡顿 0.5-1 秒左右的现象，由于卡顿结束后帧数还会再次上到 180 导致出现连续卡顿效果。</p>
 <span id="more"></span>
 
-<h1 id="先说解决方案"><a href="#先说解决方案" class="headerlink" title="先说解决方案"></a>先说解决方案</h1><blockquote>
+<h1 id="先说解决方案"><a href="#先说解决方案" class="headerlink" title="先说解决方案"></a>先说解决方案</h1><blockquote class="blockquote">
 <p>这个方法理论上适用于配置足够，且为游戏超过 180FPS 导致掉帧卡顿的朋友。</p>
 </blockquote>
 <p>因为我使用的是 N卡 所以这里以 NVIDIA 控制面板为例：</p>
@@ -163,7 +163,7 @@
 <li>将 <code>最大帧速率</code> 点开 选择 <code>开</code> 然后将数值改成低于 180 的数值 例如 144、165 等</li>
 <li>改完点击 确定 按钮，然后确认 <code>最大帧速率</code> 显示的为你修改的帧数数值。</li>
 </ol>
-<blockquote>
+<blockquote class="blockquote">
 <p>我不清楚其它显卡是否存在此问题，如果存在寻找你对应的显卡驱动将游戏的最大帧数限制在低于 180 以下即可。</p>
 </blockquote>
 <h1 id="解决思路"><a href="#解决思路" class="headerlink" title="解决思路"></a>解决思路</h1><h2 id="定位问题根源"><a href="#定位问题根源" class="headerlink" title="定位问题根源"></a>定位问题根源</h2><p>通过搜索引擎搜索 <code>GTA5 间歇性 掉帧 卡顿</code> 等关键词后，获得大致两类结果</p>
@@ -189,11 +189,26 @@
 
     
         
-            <a href="/tags/%E6%B8%B8%E6%88%8F/"><span class="tag-item" data-tag="游戏">#游戏</span></a>
+            <a href="/tags/%E6%B8%B8%E6%88%8F/" class="text-decoration-none">
+                <div class="btn btn-secondary rounded-pill shadow-sm">
+                    #游戏
+                    <span class="badge text-bg-light rounded-pill ms-1">3</span>
+                </div>
+            </a>
         
-            <a href="/tags/%E5%8D%A1%E9%A1%BF/"><span class="tag-item" data-tag="卡顿">#卡顿</span></a>
+            <a href="/tags/%E5%8D%A1%E9%A1%BF/" class="text-decoration-none">
+                <div class="btn btn-secondary rounded-pill shadow-sm">
+                    #卡顿
+                    <span class="badge text-bg-light rounded-pill ms-1">1</span>
+                </div>
+            </a>
         
-            <a href="/tags/%E6%8E%89%E5%B8%A7/"><span class="tag-item" data-tag="掉帧">#掉帧</span></a>
+            <a href="/tags/%E6%8E%89%E5%B8%A7/" class="text-decoration-none">
+                <div class="btn btn-secondary rounded-pill shadow-sm">
+                    #掉帧
+                    <span class="badge text-bg-light rounded-pill ms-1">1</span>
+                </div>
+            </a>
         
     
 
@@ -240,10 +255,6 @@
 
 
 <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-
-
-<script src="/js/utils/tag-color.js"></script>
 
 
 <script>

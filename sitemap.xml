@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://fastchen.com/tags/index.html</loc>
+    
+    <lastmod>2026-04-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://fastchen.com/categories/index.html</loc>
+    
+    <lastmod>2026-04-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://fastchen.com/hardware/tspi-leds/</loc>
     
     <lastmod>2026-04-21</lastmod>
@@ -244,24 +262,6 @@
     <priority>0.6</priority>
   </url>
   
-  <url>
-    <loc>https://fastchen.com/tags/index.html</loc>
-    
-    <lastmod>2022-03-25</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://fastchen.com/categories/index.html</loc>
-    
-    <lastmod>2022-03-25</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
 
   <url>
     <loc>https://fastchen.com/</loc>
@@ -294,6 +294,20 @@
   
   <url>
     <loc>https://fastchen.com/tags/VSCode/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://fastchen.com/tags/NET/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://fastchen.com/tags/AOT/</loc>
     <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -356,34 +370,6 @@
   </url>
   
   <url>
-    <loc>https://fastchen.com/tags/Linux/</loc>
-    <lastmod>2026-04-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://fastchen.com/tags/%E7%A1%AC%E4%BB%B6%E5%BC%80%E5%8F%91/</loc>
-    <lastmod>2026-04-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://fastchen.com/tags/%E6%8A%98%E8%85%BE/</loc>
-    <lastmod>2026-04-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://fastchen.com/tags/Windows/</loc>
-    <lastmod>2026-04-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://fastchen.com/tags/%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF/</loc>
     <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
@@ -398,14 +384,7 @@
   </url>
   
   <url>
-    <loc>https://fastchen.com/tags/NET/</loc>
-    <lastmod>2026-04-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://fastchen.com/tags/AOT/</loc>
+    <loc>https://fastchen.com/tags/Linux/</loc>
     <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -433,21 +412,14 @@
   </url>
   
   <url>
-    <loc>https://fastchen.com/tags/Swap/</loc>
+    <loc>https://fastchen.com/tags/%E7%A1%AC%E4%BB%B6%E5%BC%80%E5%8F%91/</loc>
     <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://fastchen.com/tags/C/</loc>
-    <lastmod>2026-04-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://fastchen.com/tags/%E6%A8%A1%E7%BB%84/</loc>
+    <loc>https://fastchen.com/tags/%E6%8A%98%E8%85%BE/</loc>
     <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -468,13 +440,6 @@
   </url>
   
   <url>
-    <loc>https://fastchen.com/tags/%E5%B1%80%E5%9F%9F%E7%BD%91/</loc>
-    <lastmod>2026-04-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://fastchen.com/tags/PHP/</loc>
     <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
@@ -482,7 +447,35 @@
   </url>
   
   <url>
-    <loc>https://fastchen.com/tags/%E5%8E%9F%E7%A5%9E/</loc>
+    <loc>https://fastchen.com/tags/Windows/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://fastchen.com/tags/C/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://fastchen.com/tags/%E6%A8%A1%E7%BB%84/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://fastchen.com/tags/%E5%B1%80%E5%9F%9F%E7%BD%91/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://fastchen.com/tags/Swap/</loc>
     <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -490,6 +483,13 @@
   
   <url>
     <loc>https://fastchen.com/tags/WinUI3/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://fastchen.com/tags/%E5%8E%9F%E7%A5%9E/</loc>
     <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -505,7 +505,7 @@
   </url>
   
   <url>
-    <loc>https://fastchen.com/categories/development/</loc>
+    <loc>https://fastchen.com/categories/gameconsole/3DS/</loc>
     <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -519,14 +519,7 @@
   </url>
   
   <url>
-    <loc>https://fastchen.com/categories/gameconsole/3DS/</loc>
-    <lastmod>2026-04-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://fastchen.com/categories/project/</loc>
+    <loc>https://fastchen.com/categories/development/</loc>
     <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -540,13 +533,6 @@
   </url>
   
   <url>
-    <loc>https://fastchen.com/categories/hardware/</loc>
-    <lastmod>2026-04-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://fastchen.com/categories/cybersecurity/</loc>
     <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
@@ -554,14 +540,28 @@
   </url>
   
   <url>
-    <loc>https://fastchen.com/categories/csharp/winform/</loc>
+    <loc>https://fastchen.com/categories/linux/</loc>
     <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://fastchen.com/categories/linux/</loc>
+    <loc>https://fastchen.com/categories/project/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://fastchen.com/categories/hardware/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://fastchen.com/categories/csharp/winform/</loc>
     <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

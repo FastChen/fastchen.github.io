@@ -148,16 +148,16 @@
         <p>在工作中遇到的杀毒软件无法完全清理的病毒程序 WannaMine 4.0。</p>
 <span id="more"></span>
 
-<blockquote>
+<blockquote class="blockquote">
 <p>本文信息已脱敏，将主要以文字格式进行书写。</p>
 </blockquote>
-<h1 id="了解-WannaMine-4-0"><a href="#了解-WannaMine-4-0" class="headerlink" title="了解 WannaMine 4.0"></a>了解 WannaMine 4.0</h1><h2 id="WannaMine-4-0-变种信息"><a href="#WannaMine-4-0-变种信息" class="headerlink" title="WannaMine 4.0 变种信息"></a>WannaMine 4.0 变种信息</h2><blockquote>
+<h1 id="了解-WannaMine-4-0"><a href="#了解-WannaMine-4-0" class="headerlink" title="了解 WannaMine 4.0"></a>了解 WannaMine 4.0</h1><h2 id="WannaMine-4-0-变种信息"><a href="#WannaMine-4-0-变种信息" class="headerlink" title="WannaMine 4.0 变种信息"></a>WannaMine 4.0 变种信息</h2><blockquote class="blockquote">
 <p>所谓了解你的敌人才能打败它，知彼知己者，百战不殆。<br> ——《谋攻篇》 </p>
 </blockquote>
 <h3 id="发作特征"><a href="#发作特征" class="headerlink" title="发作特征"></a>发作特征</h3><p>WannaMine，病毒如其名，一款挖矿病毒，特征为高占用系统资源，导致系统正常运作出现异常问题等。</p>
 <h3 id="传染途径"><a href="#传染途径" class="headerlink" title="传染途径"></a>传染途径</h3><p>当局域网内拥有一台被入侵宿主主机后，将通过微软关键漏洞 —— 永恒之蓝(MS17-010) 入侵局域网内其它主机，实现交叉感染并且再次利用漏洞模块对局域网内进行定时发起大量的 SMB 扫描(445端口)进行爆破入侵，并且横向扩散。</p>
 <p>具体传播流程如下：<br>当主机存在 MS17-010 漏洞时并且防火墙开放了 445 端口(用于SMB网络共享协议，如共享文件夹。)的 Windows 系列系统。</p>
-<blockquote>
+<blockquote class="blockquote">
 <p>有关 永恒之蓝(MS17-010) 具体信息可访问：<a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/security-updates/securitybulletins/2017/ms17-010">Microsoft 安全公告 MS17-010 - 关键</a></p>
 </blockquote>
 <h3 id="如何判断是否存在-MS17-010-漏洞？"><a href="#如何判断是否存在-MS17-010-漏洞？" class="headerlink" title="如何判断是否存在 MS17-010 漏洞？"></a>如何判断是否存在 MS17-010 漏洞？</h3><p>可以通过查看已安装补丁来确认是否存在漏洞。<a target="_blank" rel="noopener" href="https://support.microsoft.com/zh-cn/topic/%E5%A6%82%E4%BD%95%E9%AA%8C%E8%AF%81%E6%98%AF%E5%90%A6%E5%B7%B2%E5%AE%89%E8%A3%85-ms17-010-f55d3f13-7a9c-688c-260b-477d0ec9f2c8">如何验证是否已安装 MS17-010</a></p>
@@ -208,9 +208,19 @@
 
     
         
-            <a href="/tags/%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF/"><span class="tag-item" data-tag="安全技术">#安全技术</span></a>
+            <a href="/tags/%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF/" class="text-decoration-none">
+                <div class="btn btn-secondary rounded-pill shadow-sm">
+                    #安全技术
+                    <span class="badge text-bg-light rounded-pill ms-1">1</span>
+                </div>
+            </a>
         
-            <a href="/tags/%E6%8C%96%E7%9F%BF%E7%97%85%E6%AF%92/"><span class="tag-item" data-tag="挖矿病毒">#挖矿病毒</span></a>
+            <a href="/tags/%E6%8C%96%E7%9F%BF%E7%97%85%E6%AF%92/" class="text-decoration-none">
+                <div class="btn btn-secondary rounded-pill shadow-sm">
+                    #挖矿病毒
+                    <span class="badge text-bg-light rounded-pill ms-1">1</span>
+                </div>
+            </a>
         
     
 
@@ -257,10 +267,6 @@
 
 
 <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-
-
-<script src="/js/utils/tag-color.js"></script>
 
 
 <script>

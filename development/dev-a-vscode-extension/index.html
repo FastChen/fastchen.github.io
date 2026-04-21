@@ -159,15 +159,15 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># ? What type of extension do you want to create? New Extension (TypeScript)</span><br><span class="line"># ? What&#x27;s the name of your extension? HelloWorld</span><br><span class="line">### Press &lt;Enter&gt; to choose default for all options below ###</span><br><span class="line"></span><br><span class="line"># ? What&#x27;s the identifier of your extension? helloworld</span><br><span class="line"># ? What&#x27;s the description of your extension? LEAVE BLANK</span><br><span class="line"># ? Initialize a git repository? Yes</span><br><span class="line"># ? Bundle the source code with webpack? No</span><br><span class="line"># ? Which package manager to use? npm</span><br><span class="line"></span><br><span class="line"># ? Do you want to open the new folder with Visual Studio Code? Open with `code`</span><br></pre></td></tr></table></figure>
 
 <p>然后，在编辑器中，按 F5 键。就会在新的 <strong>扩展开发主机窗口</strong> 中编译并运行扩展。</p>
-<blockquote>
+<blockquote class="blockquote">
 <p>关于官方提供的教学文档地址：<a target="_blank" rel="noopener" href="https://code.visualstudio.com/api/get-started/your-first-extension">Your First Extension</a></p>
 </blockquote>
 <hr>
-<h2 id="配置-“发布”-环境"><a href="#配置-“发布”-环境" class="headerlink" title="配置 “发布” 环境"></a>配置 “发布” 环境</h2><blockquote>
+<h2 id="配置-“发布”-环境"><a href="#配置-“发布”-环境" class="headerlink" title="配置 “发布” 环境"></a>配置 “发布” 环境</h2><blockquote class="blockquote">
 <p>此部分文字流程将在后续持续更新，如需要此部分教程，可以参考我当时参考的一期视频里上传 “发布” 部分。<br>《<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1bG4y1n78A">编写一个 Vscode 插件 | 从创建到发布 | 一键删除函数</a>》 —— <strong>53分</strong> 开始讲解发布部分。</p>
 </blockquote>
 <p>当你的插件写完后，想要发布到 VSCode 自带的插件市场，就需要通过一系列的配置，并且安装发布脚手架进行发布。</p>
-<blockquote>
+<blockquote class="blockquote">
 <p>按照 <strong>官方</strong> 给出的流程是先配置发布脚手架 <strong>vsce</strong>(Visual Studio Code Extensions)，但是我们这里以先配置 发布账号 和 Token 配置优先。</p>
 </blockquote>
 <h3 id="创建-Azure-DevOps-账号"><a href="#创建-Azure-DevOps-账号" class="headerlink" title="创建 Azure DevOps 账号"></a>创建 Azure DevOps 账号</h3><ol>
@@ -184,9 +184,19 @@
 
     
         
-            <a href="/tags/%E6%8F%92%E4%BB%B6%E5%BC%80%E5%8F%91/"><span class="tag-item" data-tag="插件开发">#插件开发</span></a>
+            <a href="/tags/%E6%8F%92%E4%BB%B6%E5%BC%80%E5%8F%91/" class="text-decoration-none">
+                <div class="btn btn-secondary rounded-pill shadow-sm">
+                    #插件开发
+                    <span class="badge text-bg-light rounded-pill ms-1">1</span>
+                </div>
+            </a>
         
-            <a href="/tags/VSCode/"><span class="tag-item" data-tag="VSCode">#VSCode</span></a>
+            <a href="/tags/VSCode/" class="text-decoration-none">
+                <div class="btn btn-secondary rounded-pill shadow-sm">
+                    #VSCode
+                    <span class="badge text-bg-light rounded-pill ms-1">1</span>
+                </div>
+            </a>
         
     
 
@@ -233,10 +243,6 @@
 
 
 <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-
-
-<script src="/js/utils/tag-color.js"></script>
 
 
 <script>
