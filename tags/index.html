@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html class="h-100">
   <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -63,7 +63,7 @@
   document.documentElement.setAttribute('data-bs-theme', theme);
 </script>
 
-  <body class="theme-transition bg-body-tertiary">
+  <body class="d-flex flex-column h-100 theme-transition bg-body-tertiary">
     <header class="bg-body p-3 mb-3 border-bottom">
   <div class="container">
     <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
@@ -80,6 +80,8 @@
         <li><a href="/categories" class="nav-link px-2 link-body-emphasis">分类</a></li>
         
         <li><a href="/tags" class="nav-link px-2 active">标签</a></li>
+        
+        <li><a href="/friends" class="nav-link px-2 link-body-emphasis">友链</a></li>
         
         <li><a href="/about" class="nav-link px-2 link-body-emphasis">关于我</a></li>
         
@@ -109,7 +111,7 @@
   </div>
 </header>
     
-    <div class="container my-5">
+    <main class="flex-shrink-0 container my-3">
       <div class="text-center">
     <h1 class="page-title fw-semibold">
         标签
@@ -150,6 +152,27 @@
     </div>
   </a>
   
+  <a href="/tags/Windows/" class="text-decoration-none">
+    <div class="btn btn-secondary rounded-pill shadow-sm">
+      Windows
+      <span class="badge text-bg-light rounded-pill ms-1">5</span>
+    </div>
+  </a>
+  
+  <a href="/tags/%E5%B7%A5%E5%85%B7/" class="text-decoration-none">
+    <div class="btn btn-secondary rounded-pill shadow-sm">
+      工具
+      <span class="badge text-bg-light rounded-pill ms-1">8</span>
+    </div>
+  </a>
+  
+  <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/" class="text-decoration-none">
+    <div class="btn btn-secondary rounded-pill shadow-sm">
+      软件开发
+      <span class="badge text-bg-light rounded-pill ms-1">7</span>
+    </div>
+  </a>
+  
   <a href="/tags/NET/" class="text-decoration-none">
     <div class="btn btn-secondary rounded-pill shadow-sm">
       .NET
@@ -168,20 +191,6 @@
     <div class="btn btn-secondary rounded-pill shadow-sm">
       DDNS
       <span class="badge text-bg-light rounded-pill ms-1">1</span>
-    </div>
-  </a>
-  
-  <a href="/tags/%E5%B7%A5%E5%85%B7/" class="text-decoration-none">
-    <div class="btn btn-secondary rounded-pill shadow-sm">
-      工具
-      <span class="badge text-bg-light rounded-pill ms-1">8</span>
-    </div>
-  </a>
-  
-  <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/" class="text-decoration-none">
-    <div class="btn btn-secondary rounded-pill shadow-sm">
-      软件开发
-      <span class="badge text-bg-light rounded-pill ms-1">7</span>
     </div>
   </a>
   
@@ -220,6 +229,27 @@
     </div>
   </a>
   
+  <a href="/tags/Linux/" class="text-decoration-none">
+    <div class="btn btn-secondary rounded-pill shadow-sm">
+      Linux
+      <span class="badge text-bg-light rounded-pill ms-1">5</span>
+    </div>
+  </a>
+  
+  <a href="/tags/%E7%A1%AC%E4%BB%B6%E5%BC%80%E5%8F%91/" class="text-decoration-none">
+    <div class="btn btn-secondary rounded-pill shadow-sm">
+      硬件开发
+      <span class="badge text-bg-light rounded-pill ms-1">2</span>
+    </div>
+  </a>
+  
+  <a href="/tags/%E6%8A%98%E8%85%BE/" class="text-decoration-none">
+    <div class="btn btn-secondary rounded-pill shadow-sm">
+      折腾
+      <span class="badge text-bg-light rounded-pill ms-1">2</span>
+    </div>
+  </a>
+  
   <a href="/tags/%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF/" class="text-decoration-none">
     <div class="btn btn-secondary rounded-pill shadow-sm">
       安全技术
@@ -231,13 +261,6 @@
     <div class="btn btn-secondary rounded-pill shadow-sm">
       挖矿病毒
       <span class="badge text-bg-light rounded-pill ms-1">1</span>
-    </div>
-  </a>
-  
-  <a href="/tags/Linux/" class="text-decoration-none">
-    <div class="btn btn-secondary rounded-pill shadow-sm">
-      Linux
-      <span class="badge text-bg-light rounded-pill ms-1">5</span>
     </div>
   </a>
   
@@ -262,17 +285,10 @@
     </div>
   </a>
   
-  <a href="/tags/%E7%A1%AC%E4%BB%B6%E5%BC%80%E5%8F%91/" class="text-decoration-none">
+  <a href="/tags/%E5%B1%80%E5%9F%9F%E7%BD%91/" class="text-decoration-none">
     <div class="btn btn-secondary rounded-pill shadow-sm">
-      硬件开发
-      <span class="badge text-bg-light rounded-pill ms-1">2</span>
-    </div>
-  </a>
-  
-  <a href="/tags/%E6%8A%98%E8%85%BE/" class="text-decoration-none">
-    <div class="btn btn-secondary rounded-pill shadow-sm">
-      折腾
-      <span class="badge text-bg-light rounded-pill ms-1">2</span>
+      局域网
+      <span class="badge text-bg-light rounded-pill ms-1">1</span>
     </div>
   </a>
   
@@ -297,10 +313,24 @@
     </div>
   </a>
   
-  <a href="/tags/Windows/" class="text-decoration-none">
+  <a href="/tags/%E5%8E%9F%E7%A5%9E/" class="text-decoration-none">
     <div class="btn btn-secondary rounded-pill shadow-sm">
-      Windows
-      <span class="badge text-bg-light rounded-pill ms-1">5</span>
+      原神
+      <span class="badge text-bg-light rounded-pill ms-1">1</span>
+    </div>
+  </a>
+  
+  <a href="/tags/WinUI3/" class="text-decoration-none">
+    <div class="btn btn-secondary rounded-pill shadow-sm">
+      WinUI3
+      <span class="badge text-bg-light rounded-pill ms-1">1</span>
+    </div>
+  </a>
+  
+  <a href="/tags/Swap/" class="text-decoration-none">
+    <div class="btn btn-secondary rounded-pill shadow-sm">
+      Swap
+      <span class="badge text-bg-light rounded-pill ms-1">1</span>
     </div>
   </a>
   
@@ -318,38 +348,11 @@
     </div>
   </a>
   
-  <a href="/tags/%E5%B1%80%E5%9F%9F%E7%BD%91/" class="text-decoration-none">
-    <div class="btn btn-secondary rounded-pill shadow-sm">
-      局域网
-      <span class="badge text-bg-light rounded-pill ms-1">1</span>
-    </div>
-  </a>
-  
-  <a href="/tags/Swap/" class="text-decoration-none">
-    <div class="btn btn-secondary rounded-pill shadow-sm">
-      Swap
-      <span class="badge text-bg-light rounded-pill ms-1">1</span>
-    </div>
-  </a>
-  
-  <a href="/tags/WinUI3/" class="text-decoration-none">
-    <div class="btn btn-secondary rounded-pill shadow-sm">
-      WinUI3
-      <span class="badge text-bg-light rounded-pill ms-1">1</span>
-    </div>
-  </a>
-  
-  <a href="/tags/%E5%8E%9F%E7%A5%9E/" class="text-decoration-none">
-    <div class="btn btn-secondary rounded-pill shadow-sm">
-      原神
-      <span class="badge text-bg-light rounded-pill ms-1">1</span>
-    </div>
-  </a>
-  
 </div>
+
 <!-- 无标签时的提示 -->
 
-    </div>
+    </main>
 
     
 <!-- 返回顶部 -->
@@ -358,7 +361,7 @@
 <script src="/js/utils/back-to-top.js"></script>
 
 
-    <footer class="border-top bg-body">
+    <footer class="footer mt-auto border-top bg-body">
   <div class="container">
     
     <div class="d-flex flex-column flex-sm-row justify-content-between py-3 mt-3">
@@ -392,13 +395,6 @@
 
 <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-
-<script>
-// 页面加载后设置标签颜色
-document.addEventListener('DOMContentLoaded', function() {
-    TagColor.applyRandomColorsToAll('.tag-item');
-});
-</script>
   </body>
   
 </html>

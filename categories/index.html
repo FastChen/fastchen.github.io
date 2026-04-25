@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html class="h-100">
   <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -63,7 +63,7 @@
   document.documentElement.setAttribute('data-bs-theme', theme);
 </script>
 
-  <body class="theme-transition bg-body-tertiary">
+  <body class="d-flex flex-column h-100 theme-transition bg-body-tertiary">
     <header class="bg-body p-3 mb-3 border-bottom">
   <div class="container">
     <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
@@ -80,6 +80,8 @@
         <li><a href="/categories" class="nav-link px-2 active">分类</a></li>
         
         <li><a href="/tags" class="nav-link px-2 link-body-emphasis">标签</a></li>
+        
+        <li><a href="/friends" class="nav-link px-2 link-body-emphasis">友链</a></li>
         
         <li><a href="/about" class="nav-link px-2 link-body-emphasis">关于我</a></li>
         
@@ -109,7 +111,7 @@
   </div>
 </header>
     
-    <div class="container my-5">
+    <main class="flex-shrink-0 container my-3">
       <div class="text-center">
     <h1 class="page-title fw-semibold">
         文章分类
@@ -119,7 +121,7 @@
     </h4>
 </div>
 <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/csharp/">C#</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/csharp/winform/">WinForm</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">Linux</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/development/">开发</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/project/">我的项目</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/gameconsole/">游戏机</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/gameconsole/3DS/">3DS</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/hardware/">硬件</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/cybersecurity/">网络安全</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/write/">随便写写</a><span class="category-list-count">10</span></li></ul>
-    </div>
+    </main>
 
     
 <!-- 返回顶部 -->
@@ -128,7 +130,7 @@
 <script src="/js/utils/back-to-top.js"></script>
 
 
-    <footer class="border-top bg-body">
+    <footer class="footer mt-auto border-top bg-body">
   <div class="container">
     
     <div class="d-flex flex-column flex-sm-row justify-content-between py-3 mt-3">
@@ -162,13 +164,6 @@
 
 <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-
-<script>
-// 页面加载后设置标签颜色
-document.addEventListener('DOMContentLoaded', function() {
-    TagColor.applyRandomColorsToAll('.tag-item');
-});
-</script>
   </body>
   
 </html>

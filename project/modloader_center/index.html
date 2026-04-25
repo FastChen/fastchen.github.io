@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html class="h-100">
   <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -79,7 +79,7 @@
   document.documentElement.setAttribute('data-bs-theme', theme);
 </script>
 
-  <body class="theme-transition bg-body-tertiary">
+  <body class="d-flex flex-column h-100 theme-transition bg-body-tertiary">
     <header class="bg-body p-3 mb-3 border-bottom">
   <div class="container">
     <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
@@ -96,6 +96,8 @@
         <li><a href="/categories" class="nav-link px-2 link-body-emphasis">分类</a></li>
         
         <li><a href="/tags" class="nav-link px-2 link-body-emphasis">标签</a></li>
+        
+        <li><a href="/friends" class="nav-link px-2 link-body-emphasis">友链</a></li>
         
         <li><a href="/about" class="nav-link px-2 link-body-emphasis">关于我</a></li>
         
@@ -125,7 +127,7 @@
   </div>
 </header>
     
-    <div class="container my-5">
+    <main class="flex-shrink-0 container my-3">
       <div class="post">
     <h1 class="post-title fw-semibold">
     
@@ -136,25 +138,31 @@
 </h1>
 
     
-        <div class="text-center">
-            
-<div class="mb-4 text-muted author-info">
+        
+
+<div class="text-muted author-info d-flex flex-wrap flex-row column-gap-3 mb-3 justify-content-center">
     
-        <span title="2024-04-20T11:30:00.000Z"><i class="bi bi-calendar2 me-2" title="发布于 2024-04-20"></i>发布于 2024-04-20</span>
+        <!-- 发布日期 -->
+        <span title="2024-04-20T11:30:00.000Z">
+            <i class="bi bi-calendar2 me-2" title="发布于 2024-04-20"></i>发布于 2024-04-20
+        </span>
     
     
-        <span class="ms-3" title="2024-04-23T11:25:00.188Z"><i class="bi bi-calendar2-plus me-2" title="更新于 2024-04-23"></i>更新于 2024-04-23</span>
+        <!-- 更新日期 -->
+        <span title="2024-04-23T11:25:00.188Z">
+            <i class="bi bi-calendar2-plus me-2" title="更新于 2024-04-23"></i>更新于 2024-04-23
+        </span>
     
     
     
         
-            <span class="ms-3">
+            <!-- 分类 -->
+            <span>
                 <i class="bi bi-folder me-2"></i><a class="category-link" href="/categories/development/">开发</a>、<a class="category-link" href="/categories/project/">我的项目</a>
             </span>
         
     
 </div>
-        </div>
     
 
     
@@ -193,10 +201,10 @@
 
     
         
-            <a href="/tags/NET/" class="text-decoration-none">
+            <a href="/tags/Windows/" class="text-decoration-none">
                 <div class="btn btn-secondary rounded-pill shadow-sm">
-                    #.NET
-                    <span class="badge text-bg-light rounded-pill ms-1">2</span>
+                    #Windows
+                    <span class="badge text-bg-light rounded-pill ms-1">5</span>
                 </div>
             </a>
         
@@ -214,10 +222,10 @@
                 </div>
             </a>
         
-            <a href="/tags/Windows/" class="text-decoration-none">
+            <a href="/tags/NET/" class="text-decoration-none">
                 <div class="btn btn-secondary rounded-pill shadow-sm">
-                    #Windows
-                    <span class="badge text-bg-light rounded-pill ms-1">5</span>
+                    #.NET
+                    <span class="badge text-bg-light rounded-pill ms-1">2</span>
                 </div>
             </a>
         
@@ -238,7 +246,7 @@
     
 
 </div>
-    </div>
+    </main>
 
     
 <!-- 返回顶部 -->
@@ -247,7 +255,7 @@
 <script src="/js/utils/back-to-top.js"></script>
 
 
-    <footer class="border-top bg-body">
+    <footer class="footer mt-auto border-top bg-body">
   <div class="container">
     
     <div class="d-flex flex-column flex-sm-row justify-content-between py-3 mt-3">
@@ -281,13 +289,6 @@
 
 <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-
-<script>
-// 页面加载后设置标签颜色
-document.addEventListener('DOMContentLoaded', function() {
-    TagColor.applyRandomColorsToAll('.tag-item');
-});
-</script>
   </body>
   
 </html>
