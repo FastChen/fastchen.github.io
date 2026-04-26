@@ -84,9 +84,9 @@
         
         <li><a href="/tags" class="nav-link px-2 link-body-emphasis">标签</a></li>
         
-        <li><a href="/friends" class="nav-link px-2 link-body-emphasis">友链</a></li>
-        
         <li><a href="/about" class="nav-link px-2 link-body-emphasis">关于我</a></li>
+        
+        <li><a href="/friends" class="nav-link px-2 link-body-emphasis">友链</a></li>
         
       </ul>
 
@@ -197,7 +197,7 @@
 <h2 id="开始处置"><a href="#开始处置" class="headerlink" title="开始处置"></a>开始处置</h2><h3 id="确定并移除病毒主模块服务"><a href="#确定并移除病毒主模块服务" class="headerlink" title="确定并移除病毒主模块服务"></a>确定并移除病毒主模块服务</h3><p><strong>快速定位病毒主服务方法 (仅适用于中文系统及服务项不多的情况)</strong><br>通过 服务 <code>services.msc</code> 来查找到病毒主服务模块，因为使用中文系统，里的 服务名称 或 服务描述 大部分都是中文的，所以可以通过以下描述内容尝试快速筛查英文描述并定位病毒主服务名称</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 描述内容：</span><br><span class="line">Enables a common interface and object model for the 与主服务名称一致的字符串 Helper to ....</span><br><span class="line"></span><br><span class="line"># 例如：</span><br><span class="line">Enables a common interface and object model for the NetworkSSDPHost Helper to ....</span><br></pre></td></tr></table></figure>
 <p>如果无法通过服务定位到可以使用下面的方法：</p>
-<p><strong>Process Hacker 软件定位病毒主服务方法</strong><br>在 Process Hacker 软件右上角输入框中搜索 <code>dllhostex.exe</code> 并且切换到 Services 选项卡，如病毒正在运作，此时会显示与此进程相关联的服务。<br><strong>此图仅演示</strong><br><img src="/images/blog/kill-wannamine-4/processhacker_1.png" alt="processhacker_1.png"></p>
+<p><strong>Process Hacker 软件定位病毒主服务方法</strong><br>在 Process Hacker 软件右上角输入框中搜索 <code>dllhostex.exe</code> 并且切换到 Services 选项卡，如病毒正在运作，此时会显示与此进程相关联的服务。<br><strong>此图仅演示</strong><br><img class="img-fluid" src="/images/blog/kill-wannamine-4/processhacker_1.png" alt="processhacker_1.png"></p>
 <p>确定好主服务名称并<strong>牢记</strong>后，将服务停止并删除服务，删除服务后再前往 <code>C:\Windows\System32\</code> 目录下找到与主服务名称一致的 <code>.dll</code> 文件一并删除。</p>
 <p>如果遇到主服务删除不掉问题，则需要找到 <code>dllhostex.exe</code> 挖矿病毒进程并结束，然后再次尝试停止并删除服务与服务对应的dll文件。</p>
 <h3 id="移除病毒挖矿脚本程序"><a href="#移除病毒挖矿脚本程序" class="headerlink" title="移除病毒挖矿脚本程序"></a>移除病毒挖矿脚本程序</h3><p>进入目录 <code>C:\Windows\System32\</code> 下找到 <code>dllhostex.exe</code> 挖矿脚本，进行删除。</p>

@@ -96,9 +96,9 @@
         
         <li><a href="/tags" class="nav-link px-2 link-body-emphasis">标签</a></li>
         
-        <li><a href="/friends" class="nav-link px-2 link-body-emphasis">友链</a></li>
-        
         <li><a href="/about" class="nav-link px-2 link-body-emphasis">关于我</a></li>
+        
+        <li><a href="/friends" class="nav-link px-2 link-body-emphasis">友链</a></li>
         
       </ul>
 
@@ -175,15 +175,15 @@
 <li>安装 <code>.NET8 SDK</code> 或更高版本</li>
 <li>安装 <code>使用 C++ 的桌面开发</code> 在 Visual Studio Installer 里安装。 <strong>(坑1)</strong></li>
 </ol>
-<p><img src="/images/blog/dotnet-aot/vs_install_cpp.png"></p>
+<p><img class="img-fluid" src="/images/blog/dotnet-aot/vs_install_cpp.png"></p>
 <h2 id="创建-AOT-项目"><a href="#创建-AOT-项目" class="headerlink" title="创建 AOT 项目"></a>创建 AOT 项目</h2><p>目前 .NET8 似乎支持的 AOT 仅在控制台类应用上，还未支持 Form 项目。</p>
 <p>通过 VS 创建一个控制台基于 .NET8 的 AOT 项目。</p>
-<p><img src="/images/blog/dotnet-aot/vs_create_aot.png"></p>
+<p><img class="img-fluid" src="/images/blog/dotnet-aot/vs_create_aot.png"></p>
 <p>就和写普通的控制台应用一样。</p>
 <h2 id="构建-AOT-项目"><a href="#构建-AOT-项目" class="headerlink" title="构建 AOT 项目"></a>构建 AOT 项目</h2><p>构建这部分有两个方案早期只能通过 CLI 构建 AOT 项目，现在经过我的测试发现可以使用 VS 内自带的 发布 进行 AOT 构建。</p>
-<p><strong>(坑1)</strong> 想要构建 AOT 项目必须安装 <code>使用 C++ 的桌面开发</code> 这个选项，不然就报错<br>如下图：<br><img src="/images/blog/dotnet-aot/vs_build_aot_need_cpp.png"></p>
+<p><strong>(坑1)</strong> 想要构建 AOT 项目必须安装 <code>使用 C++ 的桌面开发</code> 这个选项，不然就报错<br>如下图：<br><img class="img-fluid" src="/images/blog/dotnet-aot/vs_build_aot_need_cpp.png"></p>
 <p>我们只需要前往 Visual Studio Installer 里直接勾选 <code>使用 C++ 的桌面开发</code> 选项安装即可，无需修改增删组件。</p>
-<p><img src="/images/blog/dotnet-aot/vs_install_cpp.png"></p>
+<p><img class="img-fluid" src="/images/blog/dotnet-aot/vs_install_cpp.png"></p>
 <p>安装完毕后，重新打开 AOT 项目进行如下方式构建：</p>
 <ol>
 <li>使用古法 .NET CLI 构建</li>
@@ -197,39 +197,39 @@
 <h3 id="其二-使用-VS-内置发布工具构建"><a href="#其二-使用-VS-内置发布工具构建" class="headerlink" title="其二 使用 VS 内置发布工具构建"></a>其二 使用 VS 内置发布工具构建</h3><ol>
 <li>右键解决方案选择发布</li>
 </ol>
-<p><img src="/images/blog/dotnet-aot/vs_publish_1.png"></p>
+<p><img class="img-fluid" src="/images/blog/dotnet-aot/vs_publish_1.png"></p>
 <ol start="2">
 <li>发布方式选择文件夹 (即编译到目录内)</li>
 </ol>
-<p><img src="/images/blog/dotnet-aot/vs_publish_2.png"></p>
+<p><img class="img-fluid" src="/images/blog/dotnet-aot/vs_publish_2.png"></p>
 <ol start="3">
 <li>继续选择文件夹</li>
 </ol>
-<p><img src="/images/blog/dotnet-aot/vs_publish_3.png"></p>
+<p><img class="img-fluid" src="/images/blog/dotnet-aot/vs_publish_3.png"></p>
 <ol start="4">
 <li>文件夹路径可以自己随意改</li>
 </ol>
-<p><img src="/images/blog/dotnet-aot/vs_publish_4.png"></p>
+<p><img class="img-fluid" src="/images/blog/dotnet-aot/vs_publish_4.png"></p>
 <ol start="5">
 <li>设置完毕后，点击 显示所有设置 文字</li>
 </ol>
-<p><img src="/images/blog/dotnet-aot/vs_publish_5.png"></p>
+<p><img class="img-fluid" src="/images/blog/dotnet-aot/vs_publish_5.png"></p>
 <ol start="6">
 <li>部署模式改为 <code>独立</code>、目标运行时改为 <code>win-x64</code>、文件发布选项点开勾选 <code>启用 ReadyToRun 编译</code></li>
 </ol>
-<p><img src="/images/blog/dotnet-aot/vs_publish_6.png"></p>
-<p><strong>(坑2)</strong> 文件发布选项内有个 生成单个文件 的勾选框，它的功能是为了打包资产到一个 exe(dll) 内，但是似乎和 AOT 有冲突，(目前?)只能二选一。<br>错误内容：<code>PublishAot and PublishSingleFile cannot be specified at the same time.</code><br>如下图：<br><img src="/images/blog/dotnet-aot/vs_publish_singlefile_cannot_same_time.png"></p>
+<p><img class="img-fluid" src="/images/blog/dotnet-aot/vs_publish_6.png"></p>
+<p><strong>(坑2)</strong> 文件发布选项内有个 生成单个文件 的勾选框，它的功能是为了打包资产到一个 exe(dll) 内，但是似乎和 AOT 有冲突，(目前?)只能二选一。<br>错误内容：<code>PublishAot and PublishSingleFile cannot be specified at the same time.</code><br>如下图：<br><img class="img-fluid" src="/images/blog/dotnet-aot/vs_publish_singlefile_cannot_same_time.png"></p>
 <ol start="7">
 <li>点击发布按钮，测试是否构建成功，并且日志输出内是否有 <code>Generating native code</code> 即代表 AOT 构建成功。</li>
 </ol>
-<p><img src="/images/blog/dotnet-aot/vs_publish_done.png"></p>
+<p><img class="img-fluid" src="/images/blog/dotnet-aot/vs_publish_done.png"></p>
 <h2 id="为了-GTAOL-写的小工具"><a href="#为了-GTAOL-写的小工具" class="headerlink" title="为了 GTAOL 写的小工具"></a>为了 GTAOL 写的小工具</h2><p>我管它叫 FreezeV 即 冻结5 (非常言简意赅不是吗?)</p>
 <p>如果你想要使用这款工具，可以在我的网盘或者用户群内下载。</p>
 <ul>
 <li><a target="_blank" rel="noopener" href="https://jq.qq.com/?_wv=1027&k=A9YzWvbS">灵工艺QQ用户群</a></li>
 <li><a target="_blank" rel="noopener" href="https://drive.fastchen.com/%E4%B8%AA%E4%BA%BA%E5%B0%8F%E5%B7%A5%E5%85%B7">FASTCHEN网盘 - 个人小工具</a></li>
 </ul>
-<p><img src="/images/blog/dotnet-aot/freezev.png"></p>
+<p><img class="img-fluid" src="/images/blog/dotnet-aot/freezev.png"></p>
 <h2 id="参考内容："><a href="#参考内容：" class="headerlink" title="参考内容："></a>参考内容：</h2><ul>
 <li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/aspnet/core/fundamentals/aot/native-aot-tutorial?view=aspnetcore-9.0&tabs=net-cli">微软 | 教程：使用本机 AOT 发布 ASP.NET Core 应用</a></li>
 </ul>

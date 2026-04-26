@@ -141,14 +141,21 @@ body {
 [data-bs-theme="dark"] .logo-dark {
   display: unset;
 }
-/* 设置非第一个文章模块间距 */
-.post:not(:first-of-type) {
-  padding-top: 4em;
+/* 引用块样式 */
+.blockquote {
+  padding: 0.75rem;
+  border-left: 0.25rem solid var(--bs-border-color, var(--bs-gray-300));
 }
 /* checkbox 列表对齐 */
 ul li:has(input[type="checkbox"]) {
   list-style: none;
   margin-left: -1em;
+}
+/* 代码块标题样式 */
+figure figcaption {
+  padding: 3px 6px;
+  background-color: var(--bs-tertiary-bg);
+  border-bottom: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
 }
 /* 代码块增加边框背景色 */
 figure.highlight {

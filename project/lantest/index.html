@@ -87,9 +87,9 @@
         
         <li><a href="/tags" class="nav-link px-2 link-body-emphasis">标签</a></li>
         
-        <li><a href="/friends" class="nav-link px-2 link-body-emphasis">友链</a></li>
-        
         <li><a href="/about" class="nav-link px-2 link-body-emphasis">关于我</a></li>
+        
+        <li><a href="/friends" class="nav-link px-2 link-body-emphasis">友链</a></li>
         
       </ul>
 
@@ -165,11 +165,11 @@
 <li>使用教学：<a target="_blank" rel="noopener" href="https://docs.nullcraft.org/software/lantest">局域网探测 - 灵工艺 | 帮助文档</a></li>
 </ul>
 <h3 id="文图介绍"><a href="#文图介绍" class="headerlink" title="文图介绍"></a>文图介绍</h3><p>通过设置要扫描的局域网 IP 段和起始结束数值即可开始扫描。</p>
-<p><img src="/images/software/lantest/lantest_1.png" alt="LanTest1"></p>
+<p><img class="img-fluid" src="/images/software/lantest/lantest_1.png" alt="LanTest1"></p>
 <p>扫描后可以查看结果信息。</p>
-<p><img src="/images/software/lantest/lantest_2.png" alt="LanTest2"></p>
+<p><img class="img-fluid" src="/images/software/lantest/lantest_2.png" alt="LanTest2"></p>
 <p>通过详细模式可以查看更多细节，以及分析局域网概况，包括局域网主机延迟、在线状态、系统类型、主机名、Mac地址等。</p>
-<p><img src="/images/software/lantest/lantest_3.png" alt="LanTest3"></p>
+<p><img class="img-fluid" src="/images/software/lantest/lantest_3.png" alt="LanTest3"></p>
 <h2 id="功能设想与实现"><a href="#功能设想与实现" class="headerlink" title="功能设想与实现"></a>功能设想与实现</h2><p><strong>基础检测方案：</strong><br>通过基础 Ping 功能对目标 IP 发出 ICMP 数据，以取得目标 IP 状态(是否在线、延迟)。</p>
 <p><strong>性能优化方案：</strong><br>使用多线程+线程池方式调用检测，减小等待时间，提升运行效率。</p>
 <h2 id="代码逻辑"><a href="#代码逻辑" class="headerlink" title="代码逻辑"></a>代码逻辑</h2><p>通过 C# 自带的 Net 实现基础 Ping 服务</p>

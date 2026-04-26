@@ -85,9 +85,9 @@
         
         <li><a href="/tags" class="nav-link px-2 link-body-emphasis">标签</a></li>
         
-        <li><a href="/friends" class="nav-link px-2 link-body-emphasis">友链</a></li>
-        
         <li><a href="/about" class="nav-link px-2 link-body-emphasis">关于我</a></li>
+        
+        <li><a href="/friends" class="nav-link px-2 link-body-emphasis">友链</a></li>
         
       </ul>
 
@@ -181,7 +181,7 @@
 </ol>
 <p>接下来就是尝试解决方案了。</p>
 <h3 id="配置不足导致"><a href="#配置不足导致" class="headerlink" title="配置不足导致?"></a>配置不足导致?</h3><p>通过降低游戏画质等，无果。</p>
-<p>同时搜索到了一个修改游戏配置的解决方法：<br>修改 Post FX 为 正常<br><img src="/images/blog/fix-gta5-180fps-lag/gamesetting_1.png" alt="fix-gta5-180fps-lag&#x2F;gamesetting_1.png"></p>
+<p>同时搜索到了一个修改游戏配置的解决方法：<br>修改 Post FX 为 正常<br><img class="img-fluid" src="/images/blog/fix-gta5-180fps-lag/gamesetting_1.png" alt="fix-gta5-180fps-lag&#x2F;gamesetting_1.png"></p>
 <p>经过测试，<strong>无效。</strong></p>
 <p>但是发现卡顿基本仅在游戏的线下模式出现，从而引出另一个猜想：《下线帧数与线上帧数差距大，线下帧数高从而导致问题所在？》</p>
 <h3 id="游戏底层代码问题"><a href="#游戏底层代码问题" class="headerlink" title="游戏底层代码问题?"></a>游戏底层代码问题?</h3><p>再次深入搜索后，发现了几篇帖子，其中共同点就是游戏帧数超过一定数值(180)后就会发生掉帧卡顿的情况。<br>通过驱动限制游戏最大帧数为 144FPS 后，重启游戏，开车跑图测试，没有卡顿，同时<strong>问题解决</strong>。</p>

@@ -90,9 +90,9 @@
         
         <li><a href="/tags" class="nav-link px-2 link-body-emphasis">标签</a></li>
         
-        <li><a href="/friends" class="nav-link px-2 link-body-emphasis">友链</a></li>
-        
         <li><a href="/about" class="nav-link px-2 link-body-emphasis">关于我</a></li>
+        
+        <li><a href="/friends" class="nav-link px-2 link-body-emphasis">友链</a></li>
         
       </ul>
 
@@ -176,7 +176,7 @@
 <li>打开《鸣潮自定义帧率解锁工具》</li>
 <li>点击 <code>...</code> 按钮选择 <code>LocalStorage.db</code> 文件</li>
 </ol>
-<p><img src="/images/blog/unlook-wuthering-waves-120fps/select_db_path.png" alt="鸣潮自定义帧率解锁工具"></p>
+<p><img class="img-fluid" src="/images/blog/unlook-wuthering-waves-120fps/select_db_path.png" alt="鸣潮自定义帧率解锁工具"></p>
 <p>通常文件路径在你安装游戏的位置例如：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">盘符:\游戏目录\Wuthering Waves Game\Client\Saved\LocalStorage\LocalStorage.db</span><br><span class="line"></span><br><span class="line">例如：</span><br><span class="line">D:\Wuthering Waves\Wuthering Waves Game\Client\Saved\LocalStorage\LocalStorage.db</span><br></pre></td></tr></table></figure>
 
@@ -184,7 +184,7 @@
 <ol start="4">
 <li>选择好路径后点击 <code>读取帧率</code> 按钮，如果弹窗为当前游戏设置的帧率则可以开启修改功能</li>
 </ol>
-<p><img src="/images/blog/unlook-wuthering-waves-120fps/read_fps.png" alt="鸣潮自定义帧率解锁工具"></p>
+<p><img class="img-fluid" src="/images/blog/unlook-wuthering-waves-120fps/read_fps.png" alt="鸣潮自定义帧率解锁工具"></p>
 <ol start="5">
 <li>在上方的输入框内，输入 <code>120</code> 数值，然后点击 <code>应用修改</code> 按钮</li>
 <li>启动游戏！</li>
@@ -205,22 +205,22 @@
 <p>通常文件路径在你安装游戏的位置例如：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">盘符:\游戏目录\Wuthering Waves Game\Client\Saved\LocalStorage\LocalStorage.db</span><br><span class="line"></span><br><span class="line">例如：</span><br><span class="line">D:\Wuthering Waves\Wuthering Waves Game\Client\Saved\LocalStorage\LocalStorage.db</span><br></pre></td></tr></table></figure>
 
-<p><img src="/images/blog/unlook-wuthering-waves-120fps/sqlitestudio_select_db_path.png" alt="鸣潮自定义帧率解锁工具"></p>
+<p><img class="img-fluid" src="/images/blog/unlook-wuthering-waves-120fps/sqlitestudio_select_db_path.png" alt="鸣潮自定义帧率解锁工具"></p>
 <ol start="4">
 <li>然后根据图片指示进入 LocalStorage 并修改数据</li>
 </ol>
-<p><img src="/images/blog/unlook-wuthering-waves-120fps/sqlitestudio_update_db.png" alt="鸣潮自定义帧率解锁工具"></p>
+<p><img class="img-fluid" src="/images/blog/unlook-wuthering-waves-120fps/sqlitestudio_update_db.png" alt="鸣潮自定义帧率解锁工具"></p>
 <ol start="5">
 <li>修改完毕后，提交修改，即可完成修改</li>
 </ol>
-<p><img src="/images/blog/unlook-wuthering-waves-120fps/sqlitestudio_save_db.png" alt="鸣潮自定义帧率解锁工具"></p>
+<p><img class="img-fluid" src="/images/blog/unlook-wuthering-waves-120fps/sqlitestudio_save_db.png" alt="鸣潮自定义帧率解锁工具"></p>
 <ol start="6">
 <li>启动游戏！</li>
 </ol>
 <p><strong>附赠：查询修改操作</strong><br>当然，如果你熟悉 SQL 操作，也可以直接通过语句查询修改。</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> LocalStorage <span class="keyword">where</span> key<span class="operator">=</span>&quot;GameQualitySetting&quot;</span><br><span class="line"><span class="operator">/</span><span class="operator">/</span> 或</span><br><span class="line"><span class="keyword">SELECT</span> key,<span class="keyword">value</span> <span class="keyword">FROM</span> LocalStorage <span class="keyword">where</span> key<span class="operator">=</span>&quot;GameQualitySetting&quot;</span><br></pre></td></tr></table></figure>
 
-<p><img src="/images/blog/unlook-wuthering-waves-120fps/sqlitestudio_sql_save_db.png" alt="鸣潮自定义帧率解锁工具"></p>
+<p><img class="img-fluid" src="/images/blog/unlook-wuthering-waves-120fps/sqlitestudio_sql_save_db.png" alt="鸣潮自定义帧率解锁工具"></p>
 
       
     
