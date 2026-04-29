@@ -6,8 +6,6 @@
   
   <title>自定义窗口(Window)状态 | FASTCHEN</title>
 
-
-
   
 <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
 
@@ -18,7 +16,9 @@
 <link rel="stylesheet" href="/css/style.css">
 
 
-  <link rel="shortcut icon" href="/favicon.ico">
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
 
   <meta name="description" content="一介凡人快辰的个人发牢骚之地。灵工艺的创始人。">
   <meta name="keywords" content="快辰,FastChen,灵工艺,NullCraft,创始人">
@@ -28,6 +28,13 @@
   <!-- Android设备图标 -->
   <link rel="icon" type="image/png" sizes="192x192" href="/images/logo_256x.png">
   <link rel="icon" type="image/png" sizes="512x512" href="/images/logo_256x.png">
+
+  
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&display=swap" rel="stylesheet">
+  
 
   <!-- Open Graph协议(社交媒体分享) -->
   <meta name="description" content="前言 这个程序本来是为了方便测试一个游戏(Mindustry)而做的，有一天群友希望我能根据这款游戏开发一个服务器管理工具，但是我再游玩了解游戏和测试的时候对这个游戏的窗口管理很烦，它不会记录窗口的类型，如全屏、无边框、窗口化等，也不会记录窗口的位置和尺寸，所以我就写了一个前置脚本来控制它，后来有人希望能制作成一个工具来管理更多的窗口。 故此此工具面世发布，并且为了能帮助更多人的同时开放源代码至">
@@ -93,16 +100,28 @@
 
       <div class="dropdown">
     <button class="btn btn-link nav-link dropdown-toggle" type="button" id="themeDropdown" data-bs-toggle="dropdown" aria-expanded="false"></button>
+    
     <ul class="dropdown-menu p-2 rounded-3 mx-0 border-0 shadow" aria-labelledby="themeDropdown">
         <li>
-        <a class="dropdown-item rounded-2 theme-option" href="#" data-theme="light"><i class="me-2 opacity-50 bi bi-sun-fill"></i> 浅色</a>
+            <a class="dropdown-item rounded-2 theme-option" href="#" data-theme="light">
+                <i class="me-2 opacity-50 bi bi-sun-fill"></i>
+                浅色
+            </a>
         </li>
         <li>
-        <a class="dropdown-item rounded-2 theme-option" href="#" data-theme="dark"><i class="me-2 opacity-50 bi bi-moon-stars-fill"></i> 深色</a>
+            <a class="dropdown-item rounded-2 theme-option" href="#" data-theme="dark">
+                <i class="me-2 opacity-50 bi bi-moon-stars-fill"></i>
+                深色
+            </a>
         </li>
-        <li><hr class="dropdown-divider"></li>
         <li>
-        <a class="dropdown-item rounded-2 theme-option active" href="#" data-theme="auto"><i class="me-2 opacity-50 bi bi-circle-half"></i> 系统</a>
+            <hr class="dropdown-divider">
+        </li>
+        <li>
+            <a class="dropdown-item rounded-2 theme-option active" href="#" data-theme="auto">
+                <i class="me-2 opacity-50 bi bi-brilliance"></i>
+                系统
+            </a>
         </li>
     </ul>
 </div>
@@ -205,13 +224,6 @@
 
     
         
-            <a href="/tags/Windows/" class="text-decoration-none">
-                <div class="btn btn-secondary rounded-pill shadow-sm">
-                    #Windows
-                    <span class="badge text-bg-light rounded-pill ms-1">5</span>
-                </div>
-            </a>
-        
             <a href="/tags/%E5%B7%A5%E5%85%B7/" class="text-decoration-none">
                 <div class="btn btn-secondary rounded-pill shadow-sm">
                     #工具
@@ -223,6 +235,13 @@
                 <div class="btn btn-secondary rounded-pill shadow-sm">
                     #软件开发
                     <span class="badge text-bg-light rounded-pill ms-1">7</span>
+                </div>
+            </a>
+        
+            <a href="/tags/Windows/" class="text-decoration-none">
+                <div class="btn btn-secondary rounded-pill shadow-sm">
+                    #Windows
+                    <span class="badge text-bg-light rounded-pill ms-1">5</span>
                 </div>
             </a>
         
