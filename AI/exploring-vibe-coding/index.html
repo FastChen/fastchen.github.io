@@ -1,0 +1,273 @@
+<!doctype html>
+<html class="h-100">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>探索 Vibe Coding | FASTCHEN</title>
+
+  
+<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+
+  
+<link rel="stylesheet" href="/bootstrap/css/bootstrap-icons.min.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+
+  <meta name="description" content="一介凡人快辰的个人发牢骚之地。灵工艺的创始人。">
+  <meta name="keywords" content="快辰,FastChen,灵工艺,NullCraft,创始人">
+
+  <!-- Apple设备图标 -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/logo_256x.png">
+  <!-- Android设备图标 -->
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/logo_256x.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/images/logo_256x.png">
+
+  
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&display=swap" rel="stylesheet">
+  
+
+  <!-- Open Graph协议(社交媒体分享) -->
+  <meta name="description" content="经历了一段时间的研究，再加上群里朋友的力荐，让我这个老人也感受到了氛围编程的快乐。 虽然我已在 AI 浪潮兴起时就尝试过将 AI 内置到 IDE 中来辅助我开发项目，那时的我和 AI 都傻傻的不好用，我也调不明白，更多还是用于解决程序上的错误或者拿它给软件的新功能设计提供思路，而且主要用各大厂商的 Web 对话。 再然后就是自从微软收购 Github 后，Visual Studio 就一直在推行它">
+<meta property="og:type" content="article">
+<meta property="og:title" content="探索 Vibe Coding">
+<meta property="og:url" content="https://fastchen.com/AI/exploring-vibe-coding/index.html">
+<meta property="og:site_name" content="FASTCHEN">
+<meta property="og:description" content="经历了一段时间的研究，再加上群里朋友的力荐，让我这个老人也感受到了氛围编程的快乐。 虽然我已在 AI 浪潮兴起时就尝试过将 AI 内置到 IDE 中来辅助我开发项目，那时的我和 AI 都傻傻的不好用，我也调不明白，更多还是用于解决程序上的错误或者拿它给软件的新功能设计提供思路，而且主要用各大厂商的 Web 对话。 再然后就是自从微软收购 Github 后，Visual Studio 就一直在推行它">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://fastchen.com/images/posts/exploring-vibe-coding/trae.png">
+<meta property="og:image" content="https://fastchen.com/images/posts/exploring-vibe-coding/trae-2.png">
+<meta property="og:image" content="https://fastchen.com/images/posts/exploring-vibe-coding/web.png">
+<meta property="og:image" content="https://fastchen.com/images/posts/exploring-vibe-coding/token-usage.png">
+<meta property="article:published_time" content="2026-04-30T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-04-30T16:23:58.386Z">
+<meta property="article:author" content="FastChen">
+<meta property="article:tag" content="AI">
+<meta property="article:tag" content="软件开发">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://fastchen.com/images/posts/exploring-vibe-coding/trae.png">
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+<!-- 内联脚本立即设置主题，防止闪烁 -->
+<script>
+  // 立即从localStorage获取主题设置或使用系统偏好
+  const savedTheme = localStorage.getItem('theme') || 'auto';
+  let theme = 'light';
+  
+  if (savedTheme === 'dark') {
+      theme = 'dark';
+  } else if (savedTheme === 'auto') {
+      // 检测系统偏好
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          theme = 'dark';
+      }
+  }
+  
+  // 立即设置主题
+  document.documentElement.setAttribute('data-bs-theme', theme);
+</script>
+
+  <body class="d-flex flex-column h-100 theme-transition bg-body-tertiary">
+    <header class="bg-body p-3 mb-3 border-bottom">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+      <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none">
+        <img class="logo-light" width="32" height="32" src="/images/logo_256x.png" />
+        <img class="logo-dark" width="32" height="32" src="/images/logo_white_256x.png" />
+      </a>
+      <ul class="nav nav-underline col-12 col-lg-auto me-lg-auto ms-3 mb-2 justify-content-center mb-md-0">
+        
+        <li><a href="/" class="nav-link px-2 link-body-emphasis">主页</a></li>
+        
+        <li><a href="/archives" class="nav-link px-2 link-body-emphasis">归档</a></li>
+        
+        <li><a href="/categories" class="nav-link px-2 link-body-emphasis">分类</a></li>
+        
+        <li><a href="/tags" class="nav-link px-2 link-body-emphasis">标签</a></li>
+        
+        <li><a href="/friends" class="nav-link px-2 link-body-emphasis">友链</a></li>
+        
+        <li><a href="/about" class="nav-link px-2 link-body-emphasis">关于我</a></li>
+        
+      </ul>
+
+      <div class="dropdown">
+    <button class="btn btn-link nav-link dropdown-toggle" type="button" id="themeDropdown" data-bs-toggle="dropdown" aria-expanded="false"></button>
+    
+    <ul class="dropdown-menu p-2 rounded-3 mx-0 border-0 shadow" aria-labelledby="themeDropdown">
+        <li>
+            <a class="dropdown-item rounded-2 theme-option" href="#" data-theme="light">
+                <i class="me-2 opacity-50 bi bi-sun-fill"></i>
+                浅色
+            </a>
+        </li>
+        <li>
+            <a class="dropdown-item rounded-2 theme-option" href="#" data-theme="dark">
+                <i class="me-2 opacity-50 bi bi-moon-stars-fill"></i>
+                深色
+            </a>
+        </li>
+        <li>
+            <hr class="dropdown-divider">
+        </li>
+        <li>
+            <a class="dropdown-item rounded-2 theme-option active" href="#" data-theme="auto">
+                <i class="me-2 opacity-50 bi bi-brilliance"></i>
+                系统
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+<script src="/js/utils/theme.js"></script>
+
+
+    </div>
+  </div>
+</header>
+    
+    <main class="flex-shrink-0 container my-3">
+      <div class="post">
+    <h1 class="post-title fw-semibold">
+    
+        <div class="text-center">
+            探索 Vibe Coding
+        </div>
+    
+</h1>
+
+    
+        
+
+<div class="text-muted author-info d-flex flex-wrap flex-row column-gap-3 mb-3 justify-content-center">
+    
+        <!-- 发布日期 -->
+        <span title="2026-04-30T16:00:00.000Z">
+            <i class="bi bi-calendar2 me-2" title="发布于 2026-05-01"></i>发布于 2026-05-01
+        </span>
+    
+    
+        <!-- 更新日期 -->
+        <span title="2026-04-30T16:23:58.386Z">
+            <i class="bi bi-calendar2-plus me-2" title="更新于 2026-05-01"></i>更新于 2026-05-01
+        </span>
+    
+    
+    
+        
+            <!-- 分类 -->
+            <span>
+                <i class="bi bi-folder me-2"></i><a class="category-link" href="/categories/AI/">AI</a>、<a class="category-link" href="/categories/development/">开发</a>
+            </span>
+        
+    
+</div>
+    
+
+    
+        <p><strong>经历了一段时间的研究，再加上群里朋友的力荐，让我这个老人也感受到了氛围编程的快乐。</strong></p>
+<p>虽然我已在 AI 浪潮兴起时就尝试过将 AI 内置到 IDE 中来辅助我开发项目，那时的我和 AI 都傻傻的不好用，我也调不明白，更多还是用于解决程序上的错误或者拿它给软件的新功能设计提供思路，而且主要用各大厂商的 Web 对话。</p>
+<p>再然后就是自从微软收购 Github 后，Visual Studio 就一直在推行它的副驾驶(Copilot)，你别说，预测下一步有时候确实非常准确好用。<br>这次刚好赶上 <a target="_blank" rel="noopener" href="https://api-docs.deepseek.com/zh-cn/">DeepSeek-v4</a> 更新，而且 <code>deepseek-v4-pro</code> 模型还有 2.5 折扣优惠，没有比现在更好的把玩机会了!</p>
+<span id="more"></span>
+
+<h2 id="部署环境"><a href="#部署环境" class="headerlink" title="部署环境"></a>部署环境</h2><h3 id="IDE-选择"><a href="#IDE-选择" class="headerlink" title="IDE 选择"></a>IDE 选择</h3><p>这次我没有使用现有的 IDE 加插件，而是选择了一个整合好的 IDE —— <a target="_blank" rel="noopener" href="https://www.trae.cn/">Trae IDE</a><br>(这不是广告，上年纪了不想折腾而已)</p>
+<h3 id="模型选择"><a href="#模型选择" class="headerlink" title="模型选择"></a>模型选择</h3><p>虽然 Trae 只需要下载，然后注册一个账户就能使用很多内置好的模型，而且免费，你可以在这里查看内置模型列表：<a target="_blank" rel="noopener" href="https://docs.trae.cn/ide/models">TRAE 预置模型</a><br>不过要想体验最新的模型还是需要自己来自定义添加的，要不就是热门模型排队等很久。<br>DeepSeek-v4 版本推出了两个模型: <code>deepseek-v4-flash</code> 与 <code>deepseek-v4-pro</code><br>小孩子才做选择，大人直接选择最强的版本，以下项目均使用 <code>deepseek-v4-pro</code> 制作。</p>
+<h2 id="编写一个简单的项目"><a href="#编写一个简单的项目" class="headerlink" title="编写一个简单的项目"></a>编写一个简单的项目</h2><p>经过上面配置后，我让它来写一个最近我一直想开发的小项目，IPv4&amp;IPv6 的检测、查询工具。<br>这个项目最早诞生于《<a target="_blank" rel="noopener" href="https://nullcraft.org/d/52">开服器系列</a>》时期，那时候都是通过请求我开发好的后端 API 来获取显示在软件上，后续有人提出为什么不制作一个聚合页面，让不打开软件的也可以获取，我当时是有这个想发的，毕竟 IPv4 和 IPv6 的 API 都已经独立部署好了，就差一个前端了，后来一直没有开工，就搁置了。</p>
+<h3 id="编写项目需求"><a href="#编写项目需求" class="headerlink" title="编写项目需求"></a>编写项目需求</h3><p>所以这个非常简单的项目，就拿来体验 Vibe Coding 了，我将设计思路写成了一个文件，提供给 AI。</p>
+<figure class="highlight markdown"><figcaption><span>我的需求.md</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">通过 javascript 原生请求 API 来开发一个 IPV4 &amp; IPV6 地址显示工具</span><br><span class="line"></span><br><span class="line"><span class="section">## 功能开发</span></span><br><span class="line"></span><br><span class="line">API请求地址：</span><br><span class="line"><span class="bullet">-</span> ipv4：https://test-ipv4.nullcraft.org 返回纯文本</span><br><span class="line"><span class="bullet">-</span> ipv6：https://test-ipv6.nullcraft.org 返回纯文本</span><br><span class="line"></span><br><span class="line">地理位置请求API</span><br><span class="line"><span class="bullet">-</span> https://myip.ipip.net/json 返回JSON：&#123;&quot;ret&quot;:&quot;ok&quot;,&quot;data&quot;:&#123;&quot;ip&quot;:&quot;IP地址&quot;,&quot;location&quot;:[&quot;国家&quot;,&quot;省&quot;,&quot;市&quot;,&quot;区&quot;,&quot;运营商&quot;]&#125;&#125;</span><br><span class="line"></span><br><span class="line">要求：</span><br><span class="line"><span class="bullet">-</span> 显示IP地址、国家、省、市、区、运营商等信息</span><br><span class="line"><span class="bullet">-</span> 功能简洁</span><br><span class="line"><span class="bullet">-</span> 最低兼容 IE11</span><br><span class="line"><span class="bullet">-</span> 语法简单封装，模块化设计，可扩展性好</span><br><span class="line"><span class="bullet">-</span> 给方法函数等增加注释，以便理解</span><br><span class="line"></span><br><span class="line"><span class="section">## UI设计</span></span><br><span class="line"></span><br><span class="line">使用下面的要求进行开发：</span><br><span class="line"></span><br><span class="line"><span class="bullet">-</span> 做好占位或加载状态设计</span><br><span class="line"><span class="bullet">-</span> 简洁大气，仪表盘卡片风格</span><br><span class="line"><span class="bullet">-</span> 支持 亮色、暗色 主题配色的切换</span><br><span class="line"><span class="bullet">-</span> 不要渐变色等奇怪的设计</span><br></pre></td></tr></table></figure>
+
+<h3 id="AI实现过程"><a href="#AI实现过程" class="headerlink" title="AI实现过程"></a>AI实现过程</h3><p>这里使用我的 API 来获取对应类型的网络地址，在通过网络地址请求第三方的物理地址 API。</p>
+<p><img class="img-fluid" src="/images/posts/exploring-vibe-coding/trae.png" alt="exploring-vibe-coding&#x2F;trae"></p>
+<p>通过几分钟的等待，就已经把项目从零到有的完成了。</p>
+<p><img class="img-fluid" src="/images/posts/exploring-vibe-coding/trae-2.png" alt="exploring-vibe-coding&#x2F;trae-2"></p>
+<h3 id="实际运行项目"><a href="#实际运行项目" class="headerlink" title="实际运行项目"></a>实际运行项目</h3><p><img class="img-fluid" src="/images/posts/exploring-vibe-coding/web.png" alt="exploring-vibe-coding&#x2F;web"></p>
+<p>可以看到完成的非常完美，没有出现问题，设计的严格执行了我的要求。</p>
+<h3 id="词元消耗"><a href="#词元消耗" class="headerlink" title="词元消耗"></a>词元消耗</h3><p>只能说定价再配合上当前的折扣，非常实惠了。</p>
+<p><img class="img-fluid" src="/images/posts/exploring-vibe-coding/token-usage.png" alt="exploring-vibe-coding&#x2F;token-usage"></p>
+<h2 id="感叹"><a href="#感叹" class="headerlink" title="感叹"></a>感叹</h2><p>这个项目不管是人写，还是 AI 写，只要有编程经验，就可以写出来，没有任何技术含量，它的核心就是请求 API 显示罢了。</p>
+<p>我为什么要写这个文章呢？更多是感叹，我行使和认为的编程，无非就是搭积木，一个软件的功能就是在一个大的地基上累加积木块罢了。<br>一个大型项目，拆分成一个一个细小的模块，都没有技术难点，在我开发软件这十年来，新技术、新工具日新月异，周边做的开发朋友换了一茬又一茬，编程甚至已经成为某些地方初中，甚至小学的专业课程。</p>
+<p>现在通过 AI 技术的加持，可以让不懂编程的也能过实现自己的想发而创造工具，会编程的可以通过 AI 辅助来更为精进自己的技术。</p>
+<p>回想起自己在人生15岁时发布的第一款软件《<a target="_blank" rel="noopener" href="https://nullcraft.org/d/4">我的世界开服器</a>》中遇到的磕磕碰碰重重困难，即便我在当你选择了中文化的易语言编程遇到问题也无可奈何，在当时互联网并不如此时，当你遇到问题网络上大概率是搜不到解决方案的，只能靠自己一遍一遍的试错。</p>
+<blockquote class="blockquote">
+<p>不得不感叹技术的发展速度越来越快，不知未来留给人类的会不会只剩下创造，或者什么都不剩。</p>
+</blockquote>
+
+      
+    
+    
+
+    
+        
+            <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/" class="text-decoration-none">
+                <div class="btn btn-secondary rounded-pill shadow-sm">
+                    #软件开发
+                    <span class="badge text-bg-light rounded-pill ms-1">8</span>
+                </div>
+            </a>
+        
+            <a href="/tags/AI/" class="text-decoration-none">
+                <div class="btn btn-secondary rounded-pill shadow-sm">
+                    #AI
+                    <span class="badge text-bg-light rounded-pill ms-1">1</span>
+                </div>
+            </a>
+        
+    
+
+</div>
+    </main>
+
+    
+<!-- 返回顶部 -->
+<a href="#" id="back-to-top" class="btn btn-secondary back-to-top" title="返回顶部"><i class="bi bi-arrow-up" style="width: auto;"></i></a>
+
+<script src="/js/utils/back-to-top.js"></script>
+
+
+    <footer class="footer mt-auto border-top bg-body">
+  <div class="container">
+    
+    <div class="d-flex flex-column flex-sm-row justify-content-between py-3 mt-3">
+      <div>
+        <a href="/" class="link-body-emphasis text-decoration-none">
+          <img class="logo-light" width="32" height="32" src="/images/logo_256x.png" />
+          <img class="logo-dark" width="32" height="32" src="/images/logo_white_256x.png" />
+        </a>
+        <span class="ms-2">
+          © 2026 <a href="https://fastchen.com">FASTCHEN</a> All Rights Reserved. 由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> &amp; <a href="https://github.com/FastChen/hexo-theme-sujian" rel="noopener" target="_blank">SuJian</a> 强力驱动
+        </span>
+      </div>
+
+      <ul class="list-unstyled d-flex d-grid gap-3">
+          
+            
+            
+            
+            <li>
+                <a class="link-body-emphasis" target="_blank" rel="noopener" href="https://github.com/fastchen">
+                <i class="bi bi-github" style="font-size: 24px;"></i>
+              </a>
+            </li>
+          
+      </ul>
+    </div>
+  </div>
+</footer>
+
+
+
+<script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  </body>
+  
+</html>
