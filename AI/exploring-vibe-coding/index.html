@@ -16,6 +16,11 @@
 <link rel="stylesheet" href="/css/style.css">
 
 
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1/dist/fancybox/fancybox.css"
+/>
+
   
     <link rel="shortcut icon" href="/favicon.ico">
   
@@ -187,13 +192,13 @@
 <figure class="highlight markdown"><figcaption><span>我的需求.md</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">通过 javascript 原生请求 API 来开发一个 IPV4 &amp; IPV6 地址显示工具</span><br><span class="line"></span><br><span class="line"><span class="section">## 功能开发</span></span><br><span class="line"></span><br><span class="line">API请求地址：</span><br><span class="line"><span class="bullet">-</span> ipv4：https://test-ipv4.nullcraft.org 返回纯文本</span><br><span class="line"><span class="bullet">-</span> ipv6：https://test-ipv6.nullcraft.org 返回纯文本</span><br><span class="line"></span><br><span class="line">地理位置请求API</span><br><span class="line"><span class="bullet">-</span> https://myip.ipip.net/json 返回JSON：&#123;&quot;ret&quot;:&quot;ok&quot;,&quot;data&quot;:&#123;&quot;ip&quot;:&quot;IP地址&quot;,&quot;location&quot;:[&quot;国家&quot;,&quot;省&quot;,&quot;市&quot;,&quot;区&quot;,&quot;运营商&quot;]&#125;&#125;</span><br><span class="line"></span><br><span class="line">要求：</span><br><span class="line"><span class="bullet">-</span> 显示IP地址、国家、省、市、区、运营商等信息</span><br><span class="line"><span class="bullet">-</span> 功能简洁</span><br><span class="line"><span class="bullet">-</span> 最低兼容 IE11</span><br><span class="line"><span class="bullet">-</span> 语法简单封装，模块化设计，可扩展性好</span><br><span class="line"><span class="bullet">-</span> 给方法函数等增加注释，以便理解</span><br><span class="line"></span><br><span class="line"><span class="section">## UI设计</span></span><br><span class="line"></span><br><span class="line">使用下面的要求进行开发：</span><br><span class="line"></span><br><span class="line"><span class="bullet">-</span> 做好占位或加载状态设计</span><br><span class="line"><span class="bullet">-</span> 简洁大气，仪表盘卡片风格</span><br><span class="line"><span class="bullet">-</span> 支持 亮色、暗色 主题配色的切换</span><br><span class="line"><span class="bullet">-</span> 不要渐变色等奇怪的设计</span><br></pre></td></tr></table></figure>
 
 <h3 id="AI实现过程"><a href="#AI实现过程" class="headerlink" title="AI实现过程"></a>AI实现过程</h3><p>这里使用我的 API 来获取对应类型的网络地址，在通过网络地址请求第三方的物理地址 API。</p>
-<p><img class="img-fluid" src="/images/posts/exploring-vibe-coding/trae.png" alt="exploring-vibe-coding&#x2F;trae"></p>
+<p><img class="img-fluid" data-fancybox="gallery" style="cursor: pointer;" src="/images/posts/exploring-vibe-coding/trae.png" alt="exploring-vibe-coding&#x2F;trae"></p>
 <p>通过几分钟的等待，就已经把项目从零到有的完成了。</p>
-<p><img class="img-fluid" src="/images/posts/exploring-vibe-coding/trae-2.png" alt="exploring-vibe-coding&#x2F;trae-2"></p>
-<h3 id="实际运行项目"><a href="#实际运行项目" class="headerlink" title="实际运行项目"></a>实际运行项目</h3><p><img class="img-fluid" src="/images/posts/exploring-vibe-coding/web.png" alt="exploring-vibe-coding&#x2F;web"></p>
+<p><img class="img-fluid" data-fancybox="gallery" style="cursor: pointer;" src="/images/posts/exploring-vibe-coding/trae-2.png" alt="exploring-vibe-coding&#x2F;trae-2"></p>
+<h3 id="实际运行项目"><a href="#实际运行项目" class="headerlink" title="实际运行项目"></a>实际运行项目</h3><p><img class="img-fluid" data-fancybox="gallery" style="cursor: pointer;" src="/images/posts/exploring-vibe-coding/web.png" alt="exploring-vibe-coding&#x2F;web"></p>
 <p>可以看到完成的非常完美，没有出现问题，设计的严格执行了我的要求。</p>
 <h3 id="词元消耗"><a href="#词元消耗" class="headerlink" title="词元消耗"></a>词元消耗</h3><p>只能说定价再配合上当前的折扣，非常实惠了。</p>
-<p><img class="img-fluid" src="/images/posts/exploring-vibe-coding/token-usage.png" alt="exploring-vibe-coding&#x2F;token-usage"></p>
+<p><img class="img-fluid" data-fancybox="gallery" style="cursor: pointer;" src="/images/posts/exploring-vibe-coding/token-usage.png" alt="exploring-vibe-coding&#x2F;token-usage"></p>
 <h2 id="感叹"><a href="#感叹" class="headerlink" title="感叹"></a>感叹</h2><p>这个项目不管是人写，还是 AI 写，只要有编程经验，就可以写出来，没有任何技术含量，它的核心就是请求 API 显示罢了。</p>
 <p>我为什么要写这个文章呢？更多是感叹，我行使和认为的编程，无非就是搭积木，一个软件的功能就是在一个大的地基上累加积木块罢了。<br>一个大型项目，拆分成一个一个细小的模块，都没有技术难点，在我开发软件这十年来，新技术、新工具日新月异，周边做的开发朋友换了一茬又一茬，编程甚至已经成为某些地方初中，甚至小学的专业课程。</p>
 <p>现在通过 AI 技术的加持，可以让不懂编程的也能过实现自己的想发而创造工具，会编程的可以通过 AI 辅助来更为精进自己的技术。</p>
@@ -263,6 +268,11 @@
     </div>
   </div>
 </footer>
+
+<!-- 引入并配置 Fancybox v6.1 -->
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1/dist/fancybox/fancybox.umd.js"></script>
+
+<script src="/js/utils/fancybox.js"></script>
 
 
 
