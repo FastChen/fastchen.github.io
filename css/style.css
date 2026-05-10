@@ -135,6 +135,50 @@ pre code {
 figure.highlight .marked {
   background: rgba(0,0,0,0.3);
 }
+.category-list {
+  font-size: large;
+  list-style: none;
+}
+.category-list .category-list-count {
+  font-size: small;
+  color: #555;
+  font-weight: bold;
+  line-height: 1;
+  margin-left: 6px;
+  padding: 1px 4px;
+}
+.back-to-top {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+.back-to-top:hover {
+  background: rgba(0,0,0,0.8);
+  color: #fff;
+}
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+}
 /* 修改字体默认以 NotoSansFont 开始 */
 :root {
   --su-font-family: "Noto Sans", "Noto Sans SC", sans-serif "Segoe UI", Roboto, "Helvetica Neue", "Liberation Sans", Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -174,34 +218,4 @@ body {
 ul li:has(input[type="checkbox"]) {
   list-style: none;
   margin-left: -1em;
-}
-.back-to-top {
-  position: fixed;
-  right: 30px;
-  bottom: 30px;
-  text-align: center;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s ease;
-  z-index: 999;
-}
-.back-to-top:hover {
-  background: rgba(0,0,0,0.8);
-  color: #fff;
-}
-.back-to-top.show {
-  opacity: 1;
-  visibility: visible;
-}
-.category-list {
-  font-size: large;
-  list-style: none;
-}
-.category-list .category-list-count {
-  font-size: small;
-  color: #555;
-  font-weight: bold;
-  line-height: 1;
-  margin-left: 6px;
-  padding: 1px 4px;
 }

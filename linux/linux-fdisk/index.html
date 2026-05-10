@@ -1,10 +1,20 @@
 <!doctype html>
 <html class="h-100">
-  <head>
+    
+<head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
+
   <title>在 Linux 下管理磁盘分区 | FASTCHEN | 快辰</title>
+  <meta name="description" content="一介凡人快辰的个人发牢骚之地。灵工艺的创始人。">
+  <meta name="keywords" content="快辰,FastChen,灵工艺,NullCraft,创始人">
+
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&display=swap" rel="stylesheet">
+
 
   
 <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
@@ -23,25 +33,13 @@
   
 
   
-    <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="shortcut icon" href="/favicon.ico">
   
-
-  <meta name="description" content="一介凡人快辰的个人发牢骚之地。灵工艺的创始人。">
-  <meta name="keywords" content="快辰,FastChen,灵工艺,NullCraft,创始人">
-
   <!-- Apple设备图标 -->
   <link rel="apple-touch-icon" sizes="180x180" href="/images/logo_256x.png">
   <!-- Android设备图标 -->
   <link rel="icon" type="image/png" sizes="192x192" href="/images/logo_256x.png">
   <link rel="icon" type="image/png" sizes="512x512" href="/images/logo_256x.png">
-
-  
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&display=swap" rel="stylesheet">
-  
-
   <!-- Open Graph协议(社交媒体分享) -->
   <meta name="description" content="新建了一台机器，发现它的 swap 是单独创建的一块物理磁盘分区，我使用 fdisk 删除 swap 的 vda2 分区然后将容量合并到主分区中，记录一下基本的使用过程。">
 <meta property="og:type" content="article">
@@ -80,7 +78,7 @@
 </script>
 
   <body class="d-flex flex-column h-100 theme-transition bg-body-tertiary">
-    <header class="bg-body p-3 mb-3 border-bottom">
+    <header class="bg-body p-3 border-bottom">
   <div class="container">
     <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
       <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none">
@@ -139,7 +137,7 @@
   </div>
 </header>
     
-    <main class="flex-shrink-0 container my-3">
+    <main class="flex-shrink-0 container my-5">
       <div class="post">
     <h1 class="post-title fw-semibold">
     
