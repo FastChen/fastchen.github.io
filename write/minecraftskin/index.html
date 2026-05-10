@@ -177,6 +177,15 @@
             </span>
         
     
+
+    
+        
+            <!-- 标签 -->
+            <span>
+                <i class="bi bi-tags me-2"></i><a class="tag-none-link" href="/tags/API/" rel="tag">API</a>、<a class="tag-none-link" href="/tags/Minecraft/" rel="tag">Minecraft</a>、<a class="tag-none-link" href="/tags/PHP/" rel="tag">PHP</a>
+            </span>
+        
+    
 </div>
     
 
@@ -224,7 +233,7 @@
 <p>大致就是这样。</p>
 
       
-    
+
     
 
     
@@ -256,10 +265,40 @@
     </main>
 
     
-<!-- 返回顶部 -->
-<a href="#" id="back-to-top" class="btn btn-secondary back-to-top" title="返回顶部"><i class="bi bi-arrow-up" style="width: auto;"></i></a>
+<!-- 右下角浮动工具栏 -->
+<div class="position-fixed bottom-0 end-0" style="margin-right: 30px;margin-bottom: 30px;z-index: 1050;">
+  <div class="d-flex flex-column align-items-center gap-2">
+    
+    <!-- TOC 按钮 + 向上弹出卡片（用 dropup 包裹） -->
+    <div class="btn-group dropup" id="toc-group">
+      <a class="btn btn-secondary rounded"
+         data-bs-toggle="dropdown"
+         aria-expanded="false"
+         title="toc">
+        <i class="bi bi-list-ul"></i>
+      </a>
+      <div class="dropdown-menu dropdown-menu-end text-nowrap p-3 mb-2 border-0 shadow"
+           style="max-height: 70vh; width: auto; overflow-y: auto;">
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="link-body-emphasis text-decoration-none" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="link-body-emphasis text-decoration-none" href="#API%E8%B0%83%E7%94%A8"><span class="toc-number">2.</span> <span class="toc-text">API调用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="link-body-emphasis text-decoration-none" href="#Mojang-%E5%AE%98%E6%96%B9-API"><span class="toc-number">2.1.</span> <span class="toc-text">Mojang(官方) API</span></a></li><li class="toc-item toc-level-3"><a class="link-body-emphasis text-decoration-none" href="#Crafatar-%E7%AC%AC%E4%B8%89%E6%96%B9-API"><span class="toc-number">2.2.</span> <span class="toc-text">Crafatar(第三方) API</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="link-body-emphasis text-decoration-none" href="#%E5%A4%B4%E5%83%8F"><span class="toc-number">2.2.1.</span> <span class="toc-text">头像</span></a></li><li class="toc-item toc-level-4"><a class="link-body-emphasis text-decoration-none" href="#%E5%A4%B4%E9%A2%85"><span class="toc-number">2.2.2.</span> <span class="toc-text">头颅</span></a></li><li class="toc-item toc-level-4"><a class="link-body-emphasis text-decoration-none" href="#%E6%95%B4%E4%B8%AA%E8%BA%AB%E4%BD%93"><span class="toc-number">2.2.3.</span> <span class="toc-text">整个身体</span></a></li><li class="toc-item toc-level-4"><a class="link-body-emphasis text-decoration-none" href="#%E7%9A%AE%E8%82%A4%E4%B8%8E%E6%8A%AB%E9%A3%8E"><span class="toc-number">2.2.4.</span> <span class="toc-text">皮肤与披风</span></a></li></ol></li></ol></li></ol>
+      </div>
+    </div>
+    
+
+    <!-- 返回顶部按钮（默认隐藏，滚动后出现） -->
+    <a href="#"
+       id="back-to-top"
+       class="btn btn-secondary d-none"
+       title="返回顶部">
+      <i class="bi bi-arrow-up"></i>
+    </a>
+
+  </div>
+</div>
+
 
 <script src="/js/utils/back-to-top.js"></script>
+
+
 
 
     <footer class="footer mt-auto border-top bg-body">

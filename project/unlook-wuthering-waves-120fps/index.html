@@ -178,6 +178,15 @@
             </span>
         
     
+
+    
+        
+            <!-- 标签 -->
+            <span>
+                <i class="bi bi-tags me-2"></i><a class="tag-none-link" href="/tags/%E5%B7%A5%E5%85%B7/" rel="tag">工具</a>、<a class="tag-none-link" href="/tags/%E6%B8%B8%E6%88%8F/" rel="tag">游戏</a>、<a class="tag-none-link" href="/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/" rel="tag">软件开发</a>
+            </span>
+        
+    
 </div>
     
 
@@ -246,7 +255,7 @@
 <p><img class="img-fluid" data-fancybox="gallery" style="cursor: pointer;" src="/images/blog/unlook-wuthering-waves-120fps/sqlitestudio_sql_save_db.png" alt="鸣潮自定义帧率解锁工具"></p>
 
       
-    
+
     
 
     
@@ -278,10 +287,40 @@
     </main>
 
     
-<!-- 返回顶部 -->
-<a href="#" id="back-to-top" class="btn btn-secondary back-to-top" title="返回顶部"><i class="bi bi-arrow-up" style="width: auto;"></i></a>
+<!-- 右下角浮动工具栏 -->
+<div class="position-fixed bottom-0 end-0" style="margin-right: 30px;margin-bottom: 30px;z-index: 1050;">
+  <div class="d-flex flex-column align-items-center gap-2">
+    
+    <!-- TOC 按钮 + 向上弹出卡片（用 dropup 包裹） -->
+    <div class="btn-group dropup" id="toc-group">
+      <a class="btn btn-secondary rounded"
+         data-bs-toggle="dropdown"
+         aria-expanded="false"
+         title="toc">
+        <i class="bi bi-list-ul"></i>
+      </a>
+      <div class="dropdown-menu dropdown-menu-end text-nowrap p-3 mb-2 border-0 shadow"
+           style="max-height: 70vh; width: auto; overflow-y: auto;">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="link-body-emphasis text-decoration-none" href="#%E6%96%B9%E5%BC%8F%E4%B8%80-%E4%BD%BF%E7%94%A8%E3%80%8A%E9%B8%A3%E6%BD%AE%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B8%A7%E7%8E%87%E8%A7%A3%E9%94%81%E5%B7%A5%E5%85%B7%E3%80%8B%E4%B8%80%E9%94%AE%E4%BF%AE%E6%94%B9%E5%B8%A7%E7%8E%87"><span class="toc-number">1.</span> <span class="toc-text">方式一 使用《鸣潮自定义帧率解锁工具》一键修改帧率</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="link-body-emphasis text-decoration-none" href="#%E4%B8%8B%E8%BD%BD%E3%80%8A%E9%B8%A3%E6%BD%AE%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B8%A7%E7%8E%87%E8%A7%A3%E9%94%81%E5%B7%A5%E5%85%B7%E3%80%8B"><span class="toc-number">1.1.</span> <span class="toc-text">下载《鸣潮自定义帧率解锁工具》</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="link-body-emphasis text-decoration-none" href="#%E6%96%B9%E6%B3%95%E4%BA%8C-%E4%BD%BF%E7%94%A8%E3%80%8ASQLiteStudio%E3%80%8B%E6%89%8B%E5%8A%A8%E7%BC%96%E8%BE%91%E6%95%B0%E6%8D%AE%E5%BA%93%E6%96%87%E4%BB%B6"><span class="toc-number">2.</span> <span class="toc-text">方法二 使用《SQLiteStudio》手动编辑数据库文件</span></a></li></ol>
+      </div>
+    </div>
+    
+
+    <!-- 返回顶部按钮（默认隐藏，滚动后出现） -->
+    <a href="#"
+       id="back-to-top"
+       class="btn btn-secondary d-none"
+       title="返回顶部">
+      <i class="bi bi-arrow-up"></i>
+    </a>
+
+  </div>
+</div>
+
 
 <script src="/js/utils/back-to-top.js"></script>
+
+
 
 
     <footer class="footer mt-auto border-top bg-body">

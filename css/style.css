@@ -147,24 +147,6 @@ figure.highlight .marked {
   margin-left: 6px;
   padding: 1px 4px;
 }
-.back-to-top {
-  position: fixed;
-  right: 30px;
-  bottom: 30px;
-  text-align: center;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s ease;
-  z-index: 999;
-}
-.back-to-top:hover {
-  background: rgba(0,0,0,0.8);
-  color: #fff;
-}
-.back-to-top.show {
-  opacity: 1;
-  visibility: visible;
-}
 .h1,
 .h2,
 .h3,
@@ -214,7 +196,8 @@ body {
   padding: 0.75rem;
   border-left: 0.25rem solid var(--bs-border-color, var(--bs-gray-300));
 }
-/* checkbox 列表对齐 */
+/* 修正列表对齐(含带有checkbox的列表) */
+ol,
 ul li:has(input[type="checkbox"]) {
   list-style: none;
   margin-left: -1em;

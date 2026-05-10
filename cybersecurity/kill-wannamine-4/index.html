@@ -172,6 +172,15 @@
             </span>
         
     
+
+    
+        
+            <!-- 标签 -->
+            <span>
+                <i class="bi bi-tags me-2"></i><a class="tag-none-link" href="/tags/%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF/" rel="tag">安全技术</a>、<a class="tag-none-link" href="/tags/%E6%8C%96%E7%9F%BF%E7%97%85%E6%AF%92/" rel="tag">挖矿病毒</a>
+            </span>
+        
+    
 </div>
     
 
@@ -234,7 +243,7 @@
 <p>文章参考：<br><a target="_blank" rel="noopener" href="https://bbs.sangfor.com.cn/forum.php?mod=viewthread&tid=152179">深信服社区 - WannaMine4.0挖矿病毒处置</a><br><a target="_blank" rel="noopener" href="https://www.freebuf.com/articles/terminal/198891.html">WannaMine升级到V4.0版本，警惕中招！</a></p>
 
       
-    
+
     
 
     
@@ -259,10 +268,40 @@
     </main>
 
     
-<!-- 返回顶部 -->
-<a href="#" id="back-to-top" class="btn btn-secondary back-to-top" title="返回顶部"><i class="bi bi-arrow-up" style="width: auto;"></i></a>
+<!-- 右下角浮动工具栏 -->
+<div class="position-fixed bottom-0 end-0" style="margin-right: 30px;margin-bottom: 30px;z-index: 1050;">
+  <div class="d-flex flex-column align-items-center gap-2">
+    
+    <!-- TOC 按钮 + 向上弹出卡片（用 dropup 包裹） -->
+    <div class="btn-group dropup" id="toc-group">
+      <a class="btn btn-secondary rounded"
+         data-bs-toggle="dropdown"
+         aria-expanded="false"
+         title="toc">
+        <i class="bi bi-list-ul"></i>
+      </a>
+      <div class="dropdown-menu dropdown-menu-end text-nowrap p-3 mb-2 border-0 shadow"
+           style="max-height: 70vh; width: auto; overflow-y: auto;">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="link-body-emphasis text-decoration-none" href="#%E4%BA%86%E8%A7%A3-WannaMine-4-0"><span class="toc-number">1.</span> <span class="toc-text">了解 WannaMine 4.0</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="link-body-emphasis text-decoration-none" href="#WannaMine-4-0-%E5%8F%98%E7%A7%8D%E4%BF%A1%E6%81%AF"><span class="toc-number">1.1.</span> <span class="toc-text">WannaMine 4.0 变种信息</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="link-body-emphasis text-decoration-none" href="#%E5%8F%91%E4%BD%9C%E7%89%B9%E5%BE%81"><span class="toc-number">1.1.1.</span> <span class="toc-text">发作特征</span></a></li><li class="toc-item toc-level-3"><a class="link-body-emphasis text-decoration-none" href="#%E4%BC%A0%E6%9F%93%E9%80%94%E5%BE%84"><span class="toc-number">1.1.2.</span> <span class="toc-text">传染途径</span></a></li><li class="toc-item toc-level-3"><a class="link-body-emphasis text-decoration-none" href="#%E5%A6%82%E4%BD%95%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8-MS17-010-%E6%BC%8F%E6%B4%9E%EF%BC%9F"><span class="toc-number">1.1.3.</span> <span class="toc-text">如何判断是否存在 MS17-010 漏洞？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="link-body-emphasis text-decoration-none" href="#WannaMine-4-0-%E6%94%BB%E5%87%BB%E6%B5%81%E7%A8%8B"><span class="toc-number">1.2.</span> <span class="toc-text">WannaMine 4.0 攻击流程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="link-body-emphasis text-decoration-none" href="#%E6%94%BB%E5%87%BB%E6%AD%A5%E9%AA%A4%E4%B8%80-%E5%88%9B%E5%BB%BA%E4%B8%BB%E6%9C%8D%E5%8A%A1"><span class="toc-number">1.2.1.</span> <span class="toc-text">攻击步骤一 - 创建主服务</span></a></li><li class="toc-item toc-level-3"><a class="link-body-emphasis text-decoration-none" href="#%E6%94%BB%E5%87%BB%E6%AD%A5%E9%AA%A4%E4%BA%8C-%E6%94%B6%E9%9B%86%E5%B9%B6%E6%94%BB%E5%87%BB-MS17-010-%E6%BC%8F%E6%B4%9E%E4%B8%BB%E6%9C%BA"><span class="toc-number">1.2.2.</span> <span class="toc-text">攻击步骤二 - 收集并攻击 MS17-010 漏洞主机</span></a></li><li class="toc-item toc-level-3"><a class="link-body-emphasis text-decoration-none" href="#%E6%94%BB%E5%87%BB%E6%AD%A5%E9%AA%A4%E4%B8%89-%E6%84%9F%E6%9F%93%E4%B8%BB%E6%9C%BA"><span class="toc-number">1.2.3.</span> <span class="toc-text">攻击步骤三 - 感染主机</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="link-body-emphasis text-decoration-none" href="#%E5%A4%84%E7%BD%AE-WannaMine-4-0"><span class="toc-number">2.</span> <span class="toc-text">处置 WannaMine 4.0</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="link-body-emphasis text-decoration-none" href="#%E6%93%8D%E4%BD%9C%E5%89%8D%E6%8F%90%E7%A4%BA"><span class="toc-number">2.1.</span> <span class="toc-text">操作前提示</span></a></li><li class="toc-item toc-level-2"><a class="link-body-emphasis text-decoration-none" href="#%E4%BD%BF%E7%94%A8%E5%B7%A5%E5%85%B7"><span class="toc-number">2.2.</span> <span class="toc-text">使用工具</span></a></li><li class="toc-item toc-level-2"><a class="link-body-emphasis text-decoration-none" href="#%E5%BC%80%E5%A7%8B%E5%A4%84%E7%BD%AE"><span class="toc-number">2.3.</span> <span class="toc-text">开始处置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="link-body-emphasis text-decoration-none" href="#%E7%A1%AE%E5%AE%9A%E5%B9%B6%E7%A7%BB%E9%99%A4%E7%97%85%E6%AF%92%E4%B8%BB%E6%A8%A1%E5%9D%97%E6%9C%8D%E5%8A%A1"><span class="toc-number">2.3.1.</span> <span class="toc-text">确定并移除病毒主模块服务</span></a></li><li class="toc-item toc-level-3"><a class="link-body-emphasis text-decoration-none" href="#%E7%A7%BB%E9%99%A4%E7%97%85%E6%AF%92%E6%8C%96%E7%9F%BF%E8%84%9A%E6%9C%AC%E7%A8%8B%E5%BA%8F"><span class="toc-number">2.3.2.</span> <span class="toc-text">移除病毒挖矿脚本程序</span></a></li><li class="toc-item toc-level-3"><a class="link-body-emphasis text-decoration-none" href="#%E7%A7%BB%E9%99%A4%E7%97%85%E6%AF%92%E9%87%8A%E6%94%BE%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8%E6%A8%A1%E5%9D%97"><span class="toc-number">2.3.3.</span> <span class="toc-text">移除病毒释放漏洞利用模块</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="link-body-emphasis text-decoration-none" href="#%E5%AE%89%E8%A3%85%E8%A1%A5%E4%B8%81"><span class="toc-number">2.4.</span> <span class="toc-text">安装补丁</span></a></li><li class="toc-item toc-level-2"><a class="link-body-emphasis text-decoration-none" href="#%E6%B5%8B%E8%AF%95%E7%97%85%E6%AF%92%E6%98%AF%E5%90%A6%E5%A4%8D%E6%B4%BB"><span class="toc-number">2.5.</span> <span class="toc-text">测试病毒是否复活</span></a></li></ol></li></ol>
+      </div>
+    </div>
+    
+
+    <!-- 返回顶部按钮（默认隐藏，滚动后出现） -->
+    <a href="#"
+       id="back-to-top"
+       class="btn btn-secondary d-none"
+       title="返回顶部">
+      <i class="bi bi-arrow-up"></i>
+    </a>
+
+  </div>
+</div>
+
 
 <script src="/js/utils/back-to-top.js"></script>
+
+
 
 
     <footer class="footer mt-auto border-top bg-body">

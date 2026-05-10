@@ -192,6 +192,10 @@
             </span>
         
     
+
+    
+        
+    
 </div>
     
 
@@ -254,7 +258,7 @@
 <p><img class="img-fluid" data-fancybox="gallery" style="cursor: pointer;" src="/images/blog/20230113/windows11_4.png" alt="windows11_4"></p>
 
       
-    
+
     
 
     
@@ -263,10 +267,40 @@
     </main>
 
     
-<!-- 返回顶部 -->
-<a href="#" id="back-to-top" class="btn btn-secondary back-to-top" title="返回顶部"><i class="bi bi-arrow-up" style="width: auto;"></i></a>
+<!-- 右下角浮动工具栏 -->
+<div class="position-fixed bottom-0 end-0" style="margin-right: 30px;margin-bottom: 30px;z-index: 1050;">
+  <div class="d-flex flex-column align-items-center gap-2">
+    
+    <!-- TOC 按钮 + 向上弹出卡片（用 dropup 包裹） -->
+    <div class="btn-group dropup" id="toc-group">
+      <a class="btn btn-secondary rounded"
+         data-bs-toggle="dropdown"
+         aria-expanded="false"
+         title="toc">
+        <i class="bi bi-list-ul"></i>
+      </a>
+      <div class="dropdown-menu dropdown-menu-end text-nowrap p-3 mb-2 border-0 shadow"
+           style="max-height: 70vh; width: auto; overflow-y: auto;">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="link-body-emphasis text-decoration-none" href="#0x01-%E4%B8%8B%E9%9C%80%E8%A6%81%E7%9A%84%E4%B8%9C%E8%A5%BF"><span class="toc-number">1.</span> <span class="toc-text">0x01 下需要的东西</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="link-body-emphasis text-decoration-none" href="#VMware-Workstation-Pro"><span class="toc-number">1.1.</span> <span class="toc-text">VMware Workstation Pro</span></a></li><li class="toc-item toc-level-2"><a class="link-body-emphasis text-decoration-none" href="#Windows11-ISO%E9%95%9C%E5%83%8F"><span class="toc-number">1.2.</span> <span class="toc-text">Windows11 ISO镜像</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="link-body-emphasis text-decoration-none" href="#0x02-%E5%BC%80%E5%A7%8B%E5%AE%89%E8%A3%85Win11"><span class="toc-number">2.</span> <span class="toc-text">0x02 开始安装Win11</span></a></li><li class="toc-item toc-level-1"><a class="link-body-emphasis text-decoration-none" href="#0x03-%E5%AE%89%E8%A3%85%E5%89%8D%E9%85%8D%E7%BD%AE"><span class="toc-number">3.</span> <span class="toc-text">0x03 安装前配置</span></a></li><li class="toc-item toc-level-1"><a class="link-body-emphasis text-decoration-none" href="#0x04-%E5%BC%80%E5%A7%8B%E5%AE%89%E8%A3%85"><span class="toc-number">4.</span> <span class="toc-text">0x04 开始安装</span></a></li><li class="toc-item toc-level-1"><a class="link-body-emphasis text-decoration-none" href="#%E9%A2%9D%E5%A4%96%E5%86%85%E5%AE%B9"><span class="toc-number">5.</span> <span class="toc-text">额外内容</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="link-body-emphasis text-decoration-none" href="#%E8%B7%B3%E8%BF%87%E5%BE%AE%E8%BD%AF%E7%99%BB%E5%BD%95"><span class="toc-number">5.1.</span> <span class="toc-text">跳过微软登录</span></a></li></ol></li></ol>
+      </div>
+    </div>
+    
+
+    <!-- 返回顶部按钮（默认隐藏，滚动后出现） -->
+    <a href="#"
+       id="back-to-top"
+       class="btn btn-secondary d-none"
+       title="返回顶部">
+      <i class="bi bi-arrow-up"></i>
+    </a>
+
+  </div>
+</div>
+
 
 <script src="/js/utils/back-to-top.js"></script>
+
+
 
 
     <footer class="footer mt-auto border-top bg-body">

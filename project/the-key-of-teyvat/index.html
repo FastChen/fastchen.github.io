@@ -185,6 +185,15 @@
             </span>
         
     
+
+    
+        
+            <!-- 标签 -->
+            <span>
+                <i class="bi bi-tags me-2"></i><a class="tag-none-link" href="/tags/%E5%8E%9F%E7%A5%9E/" rel="tag">原神</a>、<a class="tag-none-link" href="/tags/%E5%B7%A5%E5%85%B7/" rel="tag">工具</a>、<a class="tag-none-link" href="/tags/%E6%B8%B8%E6%88%8F/" rel="tag">游戏</a>、<a class="tag-none-link" href="/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/" rel="tag">软件开发</a>
+            </span>
+        
+    
 </div>
     
 
@@ -266,7 +275,7 @@
 <p>看到这里，音乐也差不多结束了吧。<strong>暂时就到这里吧。有缘再聚。</strong></p>
 
       
-    
+
     
 
     
@@ -305,10 +314,40 @@
     </main>
 
     
-<!-- 返回顶部 -->
-<a href="#" id="back-to-top" class="btn btn-secondary back-to-top" title="返回顶部"><i class="bi bi-arrow-up" style="width: auto;"></i></a>
+<!-- 右下角浮动工具栏 -->
+<div class="position-fixed bottom-0 end-0" style="margin-right: 30px;margin-bottom: 30px;z-index: 1050;">
+  <div class="d-flex flex-column align-items-center gap-2">
+    
+    <!-- TOC 按钮 + 向上弹出卡片（用 dropup 包裹） -->
+    <div class="btn-group dropup" id="toc-group">
+      <a class="btn btn-secondary rounded"
+         data-bs-toggle="dropdown"
+         aria-expanded="false"
+         title="toc">
+        <i class="bi bi-list-ul"></i>
+      </a>
+      <div class="dropdown-menu dropdown-menu-end text-nowrap p-3 mb-2 border-0 shadow"
+           style="max-height: 70vh; width: auto; overflow-y: auto;">
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="link-body-emphasis text-decoration-none" href="#%E5%9C%A8%E8%BF%99%E4%B9%8B%E5%89%8D"><span class="toc-number">1.</span> <span class="toc-text">在这之前</span></a></li><li class="toc-item toc-level-2"><a class="link-body-emphasis text-decoration-none" href="#%E6%88%91%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%81%9A%E8%BF%99%E4%B8%AA%EF%BC%9F"><span class="toc-number">2.</span> <span class="toc-text">我为什么要做这个？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="link-body-emphasis text-decoration-none" href="#%E5%BC%80%E5%A7%8B%E3%80%82"><span class="toc-number">2.1.</span> <span class="toc-text">开始。</span></a></li><li class="toc-item toc-level-3"><a class="link-body-emphasis text-decoration-none" href="#%E5%A5%91%E6%9C%BA%E3%80%82"><span class="toc-number">2.2.</span> <span class="toc-text">契机。</span></a></li><li class="toc-item toc-level-3"><a class="link-body-emphasis text-decoration-none" href="#%E5%AE%9E%E9%AA%8C%E3%80%82"><span class="toc-number">2.3.</span> <span class="toc-text">实验。</span></a></li><li class="toc-item toc-level-3"><a class="link-body-emphasis text-decoration-none" href="#%E6%9B%B4%E6%96%B0%E3%80%82"><span class="toc-number">2.4.</span> <span class="toc-text">更新。</span></a></li><li class="toc-item toc-level-3"><a class="link-body-emphasis text-decoration-none" href="#%E3%80%8A%E6%8F%90%E7%93%A6%E7%89%B9%E4%B9%8B%E5%8C%99%E3%80%8B"><span class="toc-number">2.5.</span> <span class="toc-text">《提瓦特之匙》</span></a></li><li class="toc-item toc-level-3"><a class="link-body-emphasis text-decoration-none" href="#%E9%80%9A%E8%BF%87%E5%BC%80%E5%8F%91%EF%BC%8C%E6%88%91%E5%BE%97%E5%88%B0%E4%BA%86%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">2.6.</span> <span class="toc-text">通过开发，我得到了什么？</span></a></li><li class="toc-item toc-level-3"><a class="link-body-emphasis text-decoration-none" href="#%E6%88%91%E4%B8%8D%E5%96%9C%E6%AC%A2%E5%AE%83%E7%9A%84%E7%95%8C%E9%9D%A2%E3%80%82%E5%A4%AA%E8%80%81%E4%BA%86%E3%80%82"><span class="toc-number">2.7.</span> <span class="toc-text">我不喜欢它的界面。太老了。</span></a></li><li class="toc-item toc-level-3"><a class="link-body-emphasis text-decoration-none" href="#%E5%90%8C%E6%97%B6%EF%BC%8C%E6%88%91%E7%9A%84%E7%96%91%E9%97%AE%E3%80%82"><span class="toc-number">2.8.</span> <span class="toc-text">同时，我的疑问。</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="link-body-emphasis text-decoration-none" href="#%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%EF%BC%9F"><span class="toc-number">3.</span> <span class="toc-text">如何使用？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="link-body-emphasis text-decoration-none" href="#1-%E8%8E%B7%E5%8F%96-%E4%B8%8B%E8%BD%BD%E8%BD%AF%E4%BB%B6"><span class="toc-number">3.1.</span> <span class="toc-text">1.获取&amp;下载软件</span></a></li><li class="toc-item toc-level-3"><a class="link-body-emphasis text-decoration-none" href="#2-%E8%BF%90%E8%A1%8C%E5%B9%B6%E9%98%85%E8%AF%BB%E8%AF%B4%E6%98%8E"><span class="toc-number">3.2.</span> <span class="toc-text">2.运行并阅读说明</span></a></li><li class="toc-item toc-level-3"><a class="link-body-emphasis text-decoration-none" href="#3-%E8%8E%B7%E5%8F%96%E5%88%87%E6%8D%A2%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%89%80%E9%9C%80%E9%85%8D%E7%BD%AE%E5%86%85%E5%AE%B9%E3%80%82"><span class="toc-number">3.3.</span> <span class="toc-text">3.获取切换服务器所需配置内容。</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="link-body-emphasis text-decoration-none" href="#3-1-%E5%A6%82%E4%BD%95%E6%9F%A5%E6%89%BE%E6%B8%B8%E6%88%8F-%E5%90%AF%E5%8A%A8%E5%99%A8%E7%9B%AE%E5%BD%95-%E5%9C%B0%E5%9D%80"><span class="toc-number">3.3.1.</span> <span class="toc-text">3.1 如何查找游戏 启动器目录 地址</span></a></li><li class="toc-item toc-level-4"><a class="link-body-emphasis text-decoration-none" href="#3-2-%E5%A6%82%E4%BD%95%E6%9F%A5%E6%89%BE-%E6%B8%B8%E6%88%8F%E7%9B%AE%E5%BD%95-%E5%9C%B0%E5%9D%80"><span class="toc-number">3.3.2.</span> <span class="toc-text">3.2 如何查找 游戏目录 地址</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="link-body-emphasis text-decoration-none" href="#4-%E9%85%8D%E7%BD%AE%E6%8F%90%E7%93%A6%E7%89%B9%E4%B9%8B%E5%8C%99%E5%B9%B6%E5%88%87%E6%8D%A2%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-number">3.4.</span> <span class="toc-text">4.配置提瓦特之匙并切换服务器</span></a></li><li class="toc-item toc-level-3"><a class="link-body-emphasis text-decoration-none" href="#5-%E7%94%9F%E6%88%90%E5%BF%AB%E6%8D%B7%E5%88%87%E6%8D%A2"><span class="toc-number">3.5.</span> <span class="toc-text">5.生成快捷切换</span></a></li><li class="toc-item toc-level-3"><a class="link-body-emphasis text-decoration-none" href="#%E5%AE%9E%E6%97%B6%E4%BE%BF%E7%AD%BE"><span class="toc-number">3.6.</span> <span class="toc-text">实时便签</span></a></li><li class="toc-item toc-level-3"><a class="link-body-emphasis text-decoration-none" href="#%E8%BF%9B%E9%98%B6%E5%90%AF%E5%8A%A8"><span class="toc-number">3.7.</span> <span class="toc-text">进阶启动</span></a></li><li class="toc-item toc-level-3"><a class="link-body-emphasis text-decoration-none" href="#%E4%B8%80%E4%BA%9B%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86"><span class="toc-number">3.8.</span> <span class="toc-text">一些错误处理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="link-body-emphasis text-decoration-none" href="#%E6%93%8D%E4%BD%9C%E5%B7%B2%E8%A2%AB%E7%94%A8%E6%88%B7%E5%8F%96%E6%B6%88"><span class="toc-number">3.8.1.</span> <span class="toc-text">操作已被用户取消</span></a></li><li class="toc-item toc-level-4"><a class="link-body-emphasis text-decoration-none" href="#%E5%88%87%E6%8D%A2%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%97%B6%E5%BC%B9%E5%87%BA%E2%80%9C%E5%AF%B9%E8%B7%AF%E5%BE%84%E6%8B%92%E7%BB%9D%E8%AE%BF%E9%97%AE%E2%80%9D"><span class="toc-number">3.8.2.</span> <span class="toc-text">切换服务器时弹出“对路径拒绝访问”</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="link-body-emphasis text-decoration-none" href="#%E7%99%BB%E9%99%86%E5%87%BA%E7%8E%B0%E6%95%B0%E6%8D%AE%E5%BC%82%E5%B8%B8%EF%BC%8C%E9%94%99%E8%AF%AF%E7%A0%8131-4302"><span class="toc-number">3.9.</span> <span class="toc-text">登陆出现数据异常，错误码31-4302</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="link-body-emphasis text-decoration-none" href="#%E6%9C%80%E5%90%8E"><span class="toc-number">4.</span> <span class="toc-text">最后</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="link-body-emphasis text-decoration-none" href="#%E4%BB%80%E4%B9%88%EF%BC%9F%E4%BD%A0%E4%B9%9F%E9%9C%80%E8%A6%81%E8%BF%99%E6%AC%BE%E8%BD%AF%E4%BB%B6%E3%80%82"><span class="toc-number">4.1.</span> <span class="toc-text">什么？你也需要这款软件。</span></a></li><li class="toc-item toc-level-3"><a class="link-body-emphasis text-decoration-none" href="#%E9%99%88%E5%B9%B4%E6%97%A7%E4%BA%8B%E3%80%82"><span class="toc-number">4.2.</span> <span class="toc-text">陈年旧事。</span></a></li></ol></li></ol>
+      </div>
+    </div>
+    
+
+    <!-- 返回顶部按钮（默认隐藏，滚动后出现） -->
+    <a href="#"
+       id="back-to-top"
+       class="btn btn-secondary d-none"
+       title="返回顶部">
+      <i class="bi bi-arrow-up"></i>
+    </a>
+
+  </div>
+</div>
+
 
 <script src="/js/utils/back-to-top.js"></script>
+
+
 
 
     <footer class="footer mt-auto border-top bg-body">

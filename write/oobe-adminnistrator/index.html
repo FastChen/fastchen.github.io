@@ -170,6 +170,15 @@
             </span>
         
     
+
+    
+        
+            <!-- 标签 -->
+            <span>
+                <i class="bi bi-tags me-2"></i><a class="tag-none-link" href="/tags/Windows/" rel="tag">Windows</a>、<a class="tag-none-link" href="/tags/%E5%B7%A5%E5%85%B7/" rel="tag">工具</a>
+            </span>
+        
+    
 </div>
     
 
@@ -182,22 +191,22 @@
 <h3 id="步骤二-跳过-OOBE"><a href="#步骤二-跳过-OOBE" class="headerlink" title="步骤二 跳过 OOBE"></a>步骤二 跳过 OOBE</h3><p>返回 <code>CMD</code> 窗口输入 <code>taskmgr.exe</code>  启动 <strong>“任务管理器”</strong><br>任务管理器中找到 <code>msoobe</code> 进程并将其结束。</p>
 
       
-    
+
     
 
     
-        
-            <a href="/tags/Windows/" class="text-decoration-none">
-                <div class="btn btn-secondary rounded-pill shadow-sm">
-                    #Windows
-                    <span class="badge text-bg-light rounded-pill ms-1">5</span>
-                </div>
-            </a>
         
             <a href="/tags/%E5%B7%A5%E5%85%B7/" class="text-decoration-none">
                 <div class="btn btn-secondary rounded-pill shadow-sm">
                     #工具
                     <span class="badge text-bg-light rounded-pill ms-1">8</span>
+                </div>
+            </a>
+        
+            <a href="/tags/Windows/" class="text-decoration-none">
+                <div class="btn btn-secondary rounded-pill shadow-sm">
+                    #Windows
+                    <span class="badge text-bg-light rounded-pill ms-1">5</span>
                 </div>
             </a>
         
@@ -207,10 +216,40 @@
     </main>
 
     
-<!-- 返回顶部 -->
-<a href="#" id="back-to-top" class="btn btn-secondary back-to-top" title="返回顶部"><i class="bi bi-arrow-up" style="width: auto;"></i></a>
+<!-- 右下角浮动工具栏 -->
+<div class="position-fixed bottom-0 end-0" style="margin-right: 30px;margin-bottom: 30px;z-index: 1050;">
+  <div class="d-flex flex-column align-items-center gap-2">
+    
+    <!-- TOC 按钮 + 向上弹出卡片（用 dropup 包裹） -->
+    <div class="btn-group dropup" id="toc-group">
+      <a class="btn btn-secondary rounded"
+         data-bs-toggle="dropdown"
+         aria-expanded="false"
+         title="toc">
+        <i class="bi bi-list-ul"></i>
+      </a>
+      <div class="dropdown-menu dropdown-menu-end text-nowrap p-3 mb-2 border-0 shadow"
+           style="max-height: 70vh; width: auto; overflow-y: auto;">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="link-body-emphasis text-decoration-none" href="#%E5%87%86%E5%A4%87"><span class="toc-number">1.</span> <span class="toc-text">准备</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="link-body-emphasis text-decoration-none" href="#%E6%AD%A5%E9%AA%A4%E4%B8%80-%E5%90%AF%E7%94%A8%E7%AE%A1%E7%90%86%E5%91%98%E8%B4%A6%E6%88%B7"><span class="toc-number">1.1.</span> <span class="toc-text">步骤一 启用管理员账户</span></a></li><li class="toc-item toc-level-3"><a class="link-body-emphasis text-decoration-none" href="#%E6%AD%A5%E9%AA%A4%E4%BA%8C-%E8%B7%B3%E8%BF%87-OOBE"><span class="toc-number">1.2.</span> <span class="toc-text">步骤二 跳过 OOBE</span></a></li></ol></li></ol>
+      </div>
+    </div>
+    
+
+    <!-- 返回顶部按钮（默认隐藏，滚动后出现） -->
+    <a href="#"
+       id="back-to-top"
+       class="btn btn-secondary d-none"
+       title="返回顶部">
+      <i class="bi bi-arrow-up"></i>
+    </a>
+
+  </div>
+</div>
+
 
 <script src="/js/utils/back-to-top.js"></script>
+
+
 
 
     <footer class="footer mt-auto border-top bg-body">

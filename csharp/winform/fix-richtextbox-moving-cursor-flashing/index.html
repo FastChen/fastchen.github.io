@@ -172,6 +172,15 @@
             </span>
         
     
+
+    
+        
+            <!-- 标签 -->
+            <span>
+                <i class="bi bi-tags me-2"></i><a class="tag-none-link" href="/tags/RichTextBox/" rel="tag">RichTextBox</a>、<a class="tag-none-link" href="/tags/%E5%8A%9F%E8%83%BD%E5%A2%9E%E5%BC%BA/" rel="tag">功能增强</a>
+            </span>
+        
+    
 </div>
     
 
@@ -192,7 +201,7 @@
 </ul>
 
       
-    
+
     
 
     
@@ -217,10 +226,40 @@
     </main>
 
     
-<!-- 返回顶部 -->
-<a href="#" id="back-to-top" class="btn btn-secondary back-to-top" title="返回顶部"><i class="bi bi-arrow-up" style="width: auto;"></i></a>
+<!-- 右下角浮动工具栏 -->
+<div class="position-fixed bottom-0 end-0" style="margin-right: 30px;margin-bottom: 30px;z-index: 1050;">
+  <div class="d-flex flex-column align-items-center gap-2">
+    
+    <!-- TOC 按钮 + 向上弹出卡片（用 dropup 包裹） -->
+    <div class="btn-group dropup" id="toc-group">
+      <a class="btn btn-secondary rounded"
+         data-bs-toggle="dropdown"
+         aria-expanded="false"
+         title="toc">
+        <i class="bi bi-list-ul"></i>
+      </a>
+      <div class="dropdown-menu dropdown-menu-end text-nowrap p-3 mb-2 border-0 shadow"
+           style="max-height: 70vh; width: auto; overflow-y: auto;">
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="link-body-emphasis text-decoration-none" href="#%E8%A1%A8%E7%8E%B0"><span class="toc-number">1.</span> <span class="toc-text">表现</span></a></li><li class="toc-item toc-level-3"><a class="link-body-emphasis text-decoration-none" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-number">2.</span> <span class="toc-text">解决方案</span></a></li><li class="toc-item toc-level-3"><a class="link-body-emphasis text-decoration-none" href="#%E5%85%B6%E5%AE%83%E5%BD%B1%E5%93%8D"><span class="toc-number">3.</span> <span class="toc-text">其它影响</span></a></li></ol>
+      </div>
+    </div>
+    
+
+    <!-- 返回顶部按钮（默认隐藏，滚动后出现） -->
+    <a href="#"
+       id="back-to-top"
+       class="btn btn-secondary d-none"
+       title="返回顶部">
+      <i class="bi bi-arrow-up"></i>
+    </a>
+
+  </div>
+</div>
+
 
 <script src="/js/utils/back-to-top.js"></script>
+
+
 
 
     <footer class="footer mt-auto border-top bg-body">
